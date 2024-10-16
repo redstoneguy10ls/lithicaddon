@@ -53,19 +53,6 @@ public class lithicBlocks {
                     LiquidBlock(lithicFluids.GLASS.get(glass).source(), BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()))
     );
 
-    public static final Map<Rock, Map<rockBlocks, RegistryObject<Block>>> ROCKS_BLOCKS = Helpers.mapOfKeys(Rock.class, rock ->
-            Helpers.mapOfKeys(rockBlocks.class, type ->
-                            register(("rock/"+type.name()+"/"+ rock.name()), () -> new Block(ExtendedProperties.of()
-                            .mapColor(rock.color()).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASEDRUM).properties().strength(6.5f,10).requiresCorrectToolForDrops())
-                    )
-                    )
-            );
-    public static final Map<Rock, RegistryObject<Block>> ROCKS_PILLARS = Helpers.mapOfKeys(Rock.class, rock ->(
-                    register(("rock/pillar/"+ rock.name()), () -> new
-                            ExtendedRotatedPillarBlock(ExtendedProperties.of().mapColor(rock.color()).instrument(NoteBlockInstrument.BASEDRUM).strength(6.5f,10).requiresCorrectToolForDrops())
-                    )
-            )
-    );
     public static final RegistryObject<Block> SHH = register("shh", () -> new shh(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)
             .mapColor(MapColor.COLOR_LIGHT_BLUE)
             .forceSolidOff()

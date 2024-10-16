@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ],
 "__comment__": "This file was automatically created by redstoneguy10ls",
   "type": "immersiveengineering:metal_press",
   "energy": 2400,

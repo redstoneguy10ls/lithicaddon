@@ -2,7 +2,6 @@ package com.redstoneguy10ls.lithicaddon.common.items;
 
 import com.redstoneguy10ls.lithicaddon.LithicAddon;
 import com.redstoneguy10ls.lithicaddon.common.blocks.lithicBlocks;
-import com.redstoneguy10ls.lithicaddon.common.blocks.rockBlocks;
 import net.dries007.tfc.TerraFirmaCraft;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.common.items.Food;
@@ -54,15 +53,6 @@ public class lithicTab {
         lithicItems.GLASS_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
 
 
-
-        for(Rock rock : Rock.VALUES)
-        {
-            accept(out, lithicBlocks.ROCKS_PILLARS, rock);
-            for (rockBlocks type : rockBlocks.VALUES)
-            {
-                accept(out, lithicBlocks.ROCKS_BLOCKS, rock, type);
-            }
-        }
 
         accept(out, lithicItems.CHARCOAL_BRIQUETTE);
         accept(out, lithicItems.MOLD_INGOT);
