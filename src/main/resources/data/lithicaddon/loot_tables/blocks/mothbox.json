@@ -8,7 +8,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "lithicaddon:rock/road/shale"
+          "name": "lithicaddon:mothbox"
         }
       ],
       "conditions": [
