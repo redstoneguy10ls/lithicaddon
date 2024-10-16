@@ -1,8 +1,0 @@
-{
-    "__comment__": "This file was automatically created by redstoneguy10ls",
-    "parent": "block/cube_column_horizontal",
-	"textures": {
-		"end": "lithicaddon:block/rock/pillar/conglomeratetop",
-		"side": "lithicaddon:block/rock/pillar/conglomerate"
-	}         
-}

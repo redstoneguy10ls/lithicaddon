@@ -1,8 +1,0 @@
-{
-    "__comment__": "This file was automatically created by redstoneguy10ls",
-    "parent": "block/cube_all",
-	"textures": {
-		"all": "lithicaddon:block/rock/tile/schist",
-		"particle": "tfc:block/rock/raw/schist"
-	}         
-}
