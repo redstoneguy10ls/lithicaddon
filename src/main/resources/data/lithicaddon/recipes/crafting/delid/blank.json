@@ -11,7 +11,7 @@
       "type": "minecraft:crafting_shapeless",
       "ingredients": [
         {
-            "item": "lithicaddon:empty_jar_with_lid"
+            "item": "tfc:empty_jar_with_lid"
         }
       ],
       "result": {
