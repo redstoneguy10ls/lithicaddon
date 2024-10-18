@@ -1,9 +1,8 @@
 {
-  "__comment__": "This file was automatically created by mcresources",
   "conditions": [
     {
       "type": "forge:mod_loaded",
-      "modid": "immersiveengineering"
+      "modid": "tfc_ie_addon"
     }
   ],
   "type": "tfc:heating",

@@ -1,9 +1,11 @@
 {
-  "__comment__": "This file was automatically created by mcresources",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "firmalife"
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/stainless_steel"
+      }
     }
   ],
   "type": "tfc:heating",
