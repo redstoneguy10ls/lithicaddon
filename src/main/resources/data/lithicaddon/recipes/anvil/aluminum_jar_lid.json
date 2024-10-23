@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/aluminum"
+      }
+    }
+  ],
+  "type": "tfc:anvil",
+  "input": {
+    "tag": "forge:ingots/aluminum"
+  },
+  "result": {
+    "item": "lithicaddon:aluminum_lid",
+    "count": 16
+  },
+  "tier": 1,
+  "rules": [
+    "hit_last",
+    "hit_second_last",
+    "punch_third_last"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "tfc:no_remainder_shapeless_crafting",
+  "recipe":{
+      "type": "tfc:advanced_shapeless_crafting",
+      "ingredients": [
+        {
+          "type": "tfc:not_rotten",
+          "ingredient": {
+            "item": "tfc:jar/orange_unsealed"
+          }
+        },
+        {
+          "item": "lithicaddon:aluminum_lid"
+        }
+      ],
+      "result": {
+        "item": "lithicaddon:aluminum_jar/orange"
+      }
+  }
+}

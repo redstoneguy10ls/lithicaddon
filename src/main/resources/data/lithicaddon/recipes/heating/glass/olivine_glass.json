@@ -1,0 +1,16 @@
+{
+  "conditions": [
+    {
+      "type": "forge:false"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfc:olivine_glass_batch"
+  },
+  "result_fluid": {
+    "fluid": "lithicaddon:glass/olivine",
+    "amount": 1000
+  },
+  "temperature": 1500
+}

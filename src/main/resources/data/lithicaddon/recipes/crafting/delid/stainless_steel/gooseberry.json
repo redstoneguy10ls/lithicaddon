@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "lithicaddon:jar_recipe",
+    "break_chance": 0.25,
+    "lid": [
+      {
+        "item": "lithicaddon:stainless_steel_lid"
+      }
+    ],
+    "recipe":{
+      "type": "tfc:advanced_shapeless_crafting",
+      "ingredients": [
+        {
+          "type": "tfc:not_rotten",
+          "ingredient": {
+            "item": "lithicaddon:stainless_steel_jar/gooseberry"
+          }
+        }
+      ],
+      "result": {
+          "stack": {
+            "item": "tfc:jar/gooseberry_unsealed"
+          },
+          "modifiers": [
+            "tfc:copy_food"
+          ]
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "tfc_ie_addon"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "lithicaddon:aluminum_lid"
+  },
+  "result_fluid": {
+    "fluid": "tfc_ie_addon:metal/aluminum",
+    "amount": 6
+  },
+  "temperature": 650
+}
