@@ -95,10 +95,15 @@ public class mothboxBlock extends DeviceBlock implements HoeOverlayBlock {
                     ord++;
                     continue;
                 }
+                if(moth == null)
+                {
+                    noLarva++;
+                }
                 MutableComponent mothText = Component.translatable("lithic.moth.lattices", (ord));
                 ord++;
                 if(moth != null && moth.hasLarva() && !moth.isMoth())
                 {
+                    //TODO reformat this to be more like the code form the block entity
                     int bonus = 0;
                     bonus += moth.getAbility(MothAbility.FASTING);
                     bonus -= moth.getAbility(MothAbility.HUNGER);
@@ -142,6 +147,26 @@ public class mothboxBlock extends DeviceBlock implements HoeOverlayBlock {
 
                 //lights
 
+            }
+
+            if(noLarva == 4)
+            {
+                if(temp > box.MAX_TEMP)
+                {
+                    text.add(Component.translatable("lithic.moth.too_hot", box.MAX_TEMP, String.format("%.2f", temp)).withStyle(ChatFormatting.RED));
+                }
+                if(temp < box.MIN_TEMP)
+                {
+                    text.add(Component.translatable("lithic.moth.too_cold", box.MIN_TEMP, String.format("%.2f", temp)).withStyle(ChatFormatting.AQUA));
+                }
+                if(rain > box.MAX_RAIN)
+                {
+                    text.add(Component.translatable("lithic.moth.too_wet", box.MAX_RAIN, String.format("%.2f", rain)).withStyle(ChatFormatting.BLUE));
+                }
+                if(rain < box.MIN_RAIN)
+                {
+                    text.add(Component.translatable("lithic.moth.too_dry", box.MIN_RAIN, String.format("%.2f", rain)).withStyle(ChatFormatting.YELLOW));
+                }
             }
             final List<IMoth> usableMoths = box.getUsableMoths(temp,rain);
             final int lights = box.getLight();

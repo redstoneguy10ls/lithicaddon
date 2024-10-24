@@ -122,6 +122,12 @@
   "lithic.moth.min_lights": "Not enough light!",
   "lithic.moth.larva_chance_100": "Daily New Larva Chance: Gaurenteed",
   "lithic.moth.larva_chance": "Daily New Larva Chance: 1 / %s",
+  "lithic.moth.ability.hardiness": "Hardiness %s",
+  "lithic.moth.ability.fertility": "Fertility %s",
+  "lithic.moth.ability.moth_size": "Size %s",
+  "lithic.moth.ability.fasting": "Fasting %s",
+  "lithic.moth.ability.hunger": "Hunger %s",
+
 
 
 

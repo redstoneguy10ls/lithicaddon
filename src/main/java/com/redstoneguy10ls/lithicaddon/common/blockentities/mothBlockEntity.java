@@ -64,12 +64,13 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
 
     public static final float MAX_RAIN = Helpers.getValueOrDefault(lithicConfig.SERVER.maxrain).floatValue();
 
-    public static final int UPDATE_INTERVAL = ICalendar.TICKS_IN_DAY;
+    public static final int UPDATE_INTERVAL = ICalendar.TICKS_IN_DAY/2;
     public static final int SLOTS = 5;
 
     private static final Component NAME = Component.translatable(MOD_ID + ".block_entity.mothbox");
 
     private final IMoth[] cachedMoths;
+    private boolean bruh;
 
     private long lastPlayerTick, lastAreaTick;
 
@@ -81,6 +82,7 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         lastAreaTick = Calendars.SERVER.getTicks();
         cachedMoths = new IMoth[] {null,null,null,null,null};
         leaves = 0;
+        bruh = false;
 
         sidedInventory
                 .on(new PartialItemHandler(inventory).insert(0), Direction.Plane.VERTICAL)
@@ -155,10 +157,14 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         if (level != null && level.isClientSide) updateCache();
         return cachedMoths;
     }
-//TODO make moths not grow while climate is wrong
-    //TODO refactor all of this honestly
+
     private void updateTick()
     {
+        bruh = !bruh;
+        if(bruh)
+        {
+            return;
+        }
         assert level != null;
         final float temp = Climate.getTemperature(level, worldPosition);
         final float rainfall = Climate.getRainfall(level, worldPosition);
@@ -166,65 +172,79 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         final List<IMoth> usableMoths = getUsableMoths(temp,rainfall);
         setLeaves(calculateLeaves());
 
-        int bonus;
 
         final int light = getLight();
         final int breedTickChanceInverted = getBreedTickChanceInverted(usableMoths,light);
-        //check if the conditions are right and if so, start the moth spawning process
-        if (light > MIN_LIGHTS && (breedTickChanceInverted == 0 || level.random.nextInt(breedTickChanceInverted) == 0) && leaves > 0)
+
+
+        //Declares the parent variables
+        IMoth parent1 = null;
+        IMoth parent2 = null;
+        //Declares the new moth
+        IMoth uninitializedMoth = null;
+        //checks all slots other than the leaves slot
+        for(int i = 1; i < SLOTS; i++)
         {
-            //Declares the parent variables
-            IMoth parent1 = null;
-            IMoth parent2 = null;
-            //Declares the new moth
-            IMoth uninitializedMoth = null;
-            for (int i = 1; i < SLOTS; i++)
+            //check if the current lattice has the moth capability,
+            //basically just checking each slot
+            final IMoth moth = inventory.getStackInSlot(i).getCapability(MothCapability.CAPABILITY).resolve().orElse(null);
+
+            if(moth != null && (temp >= MIN_TEMP+MothAbility.getMinTemperature(moth.getAbility(MothAbility.HARDINESS)) )
+                    && (temp <= MAX_TEMP+MothAbility.getMaxTemperature(moth.getAbility(MothAbility.HARDINESS)))
+                    && (rainfall >= MIN_RAIN+MothAbility.getMinRainfall(moth.getAbility(MothAbility.HARDINESS)))
+                    && (rainfall <= MAX_RAIN+MothAbility.getMaxRainfall(moth.getAbility(MothAbility.HARDINESS))))
             {
-                //check if the current lattice has the moth capability,
-                //basically just checking each slot
-                final IMoth moth = inventory.getStackInSlot(i).getCapability(MothCapability.CAPABILITY).resolve().orElse(null);
-                //if the current slot has the moth capability then do stuff to that item stack
-                if (moth != null)
-                {
-                    //larva stuff
+                //if the box has leaves
+                if (leaves > 0) {
+                    //new larvae and or moth breeding
+                    //if there is lights
+                    //and rng says yes to breeding
+                    int bro = level.random.nextInt(breedTickChanceInverted);
+                    System.out.println("breedTickChanceInverted = " +bro);
+                    if (light > MIN_LIGHTS && (breedTickChanceInverted == 0 || bro == 0)) {
+                        //if the lattice has an adult make it a parent
+                        if (moth.isMoth()) {
+                            //initialize parents
+                            if (parent1 == null) parent1 = moth;
+                            else if (parent2 == null) parent2 = moth;
+                        }//eles set the lattice as new
+                        else if (uninitializedMoth == null && !moth.hasLarva()) {
+                            uninitializedMoth = moth;
+                        }
+                    }
+                    //breeding stuff done
+
+                    //this is here so the lattice doesn't consume leaves if theres no moth there
                     if (moth.hasLarva())
                     {
-                        //the bonuses for the moth having the fasting and hunger trait
-                        bonus = 0;
-                        bonus += moth.getAbility(MothAbility.FASTING);
-                        bonus -= moth.getAbility(MothAbility.HUNGER);
-
-                        //if its not a cocoon, eat leaves
-                        if((moth.getDaysTillCocoon()+bonus > moth.daysAlive()) ||moth.isMoth())
-                        {
-                            eatLeaves(moth,level.random);
-                        }//if it is a cocoon set as so
-                        else if(moth.getDaysTillCocoon()+bonus <= moth.daysAlive())
-                        {
-                            moth.setHasCocoon(true);
-                        }
-                        //if its time to become a moth set as true
-                        else if (moth.getDaysTillMoth()+bonus <= moth.daysAlive())
+                        //if the silk worm has been alive for longer than the time required
+                        //for it to become a moth, make it a moth
+                        if (moth.daysAlive() >= moth.getDaysTillMoth() + MothAbility.getTimeBonus(moth.getAbility(MothAbility.FASTING), moth.getAbility(MothAbility.HUNGER)))
                         {
                             moth.setIsMoth(true);
-                        }
-                        //if its an adult set it as a parent
-                        if (moth.isMoth())
+                            eatLeaves(moth, level.random);
+                        }//otherwise if the silk worm has been alive for longer than the time required
+                        //for it to become a cocoon make it a cocoon
+                        else if (moth.daysAlive() >= moth.getDaysTillCocoon() + MothAbility.getTimeBonus(moth.getAbility(MothAbility.FASTING), moth.getAbility(MothAbility.HUNGER)))
                         {
-                            if(parent1 == null) parent1 = moth;
-                            else if(parent2 == null) parent2 = moth;
+                            moth.setHasCocoon(true);
+                        } //finally if its only a larvae make it eat
+                        else
+                        {
+                            eatLeaves(moth, level.random);
                         }
+                        //finally add a day to the moths age
                         moth.setDaysAlive(moth.daysAlive() + 1);
-
-                    }
-                    //if its not a larva and it's not initialized, set uninitializedMoth to the current "moth"
-                    else if (uninitializedMoth == null)
-                    {
-                        uninitializedMoth = moth;
                     }
                 }
+                else if (moth.hasCocoon() && !moth.isMoth()) {
+                    //since it's a cocoon and the whole point of cocoons are that they've already eaten enough
+                    //to sustain a metamorphosis, they should still grow even without leaves
+                    moth.setDaysAlive(moth.daysAlive() + 1);
+                }
+
             }
-            //
+            //make a new silk worm
             if (uninitializedMoth != null)
             {
                 if(parent2 == null)// if we have one or no parents
@@ -236,41 +256,9 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
                     uninitializedMoth.setAbilitiesFromParents(parent1,parent2, level.random);
                 }
             }
-        }
-        else//as lights are just for attracting the moths to lay eggs. they should still grow even when there's no light
-        {
-            if(leaves > 0)
-            {
-                for (int i = 1; i < SLOTS; i++)
-                {
-                    final IMoth moth = inventory.getStackInSlot(i).getCapability(MothCapability.CAPABILITY).resolve().orElse(null);
-                    if (moth !=null && moth.hasLarva())
-                    {
-                        //the bonuses for the moth having the fasting and hunger trait
-                        bonus = 0;
-                        bonus += moth.getAbility(MothAbility.FASTING);
-                        bonus -= moth.getAbility(MothAbility.HUNGER);
 
-                        //if its not a cocoon, eat leaves
-                        if((moth.getDaysTillCocoon()+bonus > moth.daysAlive()) || moth.isMoth())
-                        {
-                            eatLeaves(moth,level.random);
-                        }//if it is a cocoon set as so
-                        else if(moth.getDaysTillCocoon()+bonus <= moth.daysAlive()&& moth.getDaysTillMoth()+bonus > moth.daysAlive())
-                        {
-                            moth.setHasCocoon(true);
-                        }
-                        //if its time to become a moth set as true
-                        else if (moth.getDaysTillMoth()+bonus <= moth.daysAlive())
-                        {
-                            moth.setIsMoth(true);
-                        }
-                        moth.setDaysAlive(moth.daysAlive() + 1);
-
-                    }
-                }
-            }
         }
+
     }
 
 
@@ -326,8 +314,8 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
     {
         int eat = Mth.nextInt(random,0,100);
         int bonus = 0;
-        bonus += 5*moth.getAbility(MothAbility.FASTING);
-        bonus -= 5*moth.getAbility(MothAbility.HUNGER);
+        bonus -= 5*moth.getAbility(MothAbility.FASTING);
+        bonus += 5*moth.getAbility(MothAbility.HUNGER);
 
 
         if(eat < Helpers.getValueOrDefault(lithicConfig.SERVER.mothEatChance)+bonus)

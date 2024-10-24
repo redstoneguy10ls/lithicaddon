@@ -91,24 +91,29 @@ public interface IMoth extends INBTSerializable<CompoundTag> {
 
     default void addToolTipInfo(List<Component> tooltip)
     {
-        if(isMoth())
-        {
-            tooltip.add(Component.translatable("lithic.moth.moth").withStyle(ChatFormatting.GOLD));
-        } else if (hasLarva())
+        if(hasLarva())
         {
 
-            if(hasCocoon())
+            if(isMoth())
+            {
+                tooltip.add(Component.translatable("lithic.moth.moth").withStyle(ChatFormatting.GOLD));
+            } else if (hasCocoon())
             {
                 tooltip.add(Component.translatable("lithic.moth.cocoon").withStyle(ChatFormatting.GOLD));
-                tooltip.add(Component.translatable("lithic.moth.till_moth", String.valueOf(DAYS_TILL_MOTH - (daysAlive()+DAYS_TILL_COCOON ) ) ).withStyle(ChatFormatting.WHITE));
-
-
+                tooltip.add(Component.translatable("lithic.moth.till_moth", String.valueOf(DAYS_TILL_MOTH+MothAbility.getTimeBonus(getAbility(MothAbility.FASTING),getAbility(MothAbility.HUNGER)) - daysAlive()+1)).withStyle(ChatFormatting.WHITE));
             }
             else {
                 tooltip.add(Component.translatable("lithic.moth.larva").withStyle(ChatFormatting.GOLD));
-                tooltip.add(Component.translatable("lithic.moth.till_cocoon", String.valueOf(DAYS_TILL_COCOON -daysAlive()) ).withStyle(ChatFormatting.WHITE));
+                tooltip.add(Component.translatable("lithic.moth.till_cocoon", String.valueOf(DAYS_TILL_COCOON+MothAbility.getTimeBonus(getAbility(MothAbility.FASTING),getAbility(MothAbility.HUNGER)) -daysAlive()+1) ).withStyle(ChatFormatting.WHITE));
             }
-
+            for (MothAbility ability : MothAbility.VALUES)
+            {
+                final int amount = getAbility(ability);
+                if (amount > 0)
+                {
+                    tooltip.add(Component.translatable("lithic.moth.ability." + ability.getSerializedName(), String.valueOf(amount)).withStyle(ChatFormatting.GRAY));
+                }
+            }
         }
         else
         {

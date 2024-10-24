@@ -29,6 +29,11 @@ public enum MothAbility implements StringRepresentable {
         return 5 * hardiness;
     }
 
+    public static int getTimeBonus(int fasting,int hunger)
+    {
+        return fasting-hunger;
+    }
+
 
 
     public static int[] fresh()
