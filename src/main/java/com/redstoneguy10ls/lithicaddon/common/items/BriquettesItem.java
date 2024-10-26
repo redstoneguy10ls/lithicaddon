@@ -5,8 +5,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import org.jetbrains.annotations.Nullable;
 
-public class briquettesItem extends Item {
-    public briquettesItem(Properties pProperties) {
+public class BriquettesItem extends Item {
+    public BriquettesItem(Properties pProperties) {
         super(pProperties);
     }
 

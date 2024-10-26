@@ -1,25 +1,22 @@
 package com.redstoneguy10ls.lithicaddon.common.capabilities.moth;
 
-import com.eerussianguy.firmalife.common.capabilities.bee.BeeAbility;
-import com.redstoneguy10ls.lithicaddon.config.lithicConfig;
+import com.redstoneguy10ls.lithicaddon.config.LithicConfig;
 import net.dries007.tfc.util.Helpers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.util.INBTSerializable;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 public interface IMoth extends INBTSerializable<CompoundTag> {
 
-    int DAYS_TILL_COCOON = Helpers.getValueOrDefault(lithicConfig.SERVER.daysTillCocoon);
-    int DAYS_TILL_MOTH = Helpers.getValueOrDefault(lithicConfig.SERVER.daysTillMoth)+DAYS_TILL_COCOON;
+    int DAYS_TILL_COCOON = Helpers.getValueOrDefault(LithicConfig.SERVER.daysTillCocoon);
+    int DAYS_TILL_MOTH = Helpers.getValueOrDefault(LithicConfig.SERVER.daysTillMoth)+DAYS_TILL_COCOON;
 
 
     int daysAlive();

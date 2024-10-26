@@ -22,9 +22,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class larvaLatticeItem extends Item {
+public class LarvaLatticeItem extends Item {
 
-    public larvaLatticeItem(Properties pProperties) {
+    public LarvaLatticeItem(Properties pProperties) {
         super(pProperties);
     }
     @Override

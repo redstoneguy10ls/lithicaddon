@@ -39,7 +39,7 @@ public class LithicClientEventHandler {
     public static void clientSetup(FMLClientSetupEvent event)
     {
         event.enqueueWork(() -> {
-            MenuScreens.register(LithicContainerTypes.MOTHBOX.get(), mothBoxScreen::new);
+            MenuScreens.register(LithicContainerTypes.MOTHBOX.get(), MothBoxScreen::new);
 
             ItemProperties.register(LithicItems.LARVA_LATTICE.get(), new ResourceLocation(MOD_ID, "larva"),
                     (stack, a, b, c) -> stack.getCapability(MothCapability.CAPABILITY).map(IMoth::hasLarva).orElse(false) ? 1f: 0f);

@@ -8,10 +8,10 @@ import net.minecraftforge.fml.config.ModConfig;
 
 import java.util.function.Function;
 
-public class lithicConfig {
+public class LithicConfig {
 
 
-    public static final lithicServerConfig SERVER = register(ModConfig.Type.SERVER, lithicServerConfig::new);
+    public static final LithicServerConfig SERVER = register(ModConfig.Type.SERVER, LithicServerConfig::new);
 
     public static void init() {}
 

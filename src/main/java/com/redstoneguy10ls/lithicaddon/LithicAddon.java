@@ -9,7 +9,7 @@ import com.redstoneguy10ls.lithicaddon.common.fluids.LithicFluids;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicTab;
 import com.redstoneguy10ls.lithicaddon.common.recipe.LithicRecipeSerializer;
-import com.redstoneguy10ls.lithicaddon.config.lithicConfig;
+import com.redstoneguy10ls.lithicaddon.config.LithicConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -35,7 +35,7 @@ public class LithicAddon
     public LithicAddon()
     {
 
-        lithicConfig.init();
+        LithicConfig.init();
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 

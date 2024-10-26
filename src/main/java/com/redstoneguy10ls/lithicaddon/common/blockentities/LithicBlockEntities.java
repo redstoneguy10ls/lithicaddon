@@ -19,7 +19,7 @@ public class LithicBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MOD_ID);
 
 
-    public static final RegistryObject<BlockEntityType<mothBlockEntity>> MOTHBOX = register("mothbox", mothBlockEntity::new, LithicBlocks.MOTHBOX);
+    public static final RegistryObject<BlockEntityType<MothBlockEntity>> MOTHBOX = register("mothbox", MothBlockEntity::new, LithicBlocks.MOTHBOX);
 
 /*
     public static final RegistryObject<BlockEntityType<TickCounterBlockEntity>> TICK_COUNTER = register

@@ -1,7 +1,7 @@
 package com.redstoneguy10ls.lithicaddon.common.blocks;
 
 import com.redstoneguy10ls.lithicaddon.common.blockentities.LithicBlockEntities;
-import com.redstoneguy10ls.lithicaddon.common.blockentities.mothBlockEntity;
+import com.redstoneguy10ls.lithicaddon.common.blockentities.MothBlockEntity;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.IMoth;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothAbility;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
@@ -29,11 +29,11 @@ import net.minecraft.world.phys.BlockHitResult;
 import java.util.ArrayList;
 import java.util.List;
 
-public class mothboxBlock extends DeviceBlock implements HoeOverlayBlock {
+public class MothboxBlock extends DeviceBlock implements HoeOverlayBlock {
 
-    public static final BooleanProperty LARVA = lithicStateProperties.LARVA;
+    public static final BooleanProperty LARVA = LithicStateProperties.LARVA;
 
-    public mothboxBlock(ExtendedProperties properties)
+    public MothboxBlock(ExtendedProperties properties)
     {
         super(properties, InventoryRemoveBehavior.DROP);
         registerDefaultState(getStateDefinition().any().setValue(LARVA, false));
@@ -59,7 +59,7 @@ public class mothboxBlock extends DeviceBlock implements HoeOverlayBlock {
     @SuppressWarnings("deprecation")
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand)
     {
-        level.getBlockEntity(pos, LithicBlockEntities.MOTHBOX.get()).ifPresent(mothBlockEntity::tryPeriodicUpdate);
+        level.getBlockEntity(pos, LithicBlockEntities.MOTHBOX.get()).ifPresent(MothBlockEntity::tryPeriodicUpdate);
     }
 
     @Override
@@ -172,7 +172,7 @@ public class mothboxBlock extends DeviceBlock implements HoeOverlayBlock {
             final int lights = box.getLight();
             text.add(Component.translatable("lithic.moth.lights",  lights));
             //checks how many light blocks are around
-            if(lights < mothBlockEntity.MIN_LIGHTS)
+            if(lights < MothBlockEntity.MIN_LIGHTS)
             {
                     text.add(Component.translatable("lithic.moth.min_lights"));
 

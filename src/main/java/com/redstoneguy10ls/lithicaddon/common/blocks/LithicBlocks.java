@@ -1,7 +1,7 @@
 package com.redstoneguy10ls.lithicaddon.common.blocks;
 
 import com.redstoneguy10ls.lithicaddon.common.blockentities.LithicBlockEntities;
-import com.redstoneguy10ls.lithicaddon.common.blockentities.mothBlockEntity;
+import com.redstoneguy10ls.lithicaddon.common.blockentities.MothBlockEntity;
 import com.redstoneguy10ls.lithicaddon.common.fluids.LithicAcids;
 import com.redstoneguy10ls.lithicaddon.common.fluids.LithicFluids;
 import com.redstoneguy10ls.lithicaddon.common.fluids.LithicGlass;
@@ -74,13 +74,13 @@ public class LithicBlocks {
             , b -> new CandleBlockItem(new Item.Properties(), b, TFCBlocks.CANDLE_CAKE));
 
     public static final RegistryObject<Block> MOTHBOX = register("mothbox",
-            () -> new mothboxBlock(ExtendedProperties.of()
+            () -> new MothboxBlock(ExtendedProperties.of()
                     .strength(0.6f)
                     .sound(SoundType.WOOD)
                     .flammable(60, 30)
                     .randomTicks()
                     .blockEntity(LithicBlockEntities.MOTHBOX)
-                    .serverTicks(mothBlockEntity::serverTick)));
+                    .serverTicks(MothBlockEntity::serverTick)));
 
 
 

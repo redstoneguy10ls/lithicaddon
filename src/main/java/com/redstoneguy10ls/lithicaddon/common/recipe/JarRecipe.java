@@ -21,20 +21,19 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.common.crafting.IShapedRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.items.ItemHandlerHelper;
-import org.apache.logging.log4j.core.tools.picocli.CommandLine;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class jarRecipe<R extends Recipe<CraftingContainer>> extends DelegateRecipe<R, CraftingContainer> implements CraftingRecipe {
+public abstract class JarRecipe<R extends Recipe<CraftingContainer>> extends DelegateRecipe<R, CraftingContainer> implements CraftingRecipe {
 
     private final CraftingBookCategory category;
     private final List<ItemStack> lid;
 
     private final float chance;
 
-    protected jarRecipe(ResourceLocation id, CraftingBookCategory category, R recipe, List<ItemStack> lid, float chance)
+    protected JarRecipe(ResourceLocation id, CraftingBookCategory category, R recipe, List<ItemStack> lid, float chance)
     {
         super(id, recipe);
         this.category = category;
@@ -59,14 +58,14 @@ public abstract class jarRecipe<R extends Recipe<CraftingContainer>> extends Del
     public NonNullList<ItemStack> getRemainingItems(CraftingContainer inv)
     {
         Player player = ForgeHooks.getCraftingPlayer();
-        final jarRecipe recipe = jarRecipe.this;
+        final JarRecipe recipe = JarRecipe.this;
         if (player != null && player.getRandom().nextFloat() > recipe.getBreackChance())
         {
             lid.forEach(item -> ItemHandlerHelper.giveItemToPlayer(player, item.copy()));
         }
         return super.getRemainingItems(inv);
     }
-    public static class Shapeless extends jarRecipe<Recipe<CraftingContainer>> {
+    public static class Shapeless extends JarRecipe<Recipe<CraftingContainer>> {
         public Shapeless(ResourceLocation id, CraftingBookCategory category, Recipe<CraftingContainer> recipe, List<ItemStack> lid,float chance) {
             super(id, category, recipe, lid, chance);
         }
@@ -76,11 +75,11 @@ public abstract class jarRecipe<R extends Recipe<CraftingContainer>> extends Del
             return LithicRecipeSerializer.JAR_RECIPE_SHAPELESS.get();
         }
     }
-    public static class jarRecipeSerializer extends RecipeSerializerImpl<jarRecipe<?>>
+    public static class jarRecipeSerializer extends RecipeSerializerImpl<JarRecipe<?>>
         {
             public interface Factory
             {
-                jarRecipe<?> apply(ResourceLocation id, CraftingBookCategory category, Recipe<CraftingContainer> recipe, List<ItemStack> list, float chance);
+                JarRecipe<?> apply(ResourceLocation id, CraftingBookCategory category, Recipe<CraftingContainer> recipe, List<ItemStack> list, float chance);
             }
 
             public static jarRecipeSerializer shapeless(Factory factory)
@@ -99,14 +98,14 @@ public abstract class jarRecipe<R extends Recipe<CraftingContainer>> extends Del
             public jarRecipeSerializer(Factory factory){this.factory = factory;}
 
             @Override
-            public jarRecipe<?> fromJson(ResourceLocation recipeID, JsonObject json)
+            public JarRecipe<?> fromJson(ResourceLocation recipeID, JsonObject json)
             {
                 return fromJson(recipeID, json, ICondition.IContext.EMPTY);
             }
 
             @Override
             @SuppressWarnings("unchecked")
-            public jarRecipe<?> fromJson(ResourceLocation recipeID, JsonObject json, ICondition.IContext context)
+            public JarRecipe<?> fromJson(ResourceLocation recipeID, JsonObject json, ICondition.IContext context)
             {
                 List<ItemStack> items = new ArrayList<>();
                 float breakChance = JsonHelpers.getAsFloat(json,"break_chance");
@@ -122,7 +121,7 @@ public abstract class jarRecipe<R extends Recipe<CraftingContainer>> extends Del
             @Nullable
             @SuppressWarnings("unchecked")
             @Override
-            public jarRecipe<?> fromNetwork(ResourceLocation recipeID, FriendlyByteBuf buffer)
+            public JarRecipe<?> fromNetwork(ResourceLocation recipeID, FriendlyByteBuf buffer)
             {
                 CraftingBookCategory cat = buffer.readEnum(CraftingBookCategory.class);
                 List<ItemStack> items = new ArrayList<>();
@@ -133,7 +132,7 @@ public abstract class jarRecipe<R extends Recipe<CraftingContainer>> extends Del
             }
 
             @Override
-            public void toNetwork(FriendlyByteBuf buffer, jarRecipe<?> recipe)
+            public void toNetwork(FriendlyByteBuf buffer, JarRecipe<?> recipe)
             {
                 buffer.writeEnum(recipe.category);
                 buffer.writeFloat(recipe.chance);

@@ -30,7 +30,7 @@ public class LithicItems {
     public static final Map<Metal.Default, RegistryObject<Item>> METAL_SPINDLES =
             Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasTools, metals ->
                     register("metal_spindle/" + metals.name(), () ->
-                    new metalSpindle(metals.toolTier(), new Item.Properties())));
+                    new MetalSpindle(metals.toolTier(), new Item.Properties())));
     public static final Map<Metal.Default, RegistryObject<Item>> SPINDLE_HEADS =
             Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasTools, metals ->
                     register("metal_spindle_head/" + metals.name(), basicItem())
@@ -71,17 +71,17 @@ public class LithicItems {
             );
 
     public static final RegistryObject<Item> CHARCOAL_BRIQUETTE = register("charcoal_briquette", () ->
-            new briquettesItem(new Item.Properties()));
+            new BriquettesItem(new Item.Properties()));
 
     public static final RegistryObject<Item> MOLD_INGOT = register("mold_ingot");
     public static final RegistryObject<Item> MOLD_LAMP = register("mold_lamp");
 
     public static final RegistryObject<Item> COCOON = register("cocoon");
-    public static final RegistryObject<Item> BOILED_COCOON = register("boiled_cocoon", () -> new boiledCacoon(prop()));
+    public static final RegistryObject<Item> BOILED_COCOON = register("boiled_cocoon", () -> new BoiledCacoon(prop()));
     public static final RegistryObject<Item> BALL_OF_SILK = register("ball_of_silk");
 
 
-    public static final RegistryObject<Item> LARVA_LATTICE = register("larva_lattice", () -> new larvaLatticeItem(prop().stacksTo(1)));
+    public static final RegistryObject<Item> LARVA_LATTICE = register("larva_lattice", () -> new LarvaLatticeItem(prop().stacksTo(1)));
 
     public static final Map<LithicFood, RegistryObject<Item>> FOODS =
             Helpers.mapOfKeys(LithicFood.class, food -> register("food/"+ food.name(),

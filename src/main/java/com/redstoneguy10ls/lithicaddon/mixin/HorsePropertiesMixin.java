@@ -1,19 +1,14 @@
 package com.redstoneguy10ls.lithicaddon.mixin;
 
-import com.redstoneguy10ls.lithicaddon.config.lithicConfig;
-import net.dries007.tfc.common.entities.livestock.CommonAnimalData;
-import net.dries007.tfc.common.entities.livestock.MammalProperties;
+import com.redstoneguy10ls.lithicaddon.config.LithicConfig;
 import net.dries007.tfc.common.entities.livestock.TFCAnimalProperties;
 import net.dries007.tfc.common.entities.livestock.horse.HorseProperties;
 import net.dries007.tfc.common.entities.livestock.horse.TFCHorse;
 import net.dries007.tfc.util.Helpers;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -27,7 +22,7 @@ public abstract class HorsePropertiesMixin implements HorseProperties{
     @Inject(method = "createGenes", at = @At("TAIL"),remap = false)
     private void morespeed(CompoundTag tag, TFCAnimalProperties maleProperties, CallbackInfo ci)
     {
-        if(Helpers.getValueOrDefault(lithicConfig.SERVER.betterHorseBreeding))
+        if(Helpers.getValueOrDefault(LithicConfig.SERVER.betterHorseBreeding))
         {
             //MammalProperties.super.createGenes(tag, maleProperties);
             AbstractHorse female = getEntity();

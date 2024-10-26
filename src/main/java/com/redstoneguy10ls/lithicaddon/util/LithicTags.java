@@ -8,7 +8,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
-public class lithicTags {
+public class LithicTags {
 
     public static class Blocks{
         public static final TagKey<Block> AIRS = tag("airs");

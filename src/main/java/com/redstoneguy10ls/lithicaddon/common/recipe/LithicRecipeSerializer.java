@@ -13,8 +13,8 @@ public class LithicRecipeSerializer {
 
     public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(Registries.RECIPE_SERIALIZER, MOD_ID);
 
-    public static final RegistryObject<jarRecipe.jarRecipeSerializer> JAR_RECIPE_SHAPELESS = register("jar_recipe",
-            () -> jarRecipe.jarRecipeSerializer.shapeless(jarRecipe.Shapeless::new));
+    public static final RegistryObject<JarRecipe.jarRecipeSerializer> JAR_RECIPE_SHAPELESS = register("jar_recipe",
+            () -> JarRecipe.jarRecipeSerializer.shapeless(JarRecipe.Shapeless::new));
 
     //public static final RegistryObject<alPotsRecipe.Serializer> POT_JAM_AL = register("pot_jam_al", alPotsRecipe.Serializer::new);
 

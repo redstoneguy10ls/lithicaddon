@@ -1,13 +1,13 @@
 package com.redstoneguy10ls.lithicaddon.common.blockentities;
 
-import com.redstoneguy10ls.lithicaddon.common.blocks.mothboxBlock;
+import com.redstoneguy10ls.lithicaddon.common.blocks.MothboxBlock;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.IMoth;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothAbility;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothCapability;
-import com.redstoneguy10ls.lithicaddon.common.container.mothboxContainer;
+import com.redstoneguy10ls.lithicaddon.common.container.MothboxContainer;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
-import com.redstoneguy10ls.lithicaddon.config.lithicConfig;
-import com.redstoneguy10ls.lithicaddon.util.lithicTags;
+import com.redstoneguy10ls.lithicaddon.config.LithicConfig;
+import com.redstoneguy10ls.lithicaddon.util.LithicTags;
 import net.dries007.tfc.common.blockentities.InventoryBlockEntity;
 import net.dries007.tfc.common.blockentities.TickableInventoryBlockEntity;
 import net.dries007.tfc.common.capabilities.InventoryItemHandler;
@@ -42,10 +42,10 @@ import java.util.stream.Collectors;
 
 import static com.redstoneguy10ls.lithicaddon.LithicAddon.MOD_ID;
 
-public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandler> implements ICalendarTickable {
+public class MothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandler> implements ICalendarTickable {
 
 
-    public static void serverTick(Level level, BlockPos pos, BlockState state, mothBlockEntity box)
+    public static void serverTick(Level level, BlockPos pos, BlockState state, MothBlockEntity box)
     {
         box.checkForLastTickSync();
         box.checkForCalendarUpdate();
@@ -56,17 +56,17 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         }
     }
 
-    public static final int MIN_LIGHT_LEVEL = Helpers.getValueOrDefault(lithicConfig.SERVER.minLightLevel);
+    public static final int MIN_LIGHT_LEVEL = Helpers.getValueOrDefault(LithicConfig.SERVER.minLightLevel);
 
-    public static final int MIN_LIGHTS = Helpers.getValueOrDefault(lithicConfig.SERVER.minLights);
+    public static final int MIN_LIGHTS = Helpers.getValueOrDefault(LithicConfig.SERVER.minLights);
 
-    public static final float MIN_TEMP = Helpers.getValueOrDefault(lithicConfig.SERVER.mintemp).floatValue();
+    public static final float MIN_TEMP = Helpers.getValueOrDefault(LithicConfig.SERVER.mintemp).floatValue();
 
-    public static final float MAX_TEMP = Helpers.getValueOrDefault(lithicConfig.SERVER.maxtemp).floatValue();
+    public static final float MAX_TEMP = Helpers.getValueOrDefault(LithicConfig.SERVER.maxtemp).floatValue();
 
-    public static final float MIN_RAIN = Helpers.getValueOrDefault(lithicConfig.SERVER.minrain).floatValue();
+    public static final float MIN_RAIN = Helpers.getValueOrDefault(LithicConfig.SERVER.minrain).floatValue();
 
-    public static final float MAX_RAIN = Helpers.getValueOrDefault(lithicConfig.SERVER.maxrain).floatValue();
+    public static final float MAX_RAIN = Helpers.getValueOrDefault(LithicConfig.SERVER.maxrain).floatValue();
 
     public static final int UPDATE_INTERVAL = ICalendar.TICKS_IN_DAY/2;
     public static final int TOTAL_SLOTS = 7;
@@ -84,7 +84,7 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
 
     private int leaves;
 
-    public mothBlockEntity(BlockPos pos, BlockState state) {
+    public MothBlockEntity(BlockPos pos, BlockState state) {
         super(LithicBlockEntities.MOTHBOX.get(), pos, state, be -> new FixedISH(be, TOTAL_SLOTS), NAME);
         lastPlayerTick = Integer.MIN_VALUE;
         lastAreaTick = Calendars.SERVER.getTicks();
@@ -121,7 +121,7 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
     @Override
     @Nullable
     public AbstractContainerMenu createMenu(int windowID, Inventory inv, Player player) {
-        return mothboxContainer.create(this, inv, windowID);
+        return MothboxContainer.create(this, inv, windowID);
     }
 
     @Override
@@ -351,7 +351,7 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         bonus += 5*moth.getAbility(MothAbility.HUNGER);
         int eatbonus = 0;
 
-        if(eat < Helpers.getValueOrDefault(lithicConfig.SERVER.mothEatChance)+bonus)
+        if(eat < Helpers.getValueOrDefault(LithicConfig.SERVER.mothEatChance)+bonus)
         {
             if(moth.getAbility(MothAbility.MOTH_SIZE) == 1)
             {
@@ -410,9 +410,9 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         final boolean moths = hasMoths();
         final BlockState state = level.getBlockState(worldPosition);
         boolean hasLeaves = leaves > 0;
-        if(hasLeaves != state.getValue(mothboxBlock.LARVA))
+        if(hasLeaves != state.getValue(MothboxBlock.LARVA))
         {
-            level.setBlockAndUpdate(worldPosition, state.setValue(mothboxBlock.LARVA, hasLeaves));
+            level.setBlockAndUpdate(worldPosition, state.setValue(MothboxBlock.LARVA, hasLeaves));
             markForSync();
         }
     }
@@ -453,7 +453,7 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         }
         else if(slot == LEAF_SLOT)
         {
-            return Helpers.isItem(stack, lithicTags.Items.MOTH_FOOD);
+            return Helpers.isItem(stack, LithicTags.Items.MOTH_FOOD);
         }
         else
         {

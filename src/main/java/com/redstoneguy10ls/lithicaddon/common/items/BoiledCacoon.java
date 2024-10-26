@@ -18,10 +18,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class boiledCacoon extends Item {
+public class BoiledCacoon extends Item {
 
 
-    public boiledCacoon(Properties pProperties) {
+    public BoiledCacoon(Properties pProperties) {
         super(pProperties);
     }
     @Override

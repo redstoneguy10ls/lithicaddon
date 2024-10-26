@@ -7,7 +7,7 @@ import java.util.function.Function;
 
 import static com.redstoneguy10ls.lithicaddon.LithicAddon.MOD_ID;
 
-public class lithicServerConfig {
+public class LithicServerConfig {
 
     public final IntValue daysTillCocoon;
     public final IntValue daysTillMoth;
@@ -29,7 +29,7 @@ public class lithicServerConfig {
     public final BooleanValue betterHorseBreeding;
 
 
-    lithicServerConfig(Builder innerBuilder)
+    LithicServerConfig(Builder innerBuilder)
     {
         Function<String, Builder> builder = name -> innerBuilder.translation(MOD_ID + ".config.server." + name);
 
