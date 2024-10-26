@@ -60,11 +60,11 @@ public class LithicServerConfig {
 
         minrain = builder.apply("minrain")
                 .comment("The minimum rainfall for the mothbox to start working")
-                .defineInRange("minrain",100.0f, 0.0f, 500.0f);
+                .defineInRange("minrain",300.0f, 0.0f, 500.0f);
 
         maxrain = builder.apply("maxrain")
                 .comment("The maximum rainfall for the mothbox to start working")
-                .defineInRange("maxrain",200.0f, 0.0f, 500.0f);
+                .defineInRange("maxrain",400.0f, 0.0f, 500.0f);
 
         mothEatChance = builder.apply("mothEatChance")
                 .comment("The chance out of 100 the fruit leaves will be consumed each day. set to 100 to gaurentee they eat ")

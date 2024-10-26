@@ -1,10 +1,14 @@
 package com.redstoneguy10ls.lithicaddon.client;
 
+import com.eerussianguy.firmalife.common.blocks.FLBlocks;
+import com.redstoneguy10ls.lithicaddon.common.blocks.LithicBlocks;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.IMoth;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothCapability;
 import com.redstoneguy10ls.lithicaddon.common.container.LithicContainerTypes;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -38,6 +42,10 @@ public class LithicClientEventHandler {
 
     public static void clientSetup(FMLClientSetupEvent event)
     {
+        final RenderType cutout = RenderType.cutout();
+        LithicBlocks.FRUIT_TREE_SAPLINGS.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
+        LithicBlocks.FRUIT_TREE_POTTED_SAPLINGS.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
+
         event.enqueueWork(() -> {
             MenuScreens.register(LithicContainerTypes.MOTHBOX.get(), MothBoxScreen::new);
 

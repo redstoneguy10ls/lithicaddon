@@ -1,0 +1,10 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "lithicaddon:mothbox",
+    "lithicaddon:plant/mulberry_branch",
+    "lithicaddon:plant/mulberry_growing_branch"
+
+  ]
+}

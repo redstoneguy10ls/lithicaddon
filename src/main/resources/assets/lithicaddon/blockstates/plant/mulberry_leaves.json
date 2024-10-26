@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "lifecycle=flowering": {
+      "model": "lithicaddon:block/plant/mulberry_flowering_leaves"
+    },
+    "lifecycle=fruiting": {
+      "model": "lithicaddon:block/plant/mulberry_fruiting_leaves"
+    },
+    "lifecycle=dormant": {
+      "model": "lithicaddon:block/plant/mulberry_dry_leaves"
+    },
+    "lifecycle=healthy": {
+      "model": "lithicaddon:block/plant/mulberry_leaves"
+    }
+  }
+}

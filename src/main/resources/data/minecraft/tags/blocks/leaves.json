@@ -1,10 +1,7 @@
 {
+  "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
-    {
-      "id": "firmalife:fruit_leaf",
-      "required": false
-    },
     "lithicaddon:plant/mulberry_leaves"
   ]
 }

@@ -1,6 +1,8 @@
 package com.redstoneguy10ls.lithicaddon.common.blockentities;
 
 import com.redstoneguy10ls.lithicaddon.common.blocks.LithicBlocks;
+import net.dries007.tfc.common.blockentities.BerryBushBlockEntity;
+import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
@@ -18,8 +20,15 @@ public class LithicBlockEntities {
 
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MOD_ID);
 
+    public static final RegistryObject<BlockEntityType<LithicTickCounterEntity>> TICK_COUNTER = register("tick_counter",LithicTickCounterEntity::new, Stream.of(
+            LithicBlocks.FRUIT_TREE_SAPLINGS.values(),
+            LithicBlocks.FRUIT_TREE_GROWING_BRANCHES.values()
+    ).<Supplier<? extends Block>>flatMap(Helpers::flatten));
 
     public static final RegistryObject<BlockEntityType<MothBlockEntity>> MOTHBOX = register("mothbox", MothBlockEntity::new, LithicBlocks.MOTHBOX);
+
+    public static final RegistryObject<BlockEntityType<BerryBushBlockEntity>> BERRY_BUSH = register("berry_bush", LithicBerryBushBlockEntity::new,
+            Stream.of(LithicBlocks.FRUIT_TREE_LEAVES.values()).<Supplier<? extends Block>>flatMap(Helpers::flatten));
 
 /*
     public static final RegistryObject<BlockEntityType<TickCounterBlockEntity>> TICK_COUNTER = register
@@ -35,7 +44,8 @@ public class LithicBlockEntities {
     }
 
 
-    private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(String name, BlockEntityType.BlockEntitySupplier<T> factory, Stream<? extends Supplier<? extends Block>> blocks)
+    private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(String name, BlockEntityType.BlockEntitySupplier<T> factory,
+                                                                                       Stream<? extends Supplier<? extends Block>> blocks)
     {
         return RegistrationHelpers.register(BLOCK_ENTITIES, name, factory, blocks);
     }

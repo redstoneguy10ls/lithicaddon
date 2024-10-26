@@ -4,7 +4,8 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 
 public enum LithicFood {
-    BOILED_GRUB(true,false,false);
+    BOILED_GRUB(true,true,false),
+    MULBERRY(false,false,true);
 
     private final boolean meat, fast,fruit;
 

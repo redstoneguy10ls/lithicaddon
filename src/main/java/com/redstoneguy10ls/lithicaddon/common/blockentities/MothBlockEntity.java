@@ -345,7 +345,7 @@ public class MothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
 
     public void eatLeaves(IMoth moth, RandomSource random)
     {
-        int eat = Mth.nextInt(random,0,100);
+        int eat = Mth.nextInt(random,1,100);
         int bonus = 0;
         bonus -= 5*moth.getAbility(MothAbility.FASTING);
         bonus += 5*moth.getAbility(MothAbility.HUNGER);

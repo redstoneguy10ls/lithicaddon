@@ -80,10 +80,16 @@
   "item.lithicaddon.boiled_cocoon": "Boiled Silk Worm Cocoon",
   "item.lithicaddon.food.boiled_grub": "Boiled Silk Worm",
   "item.lithicaddon.ball_of_silk": "Bundle of String",
+  "item.lithicaddon.food.mulberry": "Mulberry",
 
   "__comment__": "BLOCKS",
 
   "block.lithicaddon.mothbox" :  "Mothbox",
+  "block.lithicaddon.plant.mulberry_branch": "Mulberry Branch",
+  "block.lithicaddon.plant.mulberry_leaves": "Mulberry Leaves",
+  "block.lithicaddon.plant.mulberry_sapling": "Mulberry Sapling",
+  "block.lithicaddon.plant.potted.mulberry_sapling": "Potted Mulberry Sapling",
+  "block.lithicaddon.plant.mulberry_growing_branch": "Mulberry Branch",
 
 
   "__comment__": "fluids",

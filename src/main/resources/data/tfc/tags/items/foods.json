@@ -1,5 +1,4 @@
 {
-  "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
     "lithicaddon:aluminum_jar/banana",
@@ -46,6 +45,7 @@
     "lithicaddon:stainless_steel_jar/strawberry",
     "lithicaddon:aluminum_jar/wintergreen_berry",
     "lithicaddon:stainless_steel_jar/wintergreen_berry",
-    "lithicaddon:food/boiled_grub"
+    "lithicaddon:food/boiled_grub",
+    "lithicaddon:food/mulberry"
   ]
 }

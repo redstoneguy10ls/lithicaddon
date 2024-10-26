@@ -2,6 +2,7 @@ package com.redstoneguy10ls.lithicaddon.common.blocks;
 
 import com.redstoneguy10ls.lithicaddon.common.blockentities.LithicBlockEntities;
 import com.redstoneguy10ls.lithicaddon.common.blockentities.MothBlockEntity;
+import com.redstoneguy10ls.lithicaddon.common.blocks.plants.LithicFruitBlocks;
 import com.redstoneguy10ls.lithicaddon.common.fluids.LithicAcids;
 import com.redstoneguy10ls.lithicaddon.common.fluids.LithicFluids;
 import com.redstoneguy10ls.lithicaddon.common.fluids.LithicGlass;
@@ -48,6 +49,18 @@ public class LithicBlocks {
             registerNoItem("fluid/glass/" + glass.toString(), () -> new
                     LiquidBlock(LithicFluids.GLASS.get(glass).source(), BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()))
     );
+    public static final Map<LithicFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_LEAVES =
+            Helpers.mapOfKeys(LithicFruitBlocks.Tree.class, tree -> register("plant/" + tree.name() + "_leaves", tree::createLeaves));
+    public static final Map<LithicFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_BRANCHES =
+            Helpers.mapOfKeys(LithicFruitBlocks.Tree.class, tree -> register("plant/" + tree.name() + "_branch", tree::createBranch));
+    public static final Map<LithicFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_GROWING_BRANCHES =
+            Helpers.mapOfKeys(LithicFruitBlocks.Tree.class, tree -> register("plant/" + tree.name() + "_growing_branch", tree::createGrowingBranch));
+
+    public static final Map<LithicFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_SAPLINGS =
+            Helpers.mapOfKeys(LithicFruitBlocks.Tree.class, tree -> register("plant/" + tree.name() + "_sapling", tree::createSapling));
+
+    public static final Map<LithicFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_POTTED_SAPLINGS =
+            Helpers.mapOfKeys(LithicFruitBlocks.Tree.class, tree -> registerNoItem("plant/potted/" + tree.name() + "_sapling", tree::createPottedSapling));
 
 
     public static final RegistryObject<Block> SHH = register("shh", () -> new shh(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)

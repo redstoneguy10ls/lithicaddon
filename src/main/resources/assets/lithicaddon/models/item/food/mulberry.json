@@ -1,0 +1,12 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "lithicaddon:item/not_dried/mulberry",
+  "overrides": [
+    {
+      "predicate": {
+        "firmalife:dry": 1
+      },
+      "model": "lithicaddon:item/dried/mulberry"
+    }
+  ]
+}
