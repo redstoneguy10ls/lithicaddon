@@ -1,17 +1,12 @@
 package com.redstoneguy10ls.lithicaddon.common.fluids;
 
-import com.redstoneguy10ls.lithicaddon.common.blocks.lithicBlocks;
-import com.redstoneguy10ls.lithicaddon.common.items.lithicItems;
-import net.dries007.tfc.common.blocks.TFCBlocks;
+import com.redstoneguy10ls.lithicaddon.common.blocks.LithicBlocks;
+import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
 import net.dries007.tfc.common.fluids.*;
 import net.dries007.tfc.common.fluids.FluidRegistryObject;
 import net.dries007.tfc.common.fluids.MoltenFluid;
-import net.dries007.tfc.common.items.TFCItems;
 import net.dries007.tfc.util.Helpers;
-import net.dries007.tfc.util.Metal;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
@@ -29,7 +24,7 @@ import java.util.function.Function;
 import static com.redstoneguy10ls.lithicaddon.LithicAddon.MOD_ID;
 import static net.dries007.tfc.common.fluids.TFCFluids.*;
 
-public final class lithicFluids {
+public final class LithicFluids {
     /*
         public static final Map<lithicMetals, FluidRegistryObject<ForgeFlowingFluid>> METALS = Helpers.mapOfKeys(lithicMetals.class, metal -> register(
             "metal/" + metal.getId(),
@@ -47,12 +42,12 @@ public final class lithicFluids {
 
     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, MOD_ID);
 
-    public static final Map<lithicMetals, FluidRegistryObject<ForgeFlowingFluid>> METALS = Helpers.mapOfKeys(lithicMetals.class, metal
+    public static final Map<LithicMetals, FluidRegistryObject<ForgeFlowingFluid>> METALS = Helpers.mapOfKeys(LithicMetals.class, metal
             -> register(
             "metal/" + metal.getId(),
             properties -> properties
-                    .block(lithicBlocks.METAL_FLUIDS.get(metal))
-                    .bucket(lithicItems.METAL_FLUIDS_BUCKETS.get(metal))
+                    .block(LithicBlocks.METAL_FLUIDS.get(metal))
+                    .bucket(LithicItems.METAL_FLUIDS_BUCKETS.get(metal))
                     .explosionResistance(100),
             lavaLike()
                     .descriptionId("fluid.lithic.metal." + metal.getId())
@@ -62,12 +57,12 @@ public final class lithicFluids {
             MoltenFluid.Flowing::new
     ));
 
-    public static final Map<lithicAcids, FluidRegistryObject<ForgeFlowingFluid>> ACIDS = Helpers.mapOfKeys(lithicAcids.class, acid
+    public static final Map<LithicAcids, FluidRegistryObject<ForgeFlowingFluid>> ACIDS = Helpers.mapOfKeys(LithicAcids.class, acid
             -> register(
             "acid/" + acid.getId(),
             properties -> properties
-                    .block(lithicBlocks.ACID_FLUIDS.get(acid))
-                    .bucket(lithicItems.ACID_FLUIDS_BUCKETS.get(acid))
+                    .block(LithicBlocks.ACID_FLUIDS.get(acid))
+                    .bucket(LithicItems.ACID_FLUIDS_BUCKETS.get(acid))
                     .explosionResistance(100),
             lavaLike()
                     .descriptionId("fluid.lithic.acid." + acid.getId())
@@ -77,12 +72,12 @@ public final class lithicFluids {
             MoltenFluid.Flowing::new
     ));
 
-    public static final Map<lithicGlass, FluidRegistryObject<ForgeFlowingFluid>> GLASS = Helpers.mapOfKeys(lithicGlass.class, glass
+    public static final Map<LithicGlass, FluidRegistryObject<ForgeFlowingFluid>> GLASS = Helpers.mapOfKeys(LithicGlass.class, glass
             -> register(
             "glass/" + glass.getId(),
             properties -> properties
-                    .block(lithicBlocks.GLASS_FLUIDS.get(glass))
-                    .bucket(lithicItems.GLASS_FLUIDS_BUCKETS.get(glass))
+                    .block(LithicBlocks.GLASS_FLUIDS.get(glass))
+                    .bucket(LithicItems.GLASS_FLUIDS_BUCKETS.get(glass))
                     .explosionResistance(100),
             lavaLike()
                     .descriptionId("fluid.lithic.glass." + glass.getId())

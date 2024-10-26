@@ -1,9 +1,8 @@
 package com.redstoneguy10ls.lithicaddon.common.items;
 
 import com.redstoneguy10ls.lithicaddon.LithicAddon;
-import com.redstoneguy10ls.lithicaddon.common.blocks.lithicBlocks;
+import com.redstoneguy10ls.lithicaddon.common.blocks.LithicBlocks;
 import net.dries007.tfc.TerraFirmaCraft;
-import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.common.items.Food;
 import net.dries007.tfc.util.SelfTests;
 import net.minecraft.core.registries.Registries;
@@ -23,48 +22,48 @@ import java.util.function.Supplier;
 
 import static com.redstoneguy10ls.lithicaddon.LithicAddon.MOD_ID;
 
-public class lithicTab {
+public class LithicTab {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
-    public static final lithicTab.CreativeTabHolder LITHIC =
-            register("lithic", () -> new ItemStack(lithicItems.LITHIC.get()), lithicTab::fillTab);
+    public static final LithicTab.CreativeTabHolder LITHIC =
+            register("lithic", () -> new ItemStack(LithicItems.LITHIC.get()), LithicTab::fillTab);
 
     private static void fillTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out)
     {
 
         //accept(out, lithicItems.LITHIC);
-        lithicItems.METAL_SPINDLES.values().forEach(reg -> accept(out, reg));
-        lithicItems.SPINDLE_HEADS.values().forEach(reg -> accept(out, reg));
+        LithicItems.METAL_SPINDLES.values().forEach(reg -> accept(out, reg));
+        LithicItems.SPINDLE_HEADS.values().forEach(reg -> accept(out, reg));
 
-        accept(out, lithicItems.ALUMINUM_LID);
-        accept(out, lithicItems.STAINLESS_STEEL_LID);
-        accept(out, lithicItems.EMPTY_JAR_WITH_ALUMINUM_LID);
-        accept(out, lithicItems.EMPTY_JAR_WITH_STAINLESS_STEEL_LID);
+        accept(out, LithicItems.ALUMINUM_LID);
+        accept(out, LithicItems.STAINLESS_STEEL_LID);
+        accept(out, LithicItems.EMPTY_JAR_WITH_ALUMINUM_LID);
+        accept(out, LithicItems.EMPTY_JAR_WITH_STAINLESS_STEEL_LID);
 
         for(Food food : Food.values())
         {
-            accept(out, lithicItems.FRUIT_PRESERVES_ALUMINUM, food);
-            accept(out, lithicItems.FRUIT_PRESERVES_STAINLESS_STEEL, food);
+            accept(out, LithicItems.FRUIT_PRESERVES_ALUMINUM, food);
+            accept(out, LithicItems.FRUIT_PRESERVES_STAINLESS_STEEL, food);
 
         }
-        lithicItems.METAL_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
-        lithicItems.ACID_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
-        lithicItems.GLASS_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
+        LithicItems.METAL_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
+        LithicItems.ACID_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
+        LithicItems.GLASS_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
 
 
 
-        accept(out, lithicItems.CHARCOAL_BRIQUETTE);
-        accept(out, lithicItems.MOLD_INGOT);
-        accept(out, lithicItems.MOLD_LAMP);
+        accept(out, LithicItems.CHARCOAL_BRIQUETTE);
+        accept(out, LithicItems.MOLD_INGOT);
+        accept(out, LithicItems.MOLD_LAMP);
 
-        accept(out, lithicItems.COCOON);
-        accept(out, lithicItems.BOILED_COCOON);
-        accept(out, lithicItems.BALL_OF_SILK);
-        accept(out, lithicItems.LARVA_LATTICE);
-        accept(out, lithicBlocks.MOTHBOX);
+        accept(out, LithicItems.COCOON);
+        accept(out, LithicItems.BOILED_COCOON);
+        accept(out, LithicItems.BALL_OF_SILK);
+        accept(out, LithicItems.LARVA_LATTICE);
+        accept(out, LithicBlocks.MOTHBOX);
 
-        lithicItems.FOODS.values().forEach(reg -> accept(out, reg));
+        LithicItems.FOODS.values().forEach(reg -> accept(out, reg));
     }
 
     private static <T extends ItemLike, R extends Supplier<T>> void accept(CreativeModeTab.Output out, R reg)
@@ -92,14 +91,14 @@ public class lithicTab {
         }
     }
 
-    private static lithicTab.CreativeTabHolder register(String name, Supplier<ItemStack> icon, CreativeModeTab.DisplayItemsGenerator displayItems)
+    private static LithicTab.CreativeTabHolder register(String name, Supplier<ItemStack> icon, CreativeModeTab.DisplayItemsGenerator displayItems)
     {
         final RegistryObject<CreativeModeTab> reg = CREATIVE_TABS.register(name, () -> CreativeModeTab.builder()
                 .icon(icon)
                 .title(Component.translatable("lithicaddon.creative_tab." + name))
                 .displayItems(displayItems)
                 .build());
-        return new lithicTab.CreativeTabHolder(reg, displayItems);
+        return new LithicTab.CreativeTabHolder(reg, displayItems);
     }
 
     private static <T> void consumeOurs(IForgeRegistry<T> registry, Consumer<T> consumer)

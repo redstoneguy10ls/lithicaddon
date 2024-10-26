@@ -3,14 +3,14 @@ package com.redstoneguy10ls.lithicaddon.common.items;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 
-public enum lithicFood {
+public enum LithicFood {
     BOILED_GRUB(true,false,false);
 
     private final boolean meat, fast,fruit;
 
-    lithicFood(){this(false,false,false);}
+    LithicFood(){this(false,false,false);}
 
-    lithicFood(boolean meat, boolean fast,boolean fruit)
+    LithicFood(boolean meat, boolean fast, boolean fruit)
     {
         this.meat = meat;
         this.fast = fast;

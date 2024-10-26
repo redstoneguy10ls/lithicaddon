@@ -1,13 +1,13 @@
 package com.redstoneguy10ls.lithicaddon;
 
 import com.mojang.logging.LogUtils;
-import com.redstoneguy10ls.lithicaddon.client.lithicClientEventHandler;
-import com.redstoneguy10ls.lithicaddon.common.blockentities.lithicBlockEntities;
-import com.redstoneguy10ls.lithicaddon.common.blocks.lithicBlocks;
-import com.redstoneguy10ls.lithicaddon.common.container.lithicContainerTypes;
-import com.redstoneguy10ls.lithicaddon.common.fluids.lithicFluids;
-import com.redstoneguy10ls.lithicaddon.common.items.lithicItems;
-import com.redstoneguy10ls.lithicaddon.common.items.lithicTab;
+import com.redstoneguy10ls.lithicaddon.client.LithicClientEventHandler;
+import com.redstoneguy10ls.lithicaddon.common.blockentities.LithicBlockEntities;
+import com.redstoneguy10ls.lithicaddon.common.blocks.LithicBlocks;
+import com.redstoneguy10ls.lithicaddon.common.container.LithicContainerTypes;
+import com.redstoneguy10ls.lithicaddon.common.fluids.LithicFluids;
+import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
+import com.redstoneguy10ls.lithicaddon.common.items.LithicTab;
 import com.redstoneguy10ls.lithicaddon.common.recipe.LithicRecipeSerializer;
 import com.redstoneguy10ls.lithicaddon.config.lithicConfig;
 import net.minecraft.client.Minecraft;
@@ -23,8 +23,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
-
-import java.util.Scanner;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(LithicAddon.MOD_ID)
@@ -46,18 +44,20 @@ public class LithicAddon
         MinecraftForge.EVENT_BUS.register(this);
         bus.addListener(this::addCreative);
 
-        lithicItems.ITEMS.register(bus);
-        lithicTab.CREATIVE_TABS.register(bus);
-        lithicBlocks.BLOCKS.register(bus);
-        lithicFluids.FLUIDS.register(bus);
-        lithicBlockEntities.BLOCK_ENTITIES.register(bus);
-        lithicContainerTypes.CONTAINERS.register(bus);
+        LithicItems.ITEMS.register(bus);
+        LithicTab.CREATIVE_TABS.register(bus);
+        LithicBlocks.BLOCKS.register(bus);
+        LithicFluids.FLUIDS.register(bus);
+        LithicBlockEntities.BLOCK_ENTITIES.register(bus);
+        LithicContainerTypes.CONTAINERS.register(bus);
 
         LithicRecipeSerializer.RECIPE_SERIALIZERS.register(bus);
 
+        ForgeEventHandler.init();
+
         if(FMLEnvironment.dist == Dist.CLIENT)
         {
-            lithicClientEventHandler.init();
+            LithicClientEventHandler.init();
 
         }
 

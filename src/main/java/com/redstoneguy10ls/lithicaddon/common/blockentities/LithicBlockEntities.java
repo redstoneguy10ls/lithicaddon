@@ -1,6 +1,6 @@
 package com.redstoneguy10ls.lithicaddon.common.blockentities;
 
-import com.redstoneguy10ls.lithicaddon.common.blocks.lithicBlocks;
+import com.redstoneguy10ls.lithicaddon.common.blocks.LithicBlocks;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
@@ -14,12 +14,12 @@ import java.util.stream.Stream;
 
 import static com.redstoneguy10ls.lithicaddon.LithicAddon.MOD_ID;
 
-public class lithicBlockEntities {
+public class LithicBlockEntities {
 
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MOD_ID);
 
 
-    public static final RegistryObject<BlockEntityType<mothBlockEntity>> MOTHBOX = register("mothbox", mothBlockEntity::new, lithicBlocks.MOTHBOX);
+    public static final RegistryObject<BlockEntityType<mothBlockEntity>> MOTHBOX = register("mothbox", mothBlockEntity::new, LithicBlocks.MOTHBOX);
 
 /*
     public static final RegistryObject<BlockEntityType<TickCounterBlockEntity>> TICK_COUNTER = register

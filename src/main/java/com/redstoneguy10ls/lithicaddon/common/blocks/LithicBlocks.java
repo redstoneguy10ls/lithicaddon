@@ -1,17 +1,15 @@
 package com.redstoneguy10ls.lithicaddon.common.blocks;
 
-import com.redstoneguy10ls.lithicaddon.common.blockentities.lithicBlockEntities;
+import com.redstoneguy10ls.lithicaddon.common.blockentities.LithicBlockEntities;
 import com.redstoneguy10ls.lithicaddon.common.blockentities.mothBlockEntity;
-import com.redstoneguy10ls.lithicaddon.common.fluids.lithicAcids;
-import com.redstoneguy10ls.lithicaddon.common.fluids.lithicFluids;
-import com.redstoneguy10ls.lithicaddon.common.fluids.lithicGlass;
-import com.redstoneguy10ls.lithicaddon.common.fluids.lithicMetals;
-import com.redstoneguy10ls.lithicaddon.common.items.lithicItems;
+import com.redstoneguy10ls.lithicaddon.common.fluids.LithicAcids;
+import com.redstoneguy10ls.lithicaddon.common.fluids.LithicFluids;
+import com.redstoneguy10ls.lithicaddon.common.fluids.LithicGlass;
+import com.redstoneguy10ls.lithicaddon.common.fluids.LithicMetals;
+import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.TFCBlocks;
-import net.dries007.tfc.common.blocks.rock.Rock;
-import net.dries007.tfc.common.blocks.wood.ExtendedRotatedPillarBlock;
 import net.dries007.tfc.common.items.CandleBlockItem;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
@@ -21,8 +19,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -34,26 +30,26 @@ import java.util.function.Supplier;
 
 import static com.redstoneguy10ls.lithicaddon.LithicAddon.MOD_ID;
 
-public class lithicBlocks {
+public class LithicBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, MOD_ID);
 
-    public static final Map<lithicMetals, RegistryObject<LiquidBlock>> METAL_FLUIDS = Helpers.mapOfKeys(lithicMetals.class, metal ->
+    public static final Map<LithicMetals, RegistryObject<LiquidBlock>> METAL_FLUIDS = Helpers.mapOfKeys(LithicMetals.class, metal ->
             registerNoItem("fluid/metal/" + metal.toString(), () -> new
-                    LiquidBlock(lithicFluids.METALS.get(metal).source(), BlockBehaviour.Properties.copy(Blocks.LAVA).noLootTable()))
+                    LiquidBlock(LithicFluids.METALS.get(metal).source(), BlockBehaviour.Properties.copy(Blocks.LAVA).noLootTable()))
     );
 
-    public static final Map<lithicAcids, RegistryObject<LiquidBlock>> ACID_FLUIDS = Helpers.mapOfKeys(lithicAcids.class, acid ->
+    public static final Map<LithicAcids, RegistryObject<LiquidBlock>> ACID_FLUIDS = Helpers.mapOfKeys(LithicAcids.class, acid ->
             registerNoItem("fluid/acid/" + acid.toString(), () -> new
-                    LiquidBlock(lithicFluids.ACIDS.get(acid).source(), BlockBehaviour.Properties.copy(Blocks.LAVA).noLootTable()))
+                    LiquidBlock(LithicFluids.ACIDS.get(acid).source(), BlockBehaviour.Properties.copy(Blocks.LAVA).noLootTable()))
     );
 
-    public static final Map<lithicGlass, RegistryObject<LiquidBlock>> GLASS_FLUIDS = Helpers.mapOfKeys(lithicGlass.class, glass ->
+    public static final Map<LithicGlass, RegistryObject<LiquidBlock>> GLASS_FLUIDS = Helpers.mapOfKeys(LithicGlass.class, glass ->
             registerNoItem("fluid/glass/" + glass.toString(), () -> new
-                    LiquidBlock(lithicFluids.GLASS.get(glass).source(), BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()))
+                    LiquidBlock(LithicFluids.GLASS.get(glass).source(), BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()))
     );
 
-    /*
+
     public static final RegistryObject<Block> SHH = register("shh", () -> new shh(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)
             .mapColor(MapColor.COLOR_LIGHT_BLUE)
             .forceSolidOff()
@@ -63,7 +59,7 @@ public class lithicBlocks {
 
             ));
 
-     */
+
 
 
     public static final RegistryObject<Block> LCANDLE_HOLDER = register("candle_holder",
@@ -83,7 +79,7 @@ public class lithicBlocks {
                     .sound(SoundType.WOOD)
                     .flammable(60, 30)
                     .randomTicks()
-                    .blockEntity(lithicBlockEntities.MOTHBOX)
+                    .blockEntity(LithicBlockEntities.MOTHBOX)
                     .serverTicks(mothBlockEntity::serverTick)));
 
 
@@ -100,6 +96,6 @@ public class lithicBlocks {
     }
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> blockSupplier, @Nullable Function<T, ? extends BlockItem> blockItemFactory)
     {
-        return RegistrationHelpers.registerBlock(lithicBlocks.BLOCKS, lithicItems.ITEMS, name, blockSupplier, blockItemFactory);
+        return RegistrationHelpers.registerBlock(LithicBlocks.BLOCKS, LithicItems.ITEMS, name, blockSupplier, blockItemFactory);
     }
 }

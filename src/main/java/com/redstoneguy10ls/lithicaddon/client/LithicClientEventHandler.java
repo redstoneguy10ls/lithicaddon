@@ -1,10 +1,9 @@
 package com.redstoneguy10ls.lithicaddon.client;
 
-import com.redstoneguy10ls.lithicaddon.LithicAddon;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.IMoth;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothCapability;
-import com.redstoneguy10ls.lithicaddon.common.container.lithicContainerTypes;
-import com.redstoneguy10ls.lithicaddon.common.items.lithicItems;
+import com.redstoneguy10ls.lithicaddon.common.container.LithicContainerTypes;
+import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.network.chat.Component;
@@ -25,27 +24,29 @@ import java.util.Objects;
 
 import static com.redstoneguy10ls.lithicaddon.LithicAddon.MOD_ID;
 
-public class lithicClientEventHandler {
+public class LithicClientEventHandler {
 
     public static void init()
     {
         final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         final IEventBus bus2 = MinecraftForge.EVENT_BUS;
 
-        bus.addListener(lithicClientEventHandler::clientSetup);
-        bus2.addListener(lithicClientEventHandler::onTooltip);
-        bus.addListener(lithicClientEventHandler::registerColorHandlerItems);
+        bus.addListener(LithicClientEventHandler::clientSetup);
+        bus2.addListener(LithicClientEventHandler::onTooltip);
+        bus.addListener(LithicClientEventHandler::registerColorHandlerItems);
     }
 
     public static void clientSetup(FMLClientSetupEvent event)
     {
         event.enqueueWork(() -> {
-            MenuScreens.register(lithicContainerTypes.MOTHBOX.get(), mothBoxScreen::new);
+            MenuScreens.register(LithicContainerTypes.MOTHBOX.get(), mothBoxScreen::new);
 
-            ItemProperties.register(lithicItems.LARVA_LATTICE.get(), new ResourceLocation(MOD_ID, "larva"),
+            ItemProperties.register(LithicItems.LARVA_LATTICE.get(), new ResourceLocation(MOD_ID, "larva"),
                     (stack, a, b, c) -> stack.getCapability(MothCapability.CAPABILITY).map(IMoth::hasLarva).orElse(false) ? 1f: 0f);
-            ItemProperties.register(lithicItems.LARVA_LATTICE.get(), new ResourceLocation(MOD_ID, "cocoon"),
+            ItemProperties.register(LithicItems.LARVA_LATTICE.get(), new ResourceLocation(MOD_ID, "cocoon"),
                     (stack, a, b, c) -> stack.getCapability(MothCapability.CAPABILITY).map(IMoth::hasCocoon).orElse(false) ? 1f: 0f);
+            ItemProperties.register(LithicItems.LARVA_LATTICE.get(), new ResourceLocation(MOD_ID, "moth"),
+                    (stack, a, b, c) -> stack.getCapability(MothCapability.CAPABILITY).map(IMoth::isMoth).orElse(false) ? 1f: 0f);
         });
     }
     private static void onTooltip(ItemTooltipEvent event)

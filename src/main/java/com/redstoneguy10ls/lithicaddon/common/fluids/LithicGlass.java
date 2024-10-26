@@ -2,7 +2,7 @@ package com.redstoneguy10ls.lithicaddon.common.fluids;
 
 import java.util.Locale;
 
-public enum lithicGlass {
+public enum LithicGlass {
     VOLCANIC(0x3a2269),
     HEMATITIC(0xe18957),
     SILICA(0x778899),
@@ -10,7 +10,7 @@ public enum lithicGlass {
     private final String id;
     private final int color;
 
-    lithicGlass(int color)
+    LithicGlass(int color)
     {
         this.id = name().toLowerCase(Locale.ROOT);
         this.color = color;

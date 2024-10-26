@@ -1,6 +1,6 @@
 package com.redstoneguy10ls.lithicaddon.common.container;
 
-import com.redstoneguy10ls.lithicaddon.common.blockentities.lithicBlockEntities;
+import com.redstoneguy10ls.lithicaddon.common.blockentities.LithicBlockEntities;
 import com.redstoneguy10ls.lithicaddon.common.blockentities.mothBlockEntity;
 import net.dries007.tfc.common.blockentities.InventoryBlockEntity;
 import net.dries007.tfc.common.container.BlockEntityContainer;
@@ -16,11 +16,11 @@ import java.util.function.Supplier;
 
 import static com.redstoneguy10ls.lithicaddon.LithicAddon.MOD_ID;
 
-public class lithicContainerTypes {
+public class LithicContainerTypes {
 
     public static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MOD_ID);
 
-    public static final RegistryObject<MenuType<mothboxContainer>> MOTHBOX = lithicContainerTypes.<mothBlockEntity, mothboxContainer>registerBlock("mothbox", lithicBlockEntities.MOTHBOX, mothboxContainer::create);
+    public static final RegistryObject<MenuType<mothboxContainer>> MOTHBOX = LithicContainerTypes.<mothBlockEntity, mothboxContainer>registerBlock("mothbox", LithicBlockEntities.MOTHBOX, mothboxContainer::create);
 
     private static <T extends InventoryBlockEntity<?>, C extends BlockEntityContainer<T>> RegistryObject<MenuType<C>> registerBlock(String name, Supplier<BlockEntityType<T>> type, BlockEntityContainer.Factory<T, C> factory)
     {

@@ -1,13 +1,11 @@
 package com.redstoneguy10ls.lithicaddon.common.items;
 
-import com.redstoneguy10ls.lithicaddon.common.fluids.lithicAcids;
-import com.redstoneguy10ls.lithicaddon.common.fluids.lithicFluids;
-import com.redstoneguy10ls.lithicaddon.common.fluids.lithicGlass;
-import com.redstoneguy10ls.lithicaddon.common.fluids.lithicMetals;
-import net.dries007.tfc.common.fluids.FluidId;
+import com.redstoneguy10ls.lithicaddon.common.fluids.LithicAcids;
+import com.redstoneguy10ls.lithicaddon.common.fluids.LithicFluids;
+import com.redstoneguy10ls.lithicaddon.common.fluids.LithicGlass;
+import com.redstoneguy10ls.lithicaddon.common.fluids.LithicMetals;
 import net.dries007.tfc.common.items.Food;
 import net.dries007.tfc.common.items.JarItem;
-import net.dries007.tfc.common.items.ToolItem;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.core.registries.Registries;
@@ -24,7 +22,7 @@ import java.util.function.Supplier;
 
 import static com.redstoneguy10ls.lithicaddon.LithicAddon.MOD_ID;
 
-public class lithicItems {
+public class LithicItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, MOD_ID);
 
@@ -54,21 +52,21 @@ public class lithicItems {
             register("stainless_steel_jar/" + food.name(), () -> new JarItem(new Item.Properties(), food.name().toLowerCase(Locale.ROOT), false))
     );
 
-    public static final Map<lithicMetals, RegistryObject<BucketItem>> METAL_FLUIDS_BUCKETS =
-            Helpers.mapOfKeys(lithicMetals.class, fluid -> register("bucket/" + fluid.getId(),
-                    () -> new BucketItem(lithicFluids.METALS.get(fluid).source(),
+    public static final Map<LithicMetals, RegistryObject<BucketItem>> METAL_FLUIDS_BUCKETS =
+            Helpers.mapOfKeys(LithicMetals.class, fluid -> register("bucket/" + fluid.getId(),
+                    () -> new BucketItem(LithicFluids.METALS.get(fluid).source(),
                             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)))
             );
 
-    public static final Map<lithicAcids, RegistryObject<BucketItem>> ACID_FLUIDS_BUCKETS =
-            Helpers.mapOfKeys(lithicAcids.class, fluid -> register("bucket/" + fluid.getId(),
-                    () -> new BucketItem(lithicFluids.ACIDS.get(fluid).source(),
+    public static final Map<LithicAcids, RegistryObject<BucketItem>> ACID_FLUIDS_BUCKETS =
+            Helpers.mapOfKeys(LithicAcids.class, fluid -> register("bucket/" + fluid.getId(),
+                    () -> new BucketItem(LithicFluids.ACIDS.get(fluid).source(),
                             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)))
             );
 
-    public static final Map<lithicGlass, RegistryObject<BucketItem>> GLASS_FLUIDS_BUCKETS =
-            Helpers.mapOfKeys(lithicGlass.class, fluid -> register("bucket/" + fluid.getId(),
-                    () -> new BucketItem(lithicFluids.GLASS.get(fluid).source(),
+    public static final Map<LithicGlass, RegistryObject<BucketItem>> GLASS_FLUIDS_BUCKETS =
+            Helpers.mapOfKeys(LithicGlass.class, fluid -> register("bucket/" + fluid.getId(),
+                    () -> new BucketItem(LithicFluids.GLASS.get(fluid).source(),
                             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)))
             );
 
@@ -85,8 +83,8 @@ public class lithicItems {
 
     public static final RegistryObject<Item> LARVA_LATTICE = register("larva_lattice", () -> new larvaLatticeItem(prop().stacksTo(1)));
 
-    public static final Map<lithicFood, RegistryObject<Item>> FOODS =
-            Helpers.mapOfKeys(lithicFood.class, food -> register("food/"+ food.name(),
+    public static final Map<LithicFood, RegistryObject<Item>> FOODS =
+            Helpers.mapOfKeys(LithicFood.class, food -> register("food/"+ food.name(),
                     () -> new Item(new Item.Properties().food(food.getFoodProperties()))));
 
 

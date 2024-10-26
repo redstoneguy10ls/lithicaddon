@@ -2,13 +2,13 @@ package com.redstoneguy10ls.lithicaddon.common.fluids;
 
 import java.util.Locale;
 
-public enum lithicAcids {
-    NITRIC(0x00494B4C),
-    SILVER_HALIDE(0xFFB6B2B2);
+public enum LithicMetals {
+    PEWTER(0xFFE9EAEC),
+    IGNEOUS(0xFF829789);
     private final String id;
     private final int color;
 
-    lithicAcids(int color)
+    LithicMetals(int color)
     {
         this.id = name().toLowerCase(Locale.ROOT);
         this.color = color;
