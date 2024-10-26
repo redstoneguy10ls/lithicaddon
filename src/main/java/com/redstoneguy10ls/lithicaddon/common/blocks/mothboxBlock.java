@@ -1,6 +1,6 @@
 package com.redstoneguy10ls.lithicaddon.common.blocks;
 
-import com.redstoneguy10ls.lithicaddon.common.blockentities.lithicBlockEntities;
+import com.redstoneguy10ls.lithicaddon.common.blockentities.LithicBlockEntities;
 import com.redstoneguy10ls.lithicaddon.common.blockentities.mothBlockEntity;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.IMoth;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothAbility;
@@ -21,13 +21,11 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
-import java.io.Serial;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,14 +39,14 @@ public class mothboxBlock extends DeviceBlock implements HoeOverlayBlock {
         registerDefaultState(getStateDefinition().any().setValue(LARVA, false));
 
     }
-
+    @SuppressWarnings("deprecation")
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result)
     {
         if(!player.isShiftKeyDown())
         {
             if (player instanceof ServerPlayer serverPlayer)
             {
-                level.getBlockEntity(pos,lithicBlockEntities.MOTHBOX.get()).ifPresent(box -> Helpers.openScreen(serverPlayer, box,pos));
+                level.getBlockEntity(pos, LithicBlockEntities.MOTHBOX.get()).ifPresent(box -> Helpers.openScreen(serverPlayer, box,pos));
             }
             return InteractionResult.sidedSuccess(level.isClientSide);
 
@@ -58,9 +56,10 @@ public class mothboxBlock extends DeviceBlock implements HoeOverlayBlock {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand)
     {
-        level.getBlockEntity(pos, lithicBlockEntities.MOTHBOX.get()).ifPresent(mothBlockEntity::tryPeriodicUpdate);
+        level.getBlockEntity(pos, LithicBlockEntities.MOTHBOX.get()).ifPresent(mothBlockEntity::tryPeriodicUpdate);
     }
 
     @Override
@@ -73,10 +72,11 @@ public class mothboxBlock extends DeviceBlock implements HoeOverlayBlock {
     public void addHoeOverlayInfo(Level level, BlockPos pos, BlockState blockState, List<Component> text, boolean debug)
     {
 
-        level.getBlockEntity(pos, lithicBlockEntities.MOTHBOX.get()).ifPresent(box -> {
-            box.calculateLeaves();
+        level.getBlockEntity(pos, LithicBlockEntities.MOTHBOX.get()).ifPresent(box -> {
+            box.setLeaves(box.calculateLeaves());
             if(box.getLeaves() > 0)
             {
+
                 text.add(Component.translatable("lithic.moth.leaves",String.valueOf(box.getLeaves())).withStyle(ChatFormatting.GREEN));
             }
             else
@@ -90,31 +90,31 @@ public class mothboxBlock extends DeviceBlock implements HoeOverlayBlock {
             int noLarva = 0;
             for(IMoth moth : box.getCachedMoths())
             {
-                if(ord == 0)
+                if(ord > 5)
                 {
                     ord++;
                     continue;
                 }
-                if(moth == null)
+                if(moth == null || !moth.hasLarva())
                 {
                     noLarva++;
                 }
-                MutableComponent mothText = Component.translatable("lithic.moth.lattices", (ord));
+                MutableComponent mothText = Component.translatable("lithic.moth.lattices", (ord)+1);
                 ord++;
-                if(moth != null && moth.hasLarva() && !moth.isMoth())
+                if(moth != null && moth.hasLarva())
                 {
-                    //TODO reformat this to be more like the code form the block entity
-                    int bonus = 0;
-                    bonus += moth.getAbility(MothAbility.FASTING);
-                    bonus -= moth.getAbility(MothAbility.HUNGER);
-                    if (!moth.hasCocoon()) {
-                        mothText.append(Component.translatable("lithic.moth.has_larva"));
-                        mothText.append(Component.translatable("lithic.moth.till_cocoon",
-                                String.valueOf(moth.getDaysTillCocoon()+bonus - moth.daysAlive())).withStyle(ChatFormatting.WHITE));
-                    } else {
+                    int bonus = MothAbility.getTimeBonus(moth.getAbility(MothAbility.FASTING),moth.getAbility(MothAbility.HUNGER));
+                    if(moth.isMoth())
+                    {
+                        mothText.append(Component.translatable("lithic.moth.moth").withStyle(ChatFormatting.GOLD));
+                    } else if (moth.hasCocoon())
+                    {
                         mothText.append(Component.translatable("lithic.moth.cocoon").withStyle(ChatFormatting.GOLD));
-                        mothText.append(Component.translatable("lithic.moth.till_moth",
-                                String.valueOf(moth.getDaysTillMoth()+bonus - moth.daysAlive())).withStyle(ChatFormatting.WHITE));
+                        mothText.append(Component.translatable("lithic.moth.till_moth", String.valueOf(moth.getDaysTillMoth()+bonus - moth.daysAlive()+1)).withStyle(ChatFormatting.WHITE));
+                    }
+                    else {
+                        mothText.append(Component.translatable("lithic.moth.larva").withStyle(ChatFormatting.GOLD));
+                        mothText.append(Component.translatable("lithic.moth.till_cocoon", String.valueOf(moth.getDaysTillCocoon()+bonus -moth.daysAlive()+1) ).withStyle(ChatFormatting.WHITE));
                     }
 
                     //temp and rain
@@ -149,7 +149,7 @@ public class mothboxBlock extends DeviceBlock implements HoeOverlayBlock {
 
             }
 
-            if(noLarva == 4)
+            if(noLarva >= 4)
             {
                 if(temp > box.MAX_TEMP)
                 {

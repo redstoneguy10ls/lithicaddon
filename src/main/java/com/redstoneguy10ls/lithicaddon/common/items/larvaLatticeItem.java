@@ -1,12 +1,12 @@
 package com.redstoneguy10ls.lithicaddon.common.items;
 
+import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothAbility;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothCapability;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothHandler;
-import net.dries007.tfc.common.TFCTags;
-import net.dries007.tfc.util.Helpers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ClickAction;
@@ -33,14 +33,16 @@ public class larvaLatticeItem extends Item {
         if (action == ClickAction.SECONDARY && other.isEmpty())
         {
 
-            AtomicInteger rands = new AtomicInteger(player.getRandom().nextIntBetweenInclusive(1, 8));
+            AtomicInteger rands = new AtomicInteger();
+            //AtomicInteger rands = new AtomicInteger(player.getRandom().nextIntBetweenInclusive(1, 8));
             return stack.getCapability(MothCapability.CAPABILITY).map(moth ->{
-                if(moth.hasLarva() && moth.hasCocoon())
+                if(moth.hasCocoon() && !moth.isMoth())
                 {
+                    rands.set(Mth.nextInt(player.getRandom(), 1 + moth.getAbility(MothAbility.MOTH_SIZE), 6 + moth.getAbility(MothAbility.MOTH_SIZE)));
                     slot.set(new ItemStack(this));
-                    while(rands.get() > 0)
+                    while(rands.get() >= 0)
                     {
-                        ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(lithicItems.COCOON.get()));
+                        ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(LithicItems.COCOON.get()));
                         rands.getAndDecrement();
                     }
                     return true;
@@ -55,7 +57,7 @@ public class larvaLatticeItem extends Item {
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag advanced)
     {
         stack.getCapability(MothCapability.CAPABILITY).ifPresent(moth -> {
-            if (moth.daysAlive() >= moth.getDaysTillCocoon())
+            if (moth.hasCocoon() && !moth.isMoth())
             {
                 tooltip.add(Component.translatable("lithic.moth.pull").withStyle(ChatFormatting.WHITE));
             }

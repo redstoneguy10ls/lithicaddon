@@ -13,6 +13,12 @@
         "lithicaddon:cocoon": 1
       },
       "model": "lithicaddon:item/larva_lattice_cocoon"
+    },
+    {
+      "predicate": {
+        "lithicaddon:moth": 1
+      },
+      "model": "lithicaddon:item/larva_lattice_moth"
     }
   ]
 }

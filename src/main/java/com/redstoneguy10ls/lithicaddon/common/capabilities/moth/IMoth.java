@@ -84,7 +84,15 @@ public interface IMoth extends INBTSerializable<CompoundTag> {
                 setAbility(ability, Mth.nextInt(random, average, average+bonus));
             }
         }
-        initLarva();
+        if(abilitiesSet == 0)
+        {
+            initFreshAbilities(random);
+        }
+        else
+        {
+            initLarva();
+        }
+
 
     }
 

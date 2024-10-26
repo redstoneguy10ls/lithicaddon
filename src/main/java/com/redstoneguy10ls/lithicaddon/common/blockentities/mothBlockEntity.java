@@ -5,9 +5,12 @@ import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.IMoth;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothAbility;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothCapability;
 import com.redstoneguy10ls.lithicaddon.common.container.mothboxContainer;
+import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
 import com.redstoneguy10ls.lithicaddon.config.lithicConfig;
 import com.redstoneguy10ls.lithicaddon.util.lithicTags;
+import net.dries007.tfc.common.blockentities.InventoryBlockEntity;
 import net.dries007.tfc.common.blockentities.TickableInventoryBlockEntity;
+import net.dries007.tfc.common.capabilities.InventoryItemHandler;
 import net.dries007.tfc.common.capabilities.PartialItemHandler;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.calendar.Calendars;
@@ -17,6 +20,8 @@ import net.dries007.tfc.util.climate.Climate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
@@ -33,7 +38,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 import static com.redstoneguy10ls.lithicaddon.LithicAddon.MOD_ID;
@@ -65,7 +69,11 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
     public static final float MAX_RAIN = Helpers.getValueOrDefault(lithicConfig.SERVER.maxrain).floatValue();
 
     public static final int UPDATE_INTERVAL = ICalendar.TICKS_IN_DAY/2;
-    public static final int SLOTS = 5;
+    public static final int TOTAL_SLOTS = 7;
+    public static final int LATTICE_SLOTS = 5;
+    public static final int LEAF_SLOT = 5;
+    public static final int STRING_SLOT = 6;
+
 
     private static final Component NAME = Component.translatable(MOD_ID + ".block_entity.mothbox");
 
@@ -77,7 +85,7 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
     private int leaves;
 
     public mothBlockEntity(BlockPos pos, BlockState state) {
-        super(lithicBlockEntities.MOTHBOX.get(), pos, state, defaultInventory(SLOTS), NAME);
+        super(LithicBlockEntities.MOTHBOX.get(), pos, state, be -> new FixedISH(be, TOTAL_SLOTS), NAME);
         lastPlayerTick = Integer.MIN_VALUE;
         lastAreaTick = Calendars.SERVER.getTicks();
         cachedMoths = new IMoth[] {null,null,null,null,null};
@@ -85,9 +93,9 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         bruh = false;
 
         sidedInventory
-                .on(new PartialItemHandler(inventory).insert(0), Direction.Plane.VERTICAL)
-                .on(new PartialItemHandler(inventory).insert(1, 2, 3, 4), Direction.Plane.HORIZONTAL)
-                .on(new PartialItemHandler(inventory).extract(0, 1, 2, 3, 4), Direction.DOWN);
+                .on(new PartialItemHandler(inventory).insert(5), Direction.Plane.VERTICAL)
+                .on(new PartialItemHandler(inventory).insert( 0,1,2,3,4,5), Direction.Plane.HORIZONTAL)
+                .on(new PartialItemHandler(inventory).extract(6), Direction.DOWN);
     }
 
     @Override
@@ -146,7 +154,7 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
 
     private void updateCache()
     {
-        for(int i = 1; i < SLOTS; i++)
+        for(int i = 0; i < LATTICE_SLOTS; i++)
         {
             cachedMoths[i] = getMoth(i);
         }
@@ -182,8 +190,8 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         IMoth parent2 = null;
         //Declares the new moth
         IMoth uninitializedMoth = null;
-        //checks all slots other than the leaves slot
-        for(int i = 1; i < SLOTS; i++)
+        //checks all lattice slots
+        for(int i = 0; i < LATTICE_SLOTS; i++)
         {
             //check if the current lattice has the moth capability,
             //basically just checking each slot
@@ -199,9 +207,17 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
                     //new larvae and or moth breeding
                     //if there is lights
                     //and rng says yes to breeding
-                    int bro = level.random.nextInt(breedTickChanceInverted);
+                    //TODO get rid of this this is temporary for testing
+                    int bro;
+                    try{
+                        bro = level.random.nextInt(breedTickChanceInverted);
+
+                    }catch (Exception e) {
+                         bro = 0;
+                    }
                     System.out.println("breedTickChanceInverted = " +bro);
-                    if (light > MIN_LIGHTS && (breedTickChanceInverted == 0 || bro == 0)) {
+
+                    if (light >= MIN_LIGHTS && (breedTickChanceInverted == 0 || bro == 0)) {
                         //if the lattice has an adult make it a parent
                         if (moth.isMoth()) {
                             //initialize parents
@@ -223,6 +239,23 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
                         {
                             moth.setIsMoth(true);
                             eatLeaves(moth, level.random);
+                            if(moth.daysAlive() == moth.getDaysTillMoth() + MothAbility.getTimeBonus(moth.getAbility(MothAbility.FASTING), moth.getAbility(MothAbility.HUNGER)))
+                            {
+                                int bonus_silk = Mth.nextInt(level.random,0,(moth.getAbility(MothAbility.MOTH_SIZE)/2)+1);
+                                while(bonus_silk > 0)
+                                {
+                                    if(inventory.getStackInSlot(STRING_SLOT).isEmpty())
+                                    {
+                                        inventory.setStackInSlot(STRING_SLOT,new ItemStack(LithicItems.BALL_OF_SILK.get()));
+                                    }
+                                    else{
+                                        inventory.getStackInSlot(STRING_SLOT).grow(1);
+                                    }
+                                    bonus_silk--;
+                                }
+
+
+                            }
                         }//otherwise if the silk worm has been alive for longer than the time required
                         //for it to become a cocoon make it a cocoon
                         else if (moth.daysAlive() >= moth.getDaysTillCocoon() + MothAbility.getTimeBonus(moth.getAbility(MothAbility.FASTING), moth.getAbility(MothAbility.HUNGER)))
@@ -316,11 +349,15 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         int bonus = 0;
         bonus -= 5*moth.getAbility(MothAbility.FASTING);
         bonus += 5*moth.getAbility(MothAbility.HUNGER);
-
+        int eatbonus = 0;
 
         if(eat < Helpers.getValueOrDefault(lithicConfig.SERVER.mothEatChance)+bonus)
         {
-            inventory.getStackInSlot(0).shrink(1+ (moth.getAbility(MothAbility.MOTH_SIZE)/2));
+            if(moth.getAbility(MothAbility.MOTH_SIZE) == 1)
+            {
+                eatbonus =1;
+            }
+            inventory.getStackInSlot(LEAF_SLOT).shrink(1+ (moth.getAbility(MothAbility.MOTH_SIZE)/2)+eatbonus );
         }
         setLeaves(calculateLeaves());
 
@@ -337,7 +374,7 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
 
     public int calculateLeaves()
     {
-        return inventory.getStackInSlot(0).getCount();
+        return inventory.getStackInSlot(LEAF_SLOT).getCount();
     }
 
     public int getLeaves()
@@ -382,7 +419,7 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
 
     private boolean hasMoths()
     {
-        for (int i = 1; i < SLOTS; i++)
+        for (int i = 0; i < LATTICE_SLOTS; i++)
         {
             if (cachedMoths[i] != null && cachedMoths[i].hasLarva())
             {
@@ -410,13 +447,17 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
     @Override
     public boolean isItemValid(int slot, ItemStack stack)
     {
-        if(slot != 0)
+        if(slot < LATTICE_SLOTS)
         {
             return stack.getCapability(MothCapability.CAPABILITY).isPresent();
         }
-        else
+        else if(slot == LEAF_SLOT)
         {
             return Helpers.isItem(stack, lithicTags.Items.MOTH_FOOD);
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -427,6 +468,32 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
 
     @Override
     public void setLastCalendarUpdateTick(long l) {
+
+    }
+    public static class FixedISH extends InventoryItemHandler
+    {
+        public FixedISH(InventoryBlockEntity<ItemStackHandler> be, int slots)
+        {
+            super(be, slots);
+        }
+
+        @Override
+        public void deserializeNBT(CompoundTag nbt)
+        {
+            setSize(stacks.size());
+            ListTag tagList = nbt.getList("Items", Tag.TAG_COMPOUND);
+            for (int i = 0; i < tagList.size(); i++)
+            {
+                CompoundTag itemTags = tagList.getCompound(i);
+                int slot = itemTags.getInt("Slot");
+
+                if (slot >= 0 && slot < stacks.size())
+                {
+                    stacks.set(slot, ItemStack.of(itemTags));
+                }
+            }
+            onLoad();
+        }
 
     }
 }

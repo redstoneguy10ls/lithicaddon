@@ -1,6 +1,14 @@
 {
   "__comment__": "This file was automatically created by mcresources",
   "parent": "item/generated",
+  "overrides": [
+    {
+      "predicate": {
+        "lithicaddon:moth": 1
+      },
+      "model": "lithicaddon:item/larva_lattice_moth"
+    }
+  ],
   "textures": {
     "layer0": "lithicaddon:item/larva_lattice_has_cocoon"
   }
