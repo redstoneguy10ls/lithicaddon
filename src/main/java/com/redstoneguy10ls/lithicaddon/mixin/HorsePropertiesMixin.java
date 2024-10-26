@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class HorsePropertiesMixin implements HorseProperties{
 
 
-    @Shadow public abstract CommonAnimalData animalData();
+    //@Shadow public abstract CommonAnimalData animalData();
 
     @Inject(method = "createGenes", at = @At("TAIL"),remap = false)
     private void morespeed(CompoundTag tag, TFCAnimalProperties maleProperties, CallbackInfo ci)
