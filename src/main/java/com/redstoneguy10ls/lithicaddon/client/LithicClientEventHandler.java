@@ -6,6 +6,8 @@ import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.IMoth;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothCapability;
 import com.redstoneguy10ls.lithicaddon.common.container.LithicContainerTypes;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
+import com.redstoneguy10ls.lithicaddon.common.items.LithicTab;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -38,11 +40,18 @@ public class LithicClientEventHandler {
         bus.addListener(LithicClientEventHandler::clientSetup);
         bus2.addListener(LithicClientEventHandler::onTooltip);
         bus.addListener(LithicClientEventHandler::registerColorHandlerItems);
+        bus.addListener(LithicTab::onBuildCreativeTab);
     }
 
     public static void clientSetup(FMLClientSetupEvent event)
     {
+        final RenderType solid = RenderType.solid();
         final RenderType cutout = RenderType.cutout();
+        final RenderType cutoutMipped = RenderType.cutoutMipped();
+        final RenderType translucent = RenderType.translucent();
+
+
+        LithicBlocks.FRUIT_TREE_LEAVES.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), layer -> Minecraft.useFancyGraphics() ? layer == cutoutMipped : layer == solid));
         LithicBlocks.FRUIT_TREE_SAPLINGS.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
         LithicBlocks.FRUIT_TREE_POTTED_SAPLINGS.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
 

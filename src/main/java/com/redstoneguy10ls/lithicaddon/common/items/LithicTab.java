@@ -1,8 +1,12 @@
 package com.redstoneguy10ls.lithicaddon.common.items;
 
+import com.eerussianguy.firmalife.common.blocks.FLBlocks;
+import com.eerussianguy.firmalife.common.blocks.plant.FLFruitBlocks;
 import com.redstoneguy10ls.lithicaddon.LithicAddon;
 import com.redstoneguy10ls.lithicaddon.common.blocks.LithicBlocks;
+import com.redstoneguy10ls.lithicaddon.common.blocks.plants.LithicFruitBlocks;
 import net.dries007.tfc.TerraFirmaCraft;
+import net.dries007.tfc.common.TFCCreativeTabs;
 import net.dries007.tfc.common.items.Food;
 import net.dries007.tfc.util.SelfTests;
 import net.minecraft.core.registries.Registries;
@@ -11,6 +15,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryObject;
@@ -64,6 +70,19 @@ public class LithicTab {
         accept(out, LithicBlocks.MOTHBOX);
 
         LithicItems.FOODS.values().forEach(reg -> accept(out, reg));
+    }
+
+    public static void onBuildCreativeTab(BuildCreativeModeTabContentsEvent out)
+    {
+        if (out.getTab() == TFCCreativeTabs.FLORA.tab().get())
+        {
+
+            for (LithicFruitBlocks.Tree tree : LithicFruitBlocks.Tree.values())
+            {
+                accept(out, LithicBlocks.FRUIT_TREE_SAPLINGS, tree);
+                accept(out, LithicBlocks.FRUIT_TREE_LEAVES, tree);
+            }
+        }
     }
 
     private static <T extends ItemLike, R extends Supplier<T>> void accept(CreativeModeTab.Output out, R reg)

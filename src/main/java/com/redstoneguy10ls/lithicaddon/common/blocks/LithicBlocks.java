@@ -52,9 +52,9 @@ public class LithicBlocks {
     public static final Map<LithicFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_LEAVES =
             Helpers.mapOfKeys(LithicFruitBlocks.Tree.class, tree -> register("plant/" + tree.name() + "_leaves", tree::createLeaves));
     public static final Map<LithicFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_BRANCHES =
-            Helpers.mapOfKeys(LithicFruitBlocks.Tree.class, tree -> register("plant/" + tree.name() + "_branch", tree::createBranch));
+            Helpers.mapOfKeys(LithicFruitBlocks.Tree.class, tree -> registerNoItem("plant/" + tree.name() + "_branch", tree::createBranch));
     public static final Map<LithicFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_GROWING_BRANCHES =
-            Helpers.mapOfKeys(LithicFruitBlocks.Tree.class, tree -> register("plant/" + tree.name() + "_growing_branch", tree::createGrowingBranch));
+            Helpers.mapOfKeys(LithicFruitBlocks.Tree.class, tree -> registerNoItem("plant/" + tree.name() + "_growing_branch", tree::createGrowingBranch));
 
     public static final Map<LithicFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_SAPLINGS =
             Helpers.mapOfKeys(LithicFruitBlocks.Tree.class, tree -> register("plant/" + tree.name() + "_sapling", tree::createSapling));
