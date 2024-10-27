@@ -1,5 +1,7 @@
 package com.redstoneguy10ls.lithicaddon.common.items;
 
+import com.eerussianguy.firmalife.common.FLHelpers;
+import com.eerussianguy.firmalife.common.util.FLFruit;
 import com.redstoneguy10ls.lithicaddon.common.fluids.LithicAcids;
 import com.redstoneguy10ls.lithicaddon.common.fluids.LithicFluids;
 import com.redstoneguy10ls.lithicaddon.common.fluids.LithicGlass;
@@ -27,6 +29,7 @@ public class LithicItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, MOD_ID);
 
 
+
     public static final Map<Metal.Default, RegistryObject<Item>> METAL_SPINDLES =
             Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasTools, metals ->
                     register("metal_spindle/" + metals.name(), () ->
@@ -51,6 +54,28 @@ public class LithicItems {
     public static final Map<Food, RegistryObject<Item>> FRUIT_PRESERVES_STAINLESS_STEEL = Helpers.mapOfKeys(Food.class, Food::isFruit, food ->
             register("stainless_steel_jar/" + food.name(), () -> new JarItem(new Item.Properties(), food.name().toLowerCase(Locale.ROOT), false))
     );
+    public static final Map<LithicFood, RegistryObject<Item>> LITHIC_FRUIT_PRESERVES_ALUMINUM = Helpers.mapOfKeys(LithicFood.class, LithicFood::isFruit, food ->
+            register("aluminum_jar/" + food.name(), () -> new JarItem(new Item.Properties(), food.name().toLowerCase(Locale.ROOT), false))
+    );
+    public static final Map<LithicFood, RegistryObject<Item>> LITHIC_FRUIT_PRESERVES_STAINLESS_STEEL = Helpers.mapOfKeys(LithicFood.class, LithicFood::isFruit, food ->
+            register("stainless_steel_jar/" + food.name(), () -> new JarItem(new Item.Properties(), food.name().toLowerCase(Locale.ROOT), false))
+    );
+
+    public static final Map<FLFruit, RegistryObject<Item>> FL_FRUIT_PRESERVES_ALUMINUM = Helpers.mapOfKeys(FLFruit.class,
+            food -> register("aluminum_jar/" + food.getSerializedName() ,
+            () -> new JarItem(new Item.Properties(), FLHelpers.identifier("block/jar/" + food.getSerializedName()), false)));
+    public static final Map<FLFruit, RegistryObject<Item>> FL_FRUIT_PRESERVES_STAINLESS_STEEL = Helpers.mapOfKeys(FLFruit.class,
+            food -> register("stainless_steel_jar/" + food.getSerializedName() ,
+                    () -> new JarItem(new Item.Properties(), FLHelpers.identifier("block/jar/" + food.getSerializedName()), false)));
+/*
+    public static final Map<FLFruit, RegistryObject<Item>> FL_FRUIT_PRESERVES_ALUMINUM = Helpers.mapOfKeys(FLFruit.class, food ->
+            register("aluminum_jar/" + food.name(), () -> new JarItem(new Item.Properties(), food.name().toLowerCase(Locale.ROOT), false))
+    );
+    public static final Map<FLFruit, RegistryObject<Item>> FL_FRUIT_PRESERVES_STAINLESS_STEEL = Helpers.mapOfKeys(FLFruit.class, food ->
+            register("stainless_steel_jar/" + food.name(), () -> new JarItem(new Item.Properties(), food.name().toLowerCase(Locale.ROOT), false))
+    );
+
+ */
 
     public static final Map<LithicMetals, RegistryObject<BucketItem>> METAL_FLUIDS_BUCKETS =
             Helpers.mapOfKeys(LithicMetals.class, fluid -> register("bucket/" + fluid.getId(),
@@ -79,6 +104,7 @@ public class LithicItems {
     public static final RegistryObject<Item> COCOON = register("cocoon");
     public static final RegistryObject<Item> BOILED_COCOON = register("boiled_cocoon", () -> new BoiledCacoon(prop()));
     public static final RegistryObject<Item> BALL_OF_SILK = register("ball_of_silk");
+    public static final RegistryObject<Item> MULBERRY_LEAFLETS = register("mulberry_leaflets");
 
 
     public static final RegistryObject<Item> LARVA_LATTICE = register("larva_lattice", () -> new LarvaLatticeItem(prop().stacksTo(1)));

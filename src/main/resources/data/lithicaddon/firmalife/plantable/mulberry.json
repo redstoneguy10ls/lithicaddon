@@ -1,0 +1,25 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "planter": "bonsai",
+  "ingredient": {
+    "item": "lithicaddon:plant/mulberry_sapling"
+  },
+  "seed": {
+    "item": "lithicaddon:plant/mulberry_sapling"
+  },
+  "crop": {
+    "item": "lithicaddon:food/mulberry"
+  },
+  "nutrient": "nitrogen",
+  "stages": 0,
+  "texture": [
+    "lithicaddon:block/fruit_tree/mulberry_fruiting_leaves",
+    "lithicaddon:block/fruit_tree/mulberry_dry_leaves",
+    "lithicaddon:block/fruit_tree/mulberry_flowering_leaves",
+    "lithicaddon:block/fruit_tree/mulberry_branch",
+    "lithicaddon:block/fruit_tree/mulberry_leaves"
+  ],
+  "specials": [],
+  "tier": 15,
+  "extra_seed_chance": 0.08
+}

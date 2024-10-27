@@ -66,6 +66,15 @@
   "item.lithicaddon.stainless_steel_jar.strawberry" :  "Strawberry Jam, SS lid",
   "item.lithicaddon.aluminum_jar.wintergreen_berry" :  "Wintergreen Berry Jam, Al lid",
   "item.lithicaddon.stainless_steel_jar.wintergreen_berry" :  "Wintergreen Berry Jam, SS lid",
+  "item.lithicaddon.aluminum_jar.fig": "Fig Jam, AL lid",
+  "item.lithicaddon.stainless_steel_jar.fig": "Fig Jam, SS lid",
+  "item.lithicaddon.aluminum_jar.pineapple": "Pineapple Jam, AL lid",
+  "item.lithicaddon.stainless_steel_jar.pineapple": "Pineapple Jam, SS lid",
+  "item.lithicaddon.aluminum_jar.red_grapes": "Red Grapes Jam, AL lid",
+  "item.lithicaddon.stainless_steel_jar.red_grapes": "Red Grapes Jam, SS lid",
+  "item.lithicaddon.aluminum_jar.white_grapes": "White Grapes Jam, AL lid",
+  "item.lithicaddon.stainless_steel_jar.white_grapes": "White Grapes Jam, SS lid",
+
   "item.lithicaddon.bucket.silver_halide": "Bucket of Silver Halide",
   "item.lithicaddon.bucket.nitric": "Bucket of Nitric Acid",
   "item.lithicaddon.bucket.volcanic": "Bucket of Molten Volcanic Glass",
@@ -81,6 +90,8 @@
   "item.lithicaddon.food.boiled_grub": "Boiled Silk Worm",
   "item.lithicaddon.ball_of_silk": "Bundle of String",
   "item.lithicaddon.food.mulberry": "Mulberry",
+  "item.lithicaddon.mulberry_leaflets": "Mulberry Leaflets",
+
 
   "__comment__": "BLOCKS",
 

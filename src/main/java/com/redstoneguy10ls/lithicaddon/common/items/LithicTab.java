@@ -1,7 +1,7 @@
 package com.redstoneguy10ls.lithicaddon.common.items;
 
-import com.eerussianguy.firmalife.common.blocks.FLBlocks;
-import com.eerussianguy.firmalife.common.blocks.plant.FLFruitBlocks;
+
+import com.eerussianguy.firmalife.common.util.FLFruit;
 import com.redstoneguy10ls.lithicaddon.LithicAddon;
 import com.redstoneguy10ls.lithicaddon.common.blocks.LithicBlocks;
 import com.redstoneguy10ls.lithicaddon.common.blocks.plants.LithicFruitBlocks;
@@ -53,6 +53,18 @@ public class LithicTab {
             accept(out, LithicItems.FRUIT_PRESERVES_STAINLESS_STEEL, food);
 
         }
+        for(FLFruit fruit : FLFruit.values())
+        {
+            accept(out,LithicItems.FL_FRUIT_PRESERVES_ALUMINUM, fruit);
+            accept(out,LithicItems.FL_FRUIT_PRESERVES_STAINLESS_STEEL, fruit);
+
+        }
+        for(LithicFood fruit : LithicFood.values())
+        {
+            accept(out,LithicItems.LITHIC_FRUIT_PRESERVES_ALUMINUM, fruit);
+            accept(out,LithicItems.LITHIC_FRUIT_PRESERVES_STAINLESS_STEEL, fruit);
+
+        }
         LithicItems.METAL_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
         LithicItems.ACID_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
         LithicItems.GLASS_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
@@ -67,6 +79,7 @@ public class LithicTab {
         accept(out, LithicItems.BOILED_COCOON);
         accept(out, LithicItems.BALL_OF_SILK);
         accept(out, LithicItems.LARVA_LATTICE);
+        accept(out, LithicItems.MULBERRY_LEAFLETS);
         accept(out, LithicBlocks.MOTHBOX);
 
         LithicItems.FOODS.values().forEach(reg -> accept(out, reg));

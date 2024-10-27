@@ -8,8 +8,10 @@ import com.redstoneguy10ls.lithicaddon.common.container.LithicContainerTypes;
 import com.redstoneguy10ls.lithicaddon.common.fluids.LithicFluids;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicTab;
+import com.redstoneguy10ls.lithicaddon.common.misc.LithicLoot;
 import com.redstoneguy10ls.lithicaddon.common.recipe.LithicRecipeSerializer;
 import com.redstoneguy10ls.lithicaddon.config.LithicConfig;
+import com.redstoneguy10ls.lithicaddon.worldgen.LithicFeatures;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -17,6 +19,7 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -50,10 +53,12 @@ public class LithicAddon
         LithicFluids.FLUIDS.register(bus);
         LithicBlockEntities.BLOCK_ENTITIES.register(bus);
         LithicContainerTypes.CONTAINERS.register(bus);
-
+        LithicFeatures.FEATURES.register(bus);
         LithicRecipeSerializer.RECIPE_SERIALIZERS.register(bus);
+        LithicLoot.registerAll(bus);
 
         ForgeEventHandler.init();
+
 
         if(FMLEnvironment.dist == Dist.CLIENT)
         {

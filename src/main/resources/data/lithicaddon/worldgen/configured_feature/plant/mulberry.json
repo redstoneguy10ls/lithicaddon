@@ -1,0 +1,6 @@
+{
+  "type": "lithicaddon:fruit_trees",
+  "config": {
+    "state": "lithicaddon:plant/mulberry_growing_branch"
+  }
+}

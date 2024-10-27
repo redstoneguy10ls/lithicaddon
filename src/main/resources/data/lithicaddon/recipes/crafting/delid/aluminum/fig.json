@@ -1,0 +1,35 @@
+{
+    "conditions": [
+    {
+        "type": "forge:mod_loaded",
+        "modid": "firmalife"
+    }
+  ],
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "lithicaddon:jar_recipe",
+    "break_chance": 0.5,
+    "lid": [
+      {
+        "item": "lithicaddon:aluminum_lid"
+      }
+    ],
+    "recipe":{
+      "type": "tfc:advanced_shapeless_crafting",
+      "ingredients": [
+        {
+          "type": "tfc:not_rotten",
+          "ingredient": {
+            "item": "lithicaddon:aluminum_jar/fig"
+          }
+        }
+      ],
+      "result": {
+          "stack": {
+            "item": "firmalife:jar/fig_unsealed"
+          },
+          "modifiers": [
+            "tfc:copy_food"
+          ]
+        }
+    }
+}

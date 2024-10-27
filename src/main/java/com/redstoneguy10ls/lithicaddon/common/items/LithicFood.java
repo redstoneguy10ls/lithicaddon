@@ -17,6 +17,10 @@ public enum LithicFood {
         this.fast = fast;
         this.fruit =fruit;
     }
+    public boolean isFruit()
+    {
+        return fruit;
+    }
 
     public FoodProperties getFoodProperties()
     {

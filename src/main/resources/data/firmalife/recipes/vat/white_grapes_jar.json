@@ -1,0 +1,28 @@
+{
+    "conditions": [
+    {
+        "type": "forge:mod_loaded",
+        "modid": "firmalife"
+    }
+  ],
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "firmalife:vat",
+  "input_item": {
+    "type": "tfc:not_rotten",
+      "ingredient": {
+        "type": "tfc:lacks_trait",
+        "trait": "firmalife:dried",
+        "ingredient": {
+          "item": "firmalife:food/white_grapes"
+        }
+      }
+  },
+  "input_fluid": {
+    "ingredient": "firmalife:sugar_water",
+    "amount": 500
+  },
+  "jar": {
+    "item": "firmalife:jar/white_grapes_unsealed"
+  },
+  "output_texture": "firmalife:block/jar/white_grapes"
+}

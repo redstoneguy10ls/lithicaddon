@@ -1,0 +1,28 @@
+{
+    "conditions": [
+    {
+        "type": "forge:mod_loaded",
+        "modid": "firmalife"
+    }
+  ],
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "firmalife:vat",
+  "input_item": {
+    "type": "tfc:not_rotten",
+      "ingredient": {
+        "type": "tfc:lacks_trait",
+        "trait": "firmalife:dried",
+        "ingredient": {
+          "item": "tfc:food/raspberry"
+        }
+      }
+  },
+  "input_fluid": {
+    "ingredient": "firmalife:sugar_water",
+    "amount": 500
+  },
+  "jar": {
+    "item": "tfc:jar/raspberry_unsealed"
+  },
+  "output_texture": "tfc:block/jar/raspberry"
+}

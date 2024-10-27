@@ -1,0 +1,16 @@
+{
+  "type": "lithicaddon:add_item",
+  "conditions": [
+    {
+      "condition": "lithicaddon:block_ingredient",
+      "ingredient": {
+        "tag": "lithicaddon:drops_mulberry_leaflets"
+      }
+    }
+  ],
+  "item": {
+    "id": "lithicaddon:mulberry_leaflets",
+    "Count": 5
+  },
+  "chance": 0.5
+}

@@ -10,6 +10,9 @@
     "lithicaddon:metal_spindle/red_steel",
     "lithicaddon:metal_spindle/steel",
     "lithicaddon:metal_spindle/wrought_iron",
-    "tfc:spindle"
+    {
+      "id": "tfc:spindle",
+      "required": false
+    }
   ]
 }
