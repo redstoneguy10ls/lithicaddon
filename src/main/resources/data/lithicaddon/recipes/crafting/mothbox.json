@@ -1,0 +1,24 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "wlw",
+    "wbw",
+    "wlw"
+  ],
+  "key": {
+    "l": {
+      "item": "lithicaddon:larva_lattice"
+    },
+    "b": {
+      "item": "lithicaddon:plant/mulberry_leaves"
+    },
+    "w": {
+      "tag": "tfc:lumber"
+    }
+  },
+  "result": {
+    "item": "lithicaddon:mothbox",
+    "count": 1
+  }
+}
