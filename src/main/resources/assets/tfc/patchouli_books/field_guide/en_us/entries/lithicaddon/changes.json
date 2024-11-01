@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": ""
+      "text": "This mod changes some stuff about tfc. $()Newborn horses get a boost to their speed stat based on their parents familiarity"
     }
   ],
   "read_by_default": true,
