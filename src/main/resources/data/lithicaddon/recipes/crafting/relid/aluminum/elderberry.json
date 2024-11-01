@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:aluminum_jar/elderberry"
-      }
+          "stack": {
+            "item": "lithicaddon:aluminum_jar/elderberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/cranberry"
-      }
+          "stack": {
+            "item": "tfc:jar/cranberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

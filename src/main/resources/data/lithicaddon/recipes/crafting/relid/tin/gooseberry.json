@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/gooseberry"
-      }
+          "stack": {
+            "item": "tfc:jar/gooseberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

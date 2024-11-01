@@ -1,0 +1,29 @@
+{
+  "parent": "tfc:world/spindle",
+  "criteria": {
+    "special_condition": {
+      "trigger": "lithicaddon:really_serious_dedication"
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "lithicaddon:metal_spindle/blue_steel"
+    },
+    "title": {
+      "translate": "lithic.advancements.world.spindle.title"
+    },
+    "description": {
+      "translate": "lithic.advancements.world.spindle.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "tfc:textures/block/mud/silt.png"
+  },
+  "requirements": [
+    [
+      "special_condition"
+    ]
+  ]
+}

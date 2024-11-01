@@ -9,8 +9,10 @@ import com.redstoneguy10ls.lithicaddon.common.fluids.LithicFluids;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicTab;
 import com.redstoneguy10ls.lithicaddon.common.misc.LithicLoot;
+import com.redstoneguy10ls.lithicaddon.common.recipe.LithicItemStackModifiers;
 import com.redstoneguy10ls.lithicaddon.common.recipe.LithicRecipeSerializer;
 import com.redstoneguy10ls.lithicaddon.config.LithicConfig;
+import com.redstoneguy10ls.lithicaddon.util.advancements.LithicAdvancements;
 import com.redstoneguy10ls.lithicaddon.worldgen.LithicFeatures;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
@@ -56,6 +58,7 @@ public class LithicAddon
         LithicFeatures.FEATURES.register(bus);
         LithicRecipeSerializer.RECIPE_SERIALIZERS.register(bus);
         LithicLoot.registerAll(bus);
+        LithicAdvancements.registerTriggers();
 
         ForgeEventHandler.init();
 
@@ -70,6 +73,7 @@ public class LithicAddon
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        LithicItemStackModifiers.init();
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)

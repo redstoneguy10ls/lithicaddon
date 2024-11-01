@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/melon_slice"
-      }
+          "stack": {
+            "item": "tfc:jar/melon_slice"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

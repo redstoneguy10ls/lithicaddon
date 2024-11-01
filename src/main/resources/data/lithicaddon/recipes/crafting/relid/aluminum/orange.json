@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:aluminum_jar/orange"
-      }
+          "stack": {
+            "item": "lithicaddon:aluminum_jar/orange"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

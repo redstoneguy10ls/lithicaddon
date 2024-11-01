@@ -21,7 +21,12 @@
         }
       ],
       "result": {
-        "item": "firmalife:jar/red_grapes"
-      }
+          "stack": {
+            "item": "firmalife:jar/red_grapes"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

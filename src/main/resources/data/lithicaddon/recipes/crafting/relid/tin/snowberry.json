@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/snowberry"
-      }
+          "stack": {
+            "item": "tfc:jar/snowberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

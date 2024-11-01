@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:stainless_steel_jar/banana"
-      }
+          "stack": {
+            "item": "lithicaddon:stainless_steel_jar/banana"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

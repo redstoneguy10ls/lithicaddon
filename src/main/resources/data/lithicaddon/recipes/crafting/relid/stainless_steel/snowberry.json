@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:stainless_steel_jar/snowberry"
-      }
+          "stack": {
+            "item": "lithicaddon:stainless_steel_jar/snowberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

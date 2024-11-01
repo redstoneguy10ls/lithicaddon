@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/strawberry"
-      }
+          "stack": {
+            "item": "tfc:jar/strawberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

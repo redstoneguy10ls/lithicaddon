@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/pumpkin_chunks"
-      }
+          "stack": {
+            "item": "tfc:jar/pumpkin_chunks"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

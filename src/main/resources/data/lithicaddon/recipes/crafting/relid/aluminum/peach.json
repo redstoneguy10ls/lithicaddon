@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:aluminum_jar/peach"
-      }
+          "stack": {
+            "item": "lithicaddon:aluminum_jar/peach"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

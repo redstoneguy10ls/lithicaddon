@@ -4,6 +4,7 @@ import com.redstoneguy10ls.lithicaddon.common.blockentities.LithicBlockEntities;
 import com.redstoneguy10ls.lithicaddon.common.blockentities.MothBlockEntity;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.IMoth;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothAbility;
+import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothCapability;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.devices.DeviceBlock;
 import net.dries007.tfc.common.blocks.soil.HoeOverlayBlock;
@@ -16,14 +17,18 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.ArrayList;
@@ -53,6 +58,25 @@ public class MothboxBlock extends DeviceBlock implements HoeOverlayBlock {
         }
         return InteractionResult.PASS;
 
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+        BlockEntity blockEntity = level.getBlockEntity(pos);
+        if(blockEntity instanceof MothBlockEntity box)
+        {
+            for (int i = 0; i < box.LATTICE_SLOTS; i++)
+            {
+                box.getInventory().getStackInSlot(i).getCapability(MothCapability.CAPABILITY).ifPresent(moth->{
+                    if(moth.isMoth())
+                    {
+                        moth.kill();
+                    }
+                });
+            }
+        }
+
+        super.onRemove(state, level, pos, newState, isMoving);
     }
 
     @Override

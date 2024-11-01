@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/cloudberry"
-      }
+          "stack": {
+            "item": "tfc:jar/cloudberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

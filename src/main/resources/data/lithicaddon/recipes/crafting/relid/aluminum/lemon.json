@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:aluminum_jar/lemon"
-      }
+          "stack": {
+            "item": "lithicaddon:aluminum_jar/lemon"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

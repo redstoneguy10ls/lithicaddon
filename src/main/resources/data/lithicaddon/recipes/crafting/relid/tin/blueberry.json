@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/blueberry"
-      }
+          "stack": {
+            "item": "tfc:jar/blueberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

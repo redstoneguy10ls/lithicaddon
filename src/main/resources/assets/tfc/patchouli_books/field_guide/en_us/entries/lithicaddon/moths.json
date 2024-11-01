@@ -1,0 +1,292 @@
+{
+  "name": "Moths and Silk Worms",
+  "category": "tfc:lithicaddon",
+  "icon": "lithicaddon:mothbox",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Moths are much like the $(l:firmalife/beekeeping)bees$() from $(l:firmalife)firmalife$(), with a couple of key differences. $(br)Before you can even start a silk worm farm you first must find a climate suitable for them. By default silk worms need a $(l:the_world/climate#temperature)temperature$(): of 19 - 29 °C and $(l:mechanics/hydration)rainfall$(): of 300 - 400mm. While there look for a mulberry tree, it's leaves are a silk worms favourite snack."
+    },
+    {
+      "anchor": "mulberry",
+      "type": "tfc:multimultiblock",
+      "text": "Mulberry trees require 19 - 35 °C for $(l:the_world/climate#temperature)temperature$() and 300 - 500mm for $(l:mechanics/hydration)rainfall$().",
+      "multiblocks": [
+        {
+          "pattern": [
+            [
+              "     ",
+              "  L  ",
+              "     ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L3L ",
+              " L2L ",
+              "  L  ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  0  ",
+              "     ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  1  ",
+              "     ",
+              "     "
+            ]
+          ],
+          "mapping": {
+            "0": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "1": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "2": "lithicaddon:plant/mulberry_branch[down=true,west=true]",
+            "3": "lithicaddon:plant/mulberry_branch[east=true,up=true]",
+            "L": "lithicaddon:plant/mulberry_leaves[lifecycle=dormant]"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "     ",
+              "  L  ",
+              "     ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L3L ",
+              " L2L ",
+              "  L  ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  0  ",
+              "     ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  1  ",
+              "     ",
+              "     "
+            ]
+          ],
+          "mapping": {
+            "0": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "1": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "2": "lithicaddon:plant/mulberry_branch[down=true,west=true]",
+            "3": "lithicaddon:plant/mulberry_branch[east=true,up=true]",
+            "L": "lithicaddon:plant/mulberry_leaves[lifecycle=healthy]"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "     ",
+              "  L  ",
+              "     ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L3L ",
+              " L2L ",
+              "  L  ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  0  ",
+              "     ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  1  ",
+              "     ",
+              "     "
+            ]
+          ],
+          "mapping": {
+            "0": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "1": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "2": "lithicaddon:plant/mulberry_branch[down=true,west=true]",
+            "3": "lithicaddon:plant/mulberry_branch[east=true,up=true]",
+            "L": "lithicaddon:plant/mulberry_leaves[lifecycle=flowering]"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "     ",
+              "  L  ",
+              "     ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L3L ",
+              " L2L ",
+              "  L  ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  0  ",
+              "     ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  1  ",
+              "     ",
+              "     "
+            ]
+          ],
+          "mapping": {
+            "0": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "1": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "2": "lithicaddon:plant/mulberry_branch[down=true,west=true]",
+            "3": "lithicaddon:plant/mulberry_branch[east=true,up=true]",
+            "L": "lithicaddon:plant/mulberry_leaves[lifecycle=fruiting]"
+          }
+        }
+      ]
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Now you'll need to craft a $(item)mothbox$() as well as some $(item)larvae lattices$(). Wild moths will come and lay their larvae on lattices housed in mothboxes. In order to attract wild moths the mothbox needs light sources around it. About 10 torches is enough to attract moths, with the benefit falling off around 60. Mothboxes can share light sources"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lithicaddon:crafting/mothbox",
+      "recipe2": "lithicaddon:crafting/lattice"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item":
+      {
+        "item": "lithicaddon:mulberry_leaflets"
+      },
+      "text": "Getting a wild moth to lay larvae isn't the end of you job however. You remember those $(l:lithicaddon/moths#mulberry)mulberry trees$()? Well you'll need to cut them down in hopes of getting $(item)mulberry leaflets$() the primary source of food for silk worms. Silkworms have a 50% chance to eat leaves every day."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Regardless of if leaves are consumed or not leaves still must be present for the mothbox to function and for the silk worms to grow. After about 22 days of developing the silk worm will cocoon.$(br2)From there you may choose to pluck the cocoons right off using $(item)$(k:key.use)$(). Or you can let them develop into $(l:lithicaddon/moths#note)moths$() to allow for their traits to pass on to new silk worms."
+    },
+        {
+      "type":"patchouli:text",
+      "text": "$(p)Once you have a $(thing)cocoon$() you must boil it. Doing so will give you a $(item)Boiled Silk Worm Cocoon$() which you cut open with a knife to get a $(item)Boiled Silk Worm$() and a $(item)Bundle of String$().$(br)From there you can eat the $(item)Boiled Silk Worm Cocoon$() and put the $(item)Bundle of String$() in with a $(l:lithicaddon/spindle)spindle$() in a crafting table."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "lithicaddon:textures/gui/book/boiling_moth.png",
+        "lithicaddon:textures/gui/book/boiled_moth.png"
+      ],
+      "border": true
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lithicaddon:crafting/string"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "lithicaddon:textures/gui/book/steps.png"
+      ],
+      "text": "Thank you Jothbot for this image",
+      "border": true
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(thing)Hardiness$(): Allows silkworms to grow at more extreme temperatures and humidity. Hardiness increases temperature tolerance by 1°C in each direction per level and humidity tolerance by 5mm in each direction per level. $()$(li)$(thing)Size$(): Makes silk worms eat more leaves but they grow into bigger cocoons.$()$(li)$(thing)Fertility$(): Lets moth breed with less lights around$().",
+      "title": "List of Abilities"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(thing)Fasting$(): Decreases the chances a silk worm will eat. $(t:So Fasting 1 makes the chance they eat 40%)$(thing)By 10% per level$(). Fasting also increases the time it takes for a silk worm to develop $()$(li)$(thing)Hunger$(): The opposite of Fasting, decreasing the time for silk worms to develop, but increasing the chances they eat$()$(p)$(l)$(#f00)FASTING AND HUNGER CANCEL EACH-OTHER OUT"
+    },
+    {
+      "title": "Extras",
+      "anchor": "note",
+      "type":"patchouli:text",
+      "text": "$(li)When a moth hatches from a cocoon there is a small chance for a $(item)Bundle of String$() to appear in the bottom slot.$()$(li)Grown moths are good for breeding but still require food.$()$(li)Taking a $(item)Larvae lattice$() with moths on it out of the $(item)mothbox$() will kill the moth. This only applies to fully grown moths"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 5
+}

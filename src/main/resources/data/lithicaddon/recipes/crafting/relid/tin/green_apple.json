@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/green_apple"
-      }
+          "stack": {
+            "item": "tfc:jar/green_apple"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

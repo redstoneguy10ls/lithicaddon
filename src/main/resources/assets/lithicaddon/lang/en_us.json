@@ -117,6 +117,10 @@
 
   "__comment__": "text",
 
+
+  "lithic.advancements.world.spindle.title": "Really Serious Dedication",
+  "lithic.advancements.world.spindle.description": "Break a perfectly forged coloured steel spindle",
+
   "lithic.moth.larva": "Larva ",
   "lithic.moth.moth": "Moth ",
   "lithic.moth.till_cocoon": "Days till cocoon: %s ",

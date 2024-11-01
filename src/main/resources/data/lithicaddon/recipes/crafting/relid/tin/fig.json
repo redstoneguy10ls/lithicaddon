@@ -21,7 +21,12 @@
         }
       ],
       "result": {
-        "item": "firmalife:jar/fig"
-      }
+          "stack": {
+            "item": "firmalife:jar/fig"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

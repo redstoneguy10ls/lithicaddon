@@ -22,7 +22,7 @@
             "item": "tfc:jar/orange_unsealed"
           },
           "modifiers": [
-            "tfc:copy_food"
+            "lithicaddon:copy_creation_date"
           ]
         }
     }

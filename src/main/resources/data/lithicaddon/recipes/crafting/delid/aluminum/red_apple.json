@@ -22,7 +22,7 @@
             "item": "tfc:jar/red_apple_unsealed"
           },
           "modifiers": [
-            "tfc:copy_food"
+            "lithicaddon:copy_creation_date"
           ]
         }
     }

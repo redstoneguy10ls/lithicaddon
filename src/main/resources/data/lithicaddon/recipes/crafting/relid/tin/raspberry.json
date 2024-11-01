@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/raspberry"
-      }
+          "stack": {
+            "item": "tfc:jar/raspberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

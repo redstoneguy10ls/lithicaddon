@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/peach"
-      }
+          "stack": {
+            "item": "tfc:jar/peach"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

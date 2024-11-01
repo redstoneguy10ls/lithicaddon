@@ -21,7 +21,12 @@
         }
       ],
       "result": {
-        "item": "firmalife:jar/pineapple"
-      }
+          "stack": {
+            "item": "firmalife:jar/pineapple"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

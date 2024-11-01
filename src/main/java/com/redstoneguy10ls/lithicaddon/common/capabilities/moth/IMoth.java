@@ -36,6 +36,7 @@ public interface IMoth extends INBTSerializable<CompoundTag> {
     void setHasCocoon(boolean exists);
     void setIsMoth(boolean exists);
 
+    void kill();
 
     default void initLarva()
     {
@@ -70,7 +71,8 @@ public interface IMoth extends INBTSerializable<CompoundTag> {
         List<MothAbility> abilities = Arrays.asList(MothAbility.VALUES);
         Collections.shuffle(abilities);
 
-        int bonus = random.nextInt(2)+1;
+        int min_bonus = random.nextInt(1);
+        int max_bonus = random.nextInt(3)+1+min_bonus;
 
         for(MothAbility ability : abilities)
         {
@@ -78,7 +80,7 @@ public interface IMoth extends INBTSerializable<CompoundTag> {
             if(average >= 1 && abilitiesSet < 3)
             {
                 abilitiesSet++;
-                setAbility(ability, Mth.nextInt(random, average, average+bonus));
+                setAbility(ability, Mth.nextInt(random, average, average+max_bonus));
             }
         }
         if(abilitiesSet == 0)

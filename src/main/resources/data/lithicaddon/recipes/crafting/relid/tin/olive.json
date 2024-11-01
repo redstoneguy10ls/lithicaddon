@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/olive"
-      }
+          "stack": {
+            "item": "tfc:jar/olive"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

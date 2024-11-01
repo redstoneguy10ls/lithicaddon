@@ -59,12 +59,15 @@ public class LithicTab {
             accept(out,LithicItems.FL_FRUIT_PRESERVES_STAINLESS_STEEL, fruit);
 
         }
+        /*
         for(LithicFood fruit : LithicFood.values())
         {
             accept(out,LithicItems.LITHIC_FRUIT_PRESERVES_ALUMINUM, fruit);
             accept(out,LithicItems.LITHIC_FRUIT_PRESERVES_STAINLESS_STEEL, fruit);
 
         }
+
+         */
         LithicItems.METAL_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
         LithicItems.ACID_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
         LithicItems.GLASS_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));

@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/banana"
-      }
+          "stack": {
+            "item": "tfc:jar/banana"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

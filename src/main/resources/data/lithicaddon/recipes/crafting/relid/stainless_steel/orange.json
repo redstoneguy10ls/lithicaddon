@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:stainless_steel_jar/orange"
-      }
+          "stack": {
+            "item": "lithicaddon:stainless_steel_jar/orange"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

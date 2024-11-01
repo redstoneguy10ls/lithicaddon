@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/bunchberry"
-      }
+          "stack": {
+            "item": "tfc:jar/bunchberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

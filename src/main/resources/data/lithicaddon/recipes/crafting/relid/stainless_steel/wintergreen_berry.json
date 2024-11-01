@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:stainless_steel_jar/wintergreen_berry"
-      }
+          "stack": {
+            "item": "lithicaddon:stainless_steel_jar/wintergreen_berry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:stainless_steel_jar/bunchberry"
-      }
+          "stack": {
+            "item": "lithicaddon:stainless_steel_jar/bunchberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

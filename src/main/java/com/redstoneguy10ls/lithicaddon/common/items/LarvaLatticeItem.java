@@ -3,9 +3,16 @@ package com.redstoneguy10ls.lithicaddon.common.items;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothAbility;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothCapability;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothHandler;
+import net.dries007.tfc.common.TFCTags;
+import net.dries007.tfc.common.capabilities.Capabilities;
+import net.dries007.tfc.common.items.FluidContainerItem;
+import net.dries007.tfc.common.items.TFCItems;
+import net.dries007.tfc.util.Helpers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.player.Player;
@@ -16,6 +23,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -27,6 +36,40 @@ public class LarvaLatticeItem extends Item {
     public LarvaLatticeItem(Properties pProperties) {
         super(pProperties);
     }
+
+    @Override
+    public boolean overrideStackedOnOther(ItemStack stack, Slot slot, ClickAction action, Player player) {
+        ItemStack other = slot.getItem();
+        if(action == ClickAction.SECONDARY)
+        {
+            return stack.getCapability(MothCapability.CAPABILITY).map(moth->{
+                if( (moth.hasLarva() && !moth.hasCocoon()) || moth.isMoth() )
+                {
+                    if(Helpers.isItem(other, TFCItems.WOODEN_BUCKET.get()))
+                    {
+                        final IFluidHandler handler = other.getCapability(Capabilities.FLUID_ITEM).resolve().orElse(null);
+                        if(handler == null)
+                        {
+                            return false;
+                        }
+                        if(Helpers.isFluid(handler.getFluidInTank(0).getFluid(), TFCTags.Fluids.ANY_WATER))
+                        {
+                            handler.drain(1000,IFluidHandler.FluidAction.EXECUTE);
+                            stack.shrink(1);
+                            ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(this));
+                            player.playSound(SoundEvents.PLAYER_SPLASH_HIGH_SPEED,0.5f,1f);
+                            return true;
+                        }
+
+                    }
+                }
+                return false;
+            }).orElse(false);
+        }
+        return false;
+
+    }
+
     @Override
     public boolean overrideOtherStackedOnMe(ItemStack stack, ItemStack other, Slot slot, ClickAction action, Player player, SlotAccess carried)
     {

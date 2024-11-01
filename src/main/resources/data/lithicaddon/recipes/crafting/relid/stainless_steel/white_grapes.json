@@ -21,7 +21,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:stainless_steel_jar/white_grapes"
-      }
+          "stack": {
+            "item": "lithicaddon:stainless_steel_jar/white_grapes"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

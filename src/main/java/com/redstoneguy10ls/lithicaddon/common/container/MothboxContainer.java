@@ -1,6 +1,7 @@
 package com.redstoneguy10ls.lithicaddon.common.container;
 
 import com.redstoneguy10ls.lithicaddon.common.blockentities.MothBlockEntity;
+import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothCapability;
 import net.dries007.tfc.common.capabilities.Capabilities;
 import net.dries007.tfc.common.container.BlockEntityContainer;
 import net.dries007.tfc.common.container.CallbackSlot;
@@ -36,7 +37,16 @@ public class MothboxContainer extends BlockEntityContainer<MothBlockEntity> {
         return switch (typeOf(slotIndex))
         {
           case MAIN_INVENTORY, HOTBAR -> !moveItemStackTo(stack, 0, MothBlockEntity.STRING_SLOT, false);
-            case CONTAINER -> !moveItemStackTo(stack, containerSlots, slots.size(), false);
+            case CONTAINER ->
+            {
+                stack.getCapability(MothCapability.CAPABILITY).ifPresent(moth->{
+                    if(moth.isMoth())
+                    {
+                        moth.kill();
+                    }
+                });
+                yield !moveItemStackTo(stack, containerSlots, slots.size(), false);
+            }
         };
 
     }

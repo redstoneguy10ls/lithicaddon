@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:aluminum_jar/melon_slice"
-      }
+          "stack": {
+            "item": "lithicaddon:aluminum_jar/melon_slice"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

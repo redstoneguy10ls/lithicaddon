@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/lemon"
-      }
+          "stack": {
+            "item": "tfc:jar/lemon"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

@@ -54,12 +54,14 @@ public class LithicItems {
     public static final Map<Food, RegistryObject<Item>> FRUIT_PRESERVES_STAINLESS_STEEL = Helpers.mapOfKeys(Food.class, Food::isFruit, food ->
             register("stainless_steel_jar/" + food.name(), () -> new JarItem(new Item.Properties(), food.name().toLowerCase(Locale.ROOT), false))
     );
+    /*
     public static final Map<LithicFood, RegistryObject<Item>> LITHIC_FRUIT_PRESERVES_ALUMINUM = Helpers.mapOfKeys(LithicFood.class, LithicFood::isFruit, food ->
             register("aluminum_jar/" + food.name(), () -> new JarItem(new Item.Properties(), food.name().toLowerCase(Locale.ROOT), false))
     );
     public static final Map<LithicFood, RegistryObject<Item>> LITHIC_FRUIT_PRESERVES_STAINLESS_STEEL = Helpers.mapOfKeys(LithicFood.class, LithicFood::isFruit, food ->
             register("stainless_steel_jar/" + food.name(), () -> new JarItem(new Item.Properties(), food.name().toLowerCase(Locale.ROOT), false))
     );
+    */
 
     public static final Map<FLFruit, RegistryObject<Item>> FL_FRUIT_PRESERVES_ALUMINUM = Helpers.mapOfKeys(FLFruit.class,
             food -> register("aluminum_jar/" + food.getSerializedName() ,

@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:stainless_steel_jar/pumpkin_chunks"
-      }
+          "stack": {
+            "item": "lithicaddon:stainless_steel_jar/pumpkin_chunks"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

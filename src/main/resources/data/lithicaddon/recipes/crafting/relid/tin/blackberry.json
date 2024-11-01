@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/blackberry"
-      }
+          "stack": {
+            "item": "tfc:jar/blackberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

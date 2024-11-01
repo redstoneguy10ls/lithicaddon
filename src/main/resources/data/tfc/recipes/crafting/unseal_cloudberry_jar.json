@@ -22,7 +22,7 @@
             "item": "tfc:jar/cloudberry_unsealed"
           },
           "modifiers": [
-            "tfc:copy_food"
+            "lithicaddon:copy_creation_date"
           ]
         }
     }

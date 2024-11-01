@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:aluminum_jar/pumpkin_chunks"
-      }
+          "stack": {
+            "item": "lithicaddon:aluminum_jar/pumpkin_chunks"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

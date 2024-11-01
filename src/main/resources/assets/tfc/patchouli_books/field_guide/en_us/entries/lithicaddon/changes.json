@@ -1,0 +1,13 @@
+{
+  "name": "Changes",
+  "category": "tfc:lithicaddon",
+  "icon": "lithicaddon:lithic",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": ""
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 10
+}

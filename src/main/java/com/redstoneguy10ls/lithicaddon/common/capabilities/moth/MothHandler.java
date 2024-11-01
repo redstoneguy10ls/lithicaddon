@@ -90,6 +90,16 @@ public class MothHandler implements IMoth, ICapabilitySerializable<CompoundTag> 
     }
 
     @Override
+    public void kill() {
+        setDaysAlive(0);
+
+        initialized=false;
+        setHasLarva(false);
+        setHasCocoon(false);
+        setIsMoth(false);
+    }
+
+    @Override
     public void setHasLarva(boolean exists) {
         hasLarva = exists;
         save();

@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:aluminum_jar/wintergreen_berry"
-      }
+          "stack": {
+            "item": "lithicaddon:aluminum_jar/wintergreen_berry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

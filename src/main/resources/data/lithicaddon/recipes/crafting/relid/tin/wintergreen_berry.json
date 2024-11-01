@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/wintergreen_berry"
-      }
+          "stack": {
+            "item": "tfc:jar/wintergreen_berry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

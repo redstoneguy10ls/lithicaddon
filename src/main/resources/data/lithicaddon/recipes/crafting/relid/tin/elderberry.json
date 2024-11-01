@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/elderberry"
-      }
+          "stack": {
+            "item": "tfc:jar/elderberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

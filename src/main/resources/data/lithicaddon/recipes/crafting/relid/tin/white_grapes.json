@@ -21,7 +21,12 @@
         }
       ],
       "result": {
-        "item": "firmalife:jar/white_grapes"
-      }
+          "stack": {
+            "item": "firmalife:jar/white_grapes"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

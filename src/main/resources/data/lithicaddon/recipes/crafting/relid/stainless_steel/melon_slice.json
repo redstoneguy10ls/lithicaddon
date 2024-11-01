@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:stainless_steel_jar/melon_slice"
-      }
+          "stack": {
+            "item": "lithicaddon:stainless_steel_jar/melon_slice"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

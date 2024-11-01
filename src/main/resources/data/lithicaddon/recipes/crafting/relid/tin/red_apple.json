@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "tfc:jar/red_apple"
-      }
+          "stack": {
+            "item": "tfc:jar/red_apple"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

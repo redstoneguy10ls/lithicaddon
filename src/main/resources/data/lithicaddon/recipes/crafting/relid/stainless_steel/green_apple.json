@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:stainless_steel_jar/green_apple"
-      }
+          "stack": {
+            "item": "lithicaddon:stainless_steel_jar/green_apple"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

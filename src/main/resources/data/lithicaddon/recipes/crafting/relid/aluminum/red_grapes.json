@@ -21,7 +21,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:aluminum_jar/red_grapes"
-      }
+          "stack": {
+            "item": "lithicaddon:aluminum_jar/red_grapes"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

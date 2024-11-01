@@ -1,0 +1,22 @@
+{
+  "name": "Spindles",
+  "category": "tfc:lithicaddon",
+  "icon": "lithicaddon:metal_spindle/red_steel",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item":
+      {
+        "tag": "lithicaddon:spindles"
+      },
+      "text": "This mod adds metal $(l:mechanics/weaving)spindles$(), to allow for easier mass production of $(item)wool yarn$() and $(item)string$(). You make them with an anvil, and forging bonuses even apply"
+    },
+    {
+      "type": "tfc:anvil_recipe",
+      "recipe": "lithicaddon:anvil/spindle_head/bismuth_bronze_spindle_head",
+      "text": "Forge a spindle head in an $(l:mechanics/anvils)Anvil$()."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 15
+}

@@ -207,17 +207,7 @@ public class MothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
                     //new larvae and or moth breeding
                     //if there is lights
                     //and rng says yes to breeding
-                    //TODO get rid of this this is temporary for testing
-                    int bro;
-                    try{
-                        bro = level.random.nextInt(breedTickChanceInverted);
-
-                    }catch (Exception e) {
-                         bro = 0;
-                    }
-                    System.out.println("breedTickChanceInverted = " +bro);
-
-                    if (light >= MIN_LIGHTS && (breedTickChanceInverted == 0 || bro == 0)) {
+                    if (light >= MIN_LIGHTS && (breedTickChanceInverted == 0 || level.random.nextInt(breedTickChanceInverted) == 0)) {
                         //if the lattice has an adult make it a parent
                         if (moth.isMoth()) {
                             //initialize parents
@@ -370,6 +360,11 @@ public class MothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         setLeaves(calculateLeaves());
 
          */
+    }
+
+    public ItemStackHandler getInventory()
+    {
+        return inventory;
     }
 
     public int calculateLeaves()

@@ -1,29 +1,29 @@
 {
   "__comment__": "This file was automatically created by redstoneguy10ls",
   "type": "lithicaddon:jar_recipe",
-  "break_chance": 0.75,
-  "lid": [
-    {
-      "item": "tfc:jar_lid"
-    }
-  ],
-  "recipe":{
-    "type": "tfc:advanced_shapeless_crafting",
-    "ingredients": [
+    "break_chance": 0.75,
+    "lid": [
       {
-        "type": "tfc:not_rotten",
-        "ingredient": {
-          "item": "tfc:jar/banana"
-        }
+        "item": "tfc:jar_lid"
       }
     ],
-    "result": {
-      "stack": {
-        "item": "tfc:jar/banana_unsealed"
-      },
-      "modifiers": [
-        "tfc:copy_food"
-      ]
+    "recipe":{
+      "type": "tfc:advanced_shapeless_crafting",
+      "ingredients": [
+        {
+          "type": "tfc:not_rotten",
+          "ingredient": {
+            "item": "tfc:jar/banana"
+          }
+        }
+      ],
+      "result": {
+          "stack": {
+            "item": "tfc:jar/banana_unsealed"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
     }
-  }
 }

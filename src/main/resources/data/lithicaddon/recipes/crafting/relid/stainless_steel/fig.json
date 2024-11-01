@@ -21,7 +21,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:stainless_steel_jar/fig"
-      }
+          "stack": {
+            "item": "lithicaddon:stainless_steel_jar/fig"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

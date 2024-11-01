@@ -21,7 +21,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:stainless_steel_jar/pineapple"
-      }
+          "stack": {
+            "item": "lithicaddon:stainless_steel_jar/pineapple"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }

@@ -15,7 +15,12 @@
         }
       ],
       "result": {
-        "item": "lithicaddon:stainless_steel_jar/cloudberry"
-      }
+          "stack": {
+            "item": "lithicaddon:stainless_steel_jar/cloudberry"
+          },
+          "modifiers": [
+            "lithicaddon:copy_creation_date"
+          ]
+        }
   }
 }
