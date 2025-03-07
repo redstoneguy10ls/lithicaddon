@@ -1,0 +1,17 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "firmalife:stainless_steel_jar_lid"
+    }
+  ],
+  "result": {
+    "item": "lithicaddon:stainless_steel_lid"
+  }
+}
