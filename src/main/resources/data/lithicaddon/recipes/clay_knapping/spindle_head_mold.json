@@ -1,0 +1,15 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:knapping",
+  "knapping_type": "tfc:clay",
+  "pattern": [
+    "XXXXX",
+    "XX XX",
+    "     ",
+    "XX XX",
+    "XXXXX"
+  ],
+  "result": {
+    "item": "lithicaddon:ceramic/unfired_spindle_head_mold"
+  }
+}

@@ -31,7 +31,7 @@ public class ForgeEventHandler {
         final IEventBus bus = MinecraftForge.EVENT_BUS;
 
         bus.addListener(ForgeEventHandler::PlayerItemCraftedEvent);
-        bus.addListener(ForgeEventHandler::PlayerInteractWithBlockEvent);
+        //bus.addListener(ForgeEventHandler::PlayerInteractWithBlockEvent);
         //bus.addListener(ForgeEventHandler::onPlayerInventoryTick);
     }
 /*
@@ -50,7 +50,7 @@ public class ForgeEventHandler {
     }
 
  */
-
+/*
     public static void PlayerInteractWithBlockEvent(PlayerInteractEvent.RightClickBlock event)
     {
         BlockEntity block = event.getLevel().getBlockEntity(event.getPos());
@@ -80,6 +80,8 @@ public class ForgeEventHandler {
             }
         }
     }
+
+ */
     public static void PlayerItemCraftedEvent(PlayerEvent.ItemCraftedEvent event)
     {
         for(int i = 0; i < event.getInventory().getContainerSize(); i++)

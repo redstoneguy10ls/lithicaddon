@@ -6,8 +6,11 @@ import com.redstoneguy10ls.lithicaddon.common.fluids.LithicAcids;
 import com.redstoneguy10ls.lithicaddon.common.fluids.LithicFluids;
 import com.redstoneguy10ls.lithicaddon.common.fluids.LithicGlass;
 import com.redstoneguy10ls.lithicaddon.common.fluids.LithicMetals;
+import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.items.Food;
 import net.dries007.tfc.common.items.JarItem;
+import net.dries007.tfc.common.items.MoldItem;
+import net.dries007.tfc.config.TFCConfig;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.core.registries.Registries;
@@ -110,6 +113,16 @@ public class LithicItems {
 
 
     public static final RegistryObject<Item> LARVA_LATTICE = register("larva_lattice", () -> new LarvaLatticeItem(prop().stacksTo(1)));
+
+    public static final RegistryObject<Item> FRUIT_BASKET = register("fruit_basket", () -> new FruitBasket(prop().stacksTo(1).defaultDurability(200)));
+    public static final RegistryObject<Item> FRUIT_BEESKET = register("fruit_beesket", () -> new FruitBEEsket(prop().stacksTo(1).defaultDurability(833)));
+
+    public static final RegistryObject<Item> STRAW_SHEET = register("straw_sheet");
+
+    public static final RegistryObject<Item> UNFIRED_SPINDLE_HEAD_MOLD = register("ceramic/unfired_spindle_head_mold");
+    public static final RegistryObject<Item> SPINDLE_HEAD_MOLD = register("ceramic/spindle_head_mold",
+            () -> new MoldItem(TFCConfig.SERVER.moldIngotCapacity, TFCTags.Fluids.USABLE_IN_TOOL_HEAD_MOLD, new Item.Properties()));
+
 
     public static final Map<LithicFood, RegistryObject<Item>> FOODS =
             Helpers.mapOfKeys(LithicFood.class, food -> register("food/"+ food.name(),

@@ -1,0 +1,24 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    "# #",
+    " #K"
+  ],
+  "key": {
+    "s": {
+      "item": "tfc:straw"
+    },
+    "#": {
+      "item": "lithicaddon:straw_sheet"
+    },
+    "K": {
+      "tag": "tfc:knives"
+    }
+  },
+  "result": {
+    "item": "lithicaddon:fruit_basket",
+    "count": 1
+  }
+}

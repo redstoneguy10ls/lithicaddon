@@ -28,6 +28,9 @@ public class LithicServerConfig {
 
     public final BooleanValue betterHorseBreeding;
 
+    public final IntValue fruitTreeBreakChance;
+
+
 
     LithicServerConfig(Builder innerBuilder)
     {
@@ -73,6 +76,10 @@ public class LithicServerConfig {
         betterHorseBreeding = builder.apply("betterHorseBreeding")
                         .comment("Whether or not make horse offsprings get a bonus to speed based on the parents familiarity")
                         .define("betterHorseBreeding", true);
+
+        fruitTreeBreakChance = builder.apply("fruitTreeBreakChance")
+                .comment("The chance out of 100 that a fruit tree breaks when using a fruit basket. Set to zero to disable")
+                .defineInRange("fruitTreeBreakChance",5, 0, 100);
 
 
         innerBuilder.pop();

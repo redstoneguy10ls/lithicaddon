@@ -91,7 +91,11 @@
   "item.lithicaddon.ball_of_silk": "Bundle of String",
   "item.lithicaddon.food.mulberry": "Mulberry",
   "item.lithicaddon.mulberry_leaflets": "Mulberry Leaflets",
-
+  "item.lithicaddon.fruit_basket": "Fruit Basket",
+  "item.lithicaddon.fruit_beesket": "Fruit Beesket",
+  "item.lithicaddon.straw_sheet": "Straw Sheet",
+  "item.lithicaddon.ceramic.unfired_spindle_head_mold": "Unfired Spindle Head Mold",
+  "item.lithicaddon.ceramic.spindle_head_mold": "Spindle Head Mold",
 
   "__comment__": "BLOCKS",
 

@@ -10,6 +10,7 @@ import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothCapability;
 import com.redstoneguy10ls.lithicaddon.common.container.LithicContainerTypes;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicTab;
+import net.dries007.tfc.client.model.ContainedFluidModel;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -83,6 +84,7 @@ public class LithicClientEventHandler {
 
     public static void registerColorHandlerItems(RegisterColorHandlersEvent.Item event)
     {
+        event.register(new ContainedFluidModel.Colors(), LithicItems.SPINDLE_HEAD_MOLD.get());
         for (Fluid fluid : ForgeRegistries.FLUIDS.getValues())
         {
             if (Objects.requireNonNull(ForgeRegistries.FLUIDS.getKey(fluid)).getNamespace().equals(MOD_ID))

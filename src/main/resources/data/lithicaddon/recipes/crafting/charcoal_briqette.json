@@ -1,0 +1,24 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "csc",
+    "sgs",
+    "csc"
+  ],
+  "key": {
+    "s": {
+      "item": "tfc:straw"
+    },
+    "c": {
+      "item": "tfc:powder/charcoal"
+    },
+    "g": {
+      "item": "tfc:glue"
+    }
+  },
+  "result": {
+    "item": "lithicaddon:charcoal_briquette",
+    "count": 1
+  }
+}

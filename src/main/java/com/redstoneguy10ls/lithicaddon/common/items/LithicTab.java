@@ -84,6 +84,12 @@ public class LithicTab {
         accept(out, LithicItems.LARVA_LATTICE);
         accept(out, LithicItems.MULBERRY_LEAFLETS);
         accept(out, LithicBlocks.MOTHBOX);
+        accept(out, LithicItems.FRUIT_BASKET);
+        //accept(out, LithicItems.FRUIT_BEESKET);
+        accept(out, LithicItems.STRAW_SHEET);
+        accept(out, LithicItems.UNFIRED_SPINDLE_HEAD_MOLD);
+        accept(out, LithicItems.SPINDLE_HEAD_MOLD);
+
 
         LithicItems.FOODS.values().forEach(reg -> accept(out, reg));
     }
