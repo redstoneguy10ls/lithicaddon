@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+
+    "tfc:food/largemouth_bass",
+    "tfc:food/salmon"
+  ]
+}

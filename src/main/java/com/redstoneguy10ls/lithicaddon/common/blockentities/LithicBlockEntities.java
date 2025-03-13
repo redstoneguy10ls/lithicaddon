@@ -22,7 +22,8 @@ public class LithicBlockEntities {
 
     public static final RegistryObject<BlockEntityType<LithicTickCounterEntity>> TICK_COUNTER = register("tick_counter",LithicTickCounterEntity::new, Stream.of(
             LithicBlocks.FRUIT_TREE_SAPLINGS.values(),
-            LithicBlocks.FRUIT_TREE_GROWING_BRANCHES.values()
+            LithicBlocks.FRUIT_TREE_GROWING_BRANCHES.values(),
+            LithicBlocks.SOY_WHEEL
     ).<Supplier<? extends Block>>flatMap(Helpers::flatten));
 
     public static final RegistryObject<BlockEntityType<MothBlockEntity>> MOTHBOX = register("mothbox", MothBlockEntity::new, LithicBlocks.MOTHBOX);

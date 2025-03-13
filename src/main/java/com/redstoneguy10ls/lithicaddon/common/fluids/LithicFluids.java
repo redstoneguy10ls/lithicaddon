@@ -1,5 +1,6 @@
 package com.redstoneguy10ls.lithicaddon.common.fluids;
 
+
 import com.redstoneguy10ls.lithicaddon.common.blocks.LithicBlocks;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
 import net.dries007.tfc.common.fluids.*;
@@ -86,6 +87,16 @@ public final class LithicFluids {
             MoltenFluid.Source::new,
             MoltenFluid.Flowing::new
     ));
+    public static final Map<ExtraFluids, FluidRegistryObject<ForgeFlowingFluid>> EXTRA_FLUIDS = Helpers.mapOfKeys(ExtraFluids.class, fluid -> register(
+            fluid.getSerializedName(),
+            properties -> properties.block(LithicBlocks.EXTRA_FLUIDS.get(fluid)).bucket(LithicItems.EXTRA_FLUIDS_BUCKETS.get(fluid)),
+            waterLike()
+                    .descriptionId("fluid.lithic." + fluid.getSerializedName())
+                    .canConvertToSource(false),
+            new FluidTypeClientProperties(fluid.getColor(), WATER_STILL, WATER_FLOW, WATER_OVERLAY, null),
+            MixingFluid.Source::new,
+            MixingFluid.Flowing::new
+    ));
 
 
     private static FluidType.Properties lavaLike()
@@ -105,6 +116,20 @@ public final class LithicFluids {
                 .canPushEntity(false)
                 .canSwim(false)
                 .supportsBoating(false);
+    }
+    private static FluidType.Properties waterLike()
+    {
+        return FluidType.Properties.create()
+                .adjacentPathType(BlockPathTypes.WATER)
+                .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
+                .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)
+                .canConvertToSource(true)
+                .canDrown(true)
+                .canExtinguish(true)
+                .canHydrate(false)
+                .canPushEntity(true)
+                .canSwim(true)
+                .supportsBoating(true);
     }
 
 

@@ -1,0 +1,19 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:heating",
+  "ingredient": {
+    "type": "tfc:not_rotten",
+    "ingredient": {
+      "item": "lithicaddon:food/fish_fillet"
+    }
+  },
+  "result_item": {
+    "stack": {
+      "item": "lithicaddon:food/cooked_fish_fillet"
+    },
+    "modifiers": [
+      "tfc:copy_food"
+    ]
+  },
+  "temperature": 200
+}

@@ -2,10 +2,7 @@ package com.redstoneguy10ls.lithicaddon.common.items;
 
 import com.eerussianguy.firmalife.common.FLHelpers;
 import com.eerussianguy.firmalife.common.util.FLFruit;
-import com.redstoneguy10ls.lithicaddon.common.fluids.LithicAcids;
-import com.redstoneguy10ls.lithicaddon.common.fluids.LithicFluids;
-import com.redstoneguy10ls.lithicaddon.common.fluids.LithicGlass;
-import com.redstoneguy10ls.lithicaddon.common.fluids.LithicMetals;
+import com.redstoneguy10ls.lithicaddon.common.fluids.*;
 import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.items.Food;
 import net.dries007.tfc.common.items.JarItem;
@@ -97,6 +94,11 @@ public class LithicItems {
     public static final Map<LithicGlass, RegistryObject<BucketItem>> GLASS_FLUIDS_BUCKETS =
             Helpers.mapOfKeys(LithicGlass.class, fluid -> register("bucket/" + fluid.getId(),
                     () -> new BucketItem(LithicFluids.GLASS.get(fluid).source(),
+                            new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)))
+            );
+    public static final Map<ExtraFluids, RegistryObject<BucketItem>> EXTRA_FLUIDS_BUCKETS =
+            Helpers.mapOfKeys(ExtraFluids.class, fluid -> register("bucket/" + fluid.getSerializedName(),
+                    () -> new BucketItem(LithicFluids.EXTRA_FLUIDS.get(fluid).source(),
                             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)))
             );
 

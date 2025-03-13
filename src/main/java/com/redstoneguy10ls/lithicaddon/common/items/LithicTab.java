@@ -89,6 +89,7 @@ public class LithicTab {
         accept(out, LithicItems.STRAW_SHEET);
         accept(out, LithicItems.UNFIRED_SPINDLE_HEAD_MOLD);
         accept(out, LithicItems.SPINDLE_HEAD_MOLD);
+        accept(out, LithicBlocks.SOY_WHEEL);
 
 
         LithicItems.FOODS.values().forEach(reg -> accept(out, reg));

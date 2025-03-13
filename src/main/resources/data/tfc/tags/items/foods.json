@@ -54,6 +54,11 @@
     "lithicaddon:aluminum_jar/white_grapes",
     "lithicaddon:stainless_steel_jar/white_grapes",
     "lithicaddon:food/boiled_grub",
-    "lithicaddon:food/mulberry"
+    "lithicaddon:food/mulberry",
+    "lithicaddon:food/soaked_soy",
+    "lithicaddon:food/ground_soy",
+    "lithicaddon:food/fish_fillet",
+    "lithicaddon:food/cooked_fish_fillet",
+    "lithicaddon:food/soy_curd"
   ]
 }

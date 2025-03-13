@@ -5,7 +5,13 @@ import net.minecraft.world.item.Item;
 
 public enum LithicFood {
     BOILED_GRUB(true,true,false),
-    MULBERRY(false,false,true);
+    MULBERRY(false,false,true),
+    SOAKED_SOY,
+    GROUND_SOY,
+    FISH_FILLET(true,false,false),
+    COOKED_FISH_FILLET(true,false,false),
+    SOY,
+    SOY_CURD;
 
     private final boolean meat, fast,fruit;
 

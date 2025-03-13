@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+
+    "tfc:food/tropical_fish",
+    "tfc:food/smallmouth_bass",
+    "tfc:food/cod",
+    "tfc:food/rainbow_trout",
+    "tfc:food/lake_trout"
+  ]
+}

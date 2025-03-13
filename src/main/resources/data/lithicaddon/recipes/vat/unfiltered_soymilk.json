@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "firmalife:vat",
+  "input_item": {
+    "ingredient": {
+      "item": "lithicaddon:food/ground_soy"
+    }
+  },
+  "input_fluid": {
+    "ingredient": "minecraft:water",
+    "amount": 250
+  },
+  "output_fluid": {
+    "fluid": "lithicaddon:unfiltered_soymilk",
+    "amount": 100
+  }
+}

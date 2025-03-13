@@ -2,6 +2,7 @@ package com.redstoneguy10ls.lithicaddon;
 
 import com.eerussianguy.firmalife.common.blockentities.VatBlockEntity;
 import com.eerussianguy.firmalife.common.blocks.VatBlock;
+import com.redstoneguy10ls.lithicaddon.common.blocks.LithicBlocks;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothCapability;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
 import com.redstoneguy10ls.lithicaddon.util.advancements.LithicAdvancements;
@@ -11,10 +12,14 @@ import net.dries007.tfc.common.items.TFCItems;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.MinecraftForge;
@@ -31,7 +36,7 @@ public class ForgeEventHandler {
         final IEventBus bus = MinecraftForge.EVENT_BUS;
 
         bus.addListener(ForgeEventHandler::PlayerItemCraftedEvent);
-        //bus.addListener(ForgeEventHandler::PlayerInteractWithBlockEvent);
+        bus.addListener(ForgeEventHandler::PlayerInteractWithBlockEvent);
         //bus.addListener(ForgeEventHandler::onPlayerInventoryTick);
     }
 /*
@@ -50,38 +55,27 @@ public class ForgeEventHandler {
     }
 
  */
-/*
+
     public static void PlayerInteractWithBlockEvent(PlayerInteractEvent.RightClickBlock event)
     {
-        BlockEntity block = event.getLevel().getBlockEntity(event.getPos());
+        BlockState block = event.getLevel().getBlockState(event.getPos());
         Player player = event.getEntity();
-        if(block instanceof VatBlockEntity vat)
+
+        if(Helpers.isBlock(block, Blocks.LIGHT_BLUE_WOOL))
         {
-            final ItemStack stack = player.getItemInHand(event.getHand());
-            if(!vat.isBoiling())
+            final ItemStack stack1 = player.getItemInHand(InteractionHand.MAIN_HAND);
+            final ItemStack stack2 = player.getItemInHand(InteractionHand.OFF_HAND);
+            if(Helpers.isItem(stack1, Items.WHITE_DYE) && Helpers.isItem(stack2,Items.PINK_DYE))
             {
-                if(vat.hasOutput())
-                {
-
-                    if(stack.getItem() == TFCItems.EMPTY_JAR_WITH_LID.get())
-                    {
-                        event.setCanceled(true);
-                    }
-
-
-                    if(Helpers.isItem(stack, TFCTags.Items.EMPTY_JAR_WITH_LID))
-                    {
-                        stack.shrink(1);
-                        ItemHandlerHelper.giveItemToPlayer(player,vat.takeOutput());
-                        event.setCancellationResult(InteractionResult.sidedSuccess(event.getLevel().isClientSide));
-                        event.setCanceled(true);
-                    }
-                }
+                player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+                player.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
+                event.getLevel().setBlockAndUpdate(event.getPos(),LithicBlocks.SHH.get().defaultBlockState());
             }
+
         }
     }
 
- */
+
     public static void PlayerItemCraftedEvent(PlayerEvent.ItemCraftedEvent event)
     {
         for(int i = 0; i < event.getInventory().getContainerSize(); i++)

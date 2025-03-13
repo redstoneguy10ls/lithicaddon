@@ -1,0 +1,21 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:barrel_sealed",
+  "input_item": {
+    "ingredient": {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "tfc:food/lemon"
+      }
+    }
+  },
+  "input_fluid": {
+    "ingredient": "lithicaddon:soymilk",
+    "amount": 2000
+  },
+  "output_fluid": {
+    "fluid": "lithicaddon:curdled_soy_milk",
+    "amount": 2000
+  },
+  "duration": 4000
+}

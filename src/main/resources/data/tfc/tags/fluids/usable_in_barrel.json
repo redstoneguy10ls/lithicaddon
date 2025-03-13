@@ -3,6 +3,8 @@
   "replace": false,
   "values": [
     "lithicaddon:acid/nitric",
-    "lithicaddon:acid/silver_halide"
+    "lithicaddon:acid/silver_halide",
+    "lithicaddon:unfiltered_soymilk",
+    "lithicaddon:curdled_soy_milk"
   ]
 }

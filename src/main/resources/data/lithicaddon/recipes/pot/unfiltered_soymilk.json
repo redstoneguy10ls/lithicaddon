@@ -1,0 +1,31 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:pot",
+  "ingredients": [
+    {
+      "item": "lithicaddon:food/ground_soy"
+    },
+    {
+      "item": "lithicaddon:food/ground_soy"
+    },
+    {
+      "item": "lithicaddon:food/ground_soy"
+    },
+    {
+      "item": "lithicaddon:food/ground_soy"
+    },
+    {
+      "item": "lithicaddon:food/ground_soy"
+    }
+  ],
+  "fluid_ingredient": {
+    "ingredient": "minecraft:water",
+    "amount": 1000
+  },
+  "duration": 2400,
+  "temperature": 300,
+  "fluid_output": {
+    "fluid": "lithicaddon:unfiltered_soymilk",
+    "amount": 400
+  }
+}

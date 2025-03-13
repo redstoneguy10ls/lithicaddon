@@ -1,0 +1,44 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "lithicaddon:jar_recipe",
+    "break_chance": 0.75,
+    "lid": [
+      {
+        "item": "minecraft:bone_meal",
+        "count": 3
+      }
+    ],
+    "recipe": {
+    "type": "tfc:damage_inputs_shapeless_crafting",
+    "recipe": {
+      "type": "tfc:advanced_shapeless_crafting",
+      "ingredients": [
+        {
+          "type": "tfc:not_rotten",
+          "ingredient":
+          [
+            {
+              "tag": "lithicaddon:fillet_3"
+            }
+          ]
+        },
+        {
+          "tag": "tfc:knives"
+        }
+      ],
+      "primary_ingredient": {
+        "tag": "lithicaddon:fillet_3"
+      },
+      "result": {
+        "stack": {
+          "item": "lithicaddon:food/fish_fillet",
+          "count": 3
+        },
+        "modifiers": [
+          "tfc:copy_food"
+        ]
+      }
+    }
+  }
+}
+  

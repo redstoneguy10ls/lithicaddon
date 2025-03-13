@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "lithicaddon:food/fish_fillet",
+    "lithicaddon:food/cooked_fish_fillet",
+    "lithicaddon:food/boiled_grub"
+  ]
+}

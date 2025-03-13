@@ -96,6 +96,16 @@
   "item.lithicaddon.straw_sheet": "Straw Sheet",
   "item.lithicaddon.ceramic.unfired_spindle_head_mold": "Unfired Spindle Head Mold",
   "item.lithicaddon.ceramic.spindle_head_mold": "Spindle Head Mold",
+  "item.lithicaddon.food.soaked_soy": "Soaked Soybeans",
+  "item.lithicaddon.food.ground_soy": "Ground Soybeans",
+  "item.lithicaddon.bucket.soymilk": "Bucket of Soymilk",
+  "item.lithicaddon.bucket.unfiltered_soymilk": "Bucket of Unfiltered Soymilk",
+  "item.lithicaddon.bucket.curdled_soy_milk": "Bucket of Curdled Soymilk",
+  "item.lithicaddon.food.fish_fillet": "Fish Fillet",
+  "item.lithicaddon.food.cooked_fish_fillet": "Cooked Fish Fillet",
+  "item.lithicaddon.food.soy": "Soy Cheese",
+  "item.lithicaddon.food.soy_curd": "Soy Curd",
+
 
   "__comment__": "BLOCKS",
 
@@ -105,6 +115,8 @@
   "block.lithicaddon.plant.mulberry_sapling": "Mulberry Sapling",
   "block.lithicaddon.plant.potted.mulberry_sapling": "Potted Mulberry Sapling",
   "block.lithicaddon.plant.mulberry_growing_branch": "Mulberry Branch",
+  "block.lithicaddon.soy_wheel": "Soy Cheese Wheel",
+
 
 
   "__comment__": "fluids",
@@ -115,6 +127,12 @@
   "fluid.lithic.glass.silica": "Molten Silica Glass",
   "fluid.lithic.glass.olivine": "Molten Olivine Glass",
   "fluid.lithic.glass.hematitic": "Molten Hematitic Glass",
+  "fluid.lithic.unfiltered_soymilk": "Unfiltered Soymilk",
+  "fluid.lithic.soymilk": "Soymilk",
+  "fluid.lithic.curdled_soy_milk": "Curdled Soymilk",
+
+
+
 
 
   "block.lithicaddon.shh" :  "BLAHAJ",

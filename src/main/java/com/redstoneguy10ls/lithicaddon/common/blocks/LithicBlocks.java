@@ -1,12 +1,14 @@
 package com.redstoneguy10ls.lithicaddon.common.blocks;
 
+import com.eerussianguy.firmalife.common.blocks.CheeseWheelBlock;
+import com.eerussianguy.firmalife.common.blocks.FLBlocks;
+import com.eerussianguy.firmalife.common.items.FLFood;
+import com.eerussianguy.firmalife.common.items.FLItems;
 import com.redstoneguy10ls.lithicaddon.common.blockentities.LithicBlockEntities;
 import com.redstoneguy10ls.lithicaddon.common.blockentities.MothBlockEntity;
 import com.redstoneguy10ls.lithicaddon.common.blocks.plants.LithicFruitBlocks;
-import com.redstoneguy10ls.lithicaddon.common.fluids.LithicAcids;
-import com.redstoneguy10ls.lithicaddon.common.fluids.LithicFluids;
-import com.redstoneguy10ls.lithicaddon.common.fluids.LithicGlass;
-import com.redstoneguy10ls.lithicaddon.common.fluids.LithicMetals;
+import com.redstoneguy10ls.lithicaddon.common.fluids.*;
+import com.redstoneguy10ls.lithicaddon.common.items.LithicFood;
 import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
@@ -49,6 +51,10 @@ public class LithicBlocks {
             registerNoItem("fluid/glass/" + glass.toString(), () -> new
                     LiquidBlock(LithicFluids.GLASS.get(glass).source(), BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()))
     );
+    public static final Map<ExtraFluids, RegistryObject<LiquidBlock>> EXTRA_FLUIDS = Helpers.mapOfKeys(ExtraFluids.class, fluids ->
+            registerNoItem("fluid/" + fluids.toString(), () -> new
+                    LiquidBlock(LithicFluids.EXTRA_FLUIDS.get(fluids).source(), BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()))
+    );
     public static final Map<LithicFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_LEAVES =
             Helpers.mapOfKeys(LithicFruitBlocks.Tree.class, tree -> register("plant/" + tree.name() + "_leaves", tree::createLeaves));
     public static final Map<LithicFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_BRANCHES =
@@ -61,6 +67,9 @@ public class LithicBlocks {
 
     public static final Map<LithicFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_POTTED_SAPLINGS =
             Helpers.mapOfKeys(LithicFruitBlocks.Tree.class, tree -> registerNoItem("plant/potted/" + tree.name() + "_sapling", tree::createPottedSapling));
+
+    public static final RegistryObject<Block> SOY_WHEEL =
+            register("soy_wheel", () -> new CheeseWheelBlock(FLBlocks.wheelProperties(), LithicItems.FOODS.get(LithicFood.SOY)));
 
 
     public static final RegistryObject<Block> SHH = register("shh", () -> new shh(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)
