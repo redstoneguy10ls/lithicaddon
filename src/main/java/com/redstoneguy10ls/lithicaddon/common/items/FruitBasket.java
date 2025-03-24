@@ -41,7 +41,7 @@ public class FruitBasket extends Item {
     @Override
     public boolean overrideOtherStackedOnMe(ItemStack stack, ItemStack other, Slot slot, ClickAction action, Player player, SlotAccess carried)
     {
-        if(action == ClickAction.SECONDARY && beesket() && stack.getDamageValue() == 0)
+        if(action == ClickAction.SECONDARY && isRegularBasket() && stack.getDamageValue() == 0)
         {
             return other.getCapability(BeeCapability.CAPABILITY).map(bee->{
                 if(bee.hasQueen())
@@ -107,11 +107,13 @@ public class FruitBasket extends Item {
                             }
                         }
                     }
-                    final int test = level.random.nextInt(1, 100);
-                    System.out.println(test);
-                    if (test <= Helpers.getValueOrDefault(LithicConfig.SERVER.fruitTreeBreakChance) && fruitingLeaves > 0 && beesket())
+                    
+                    if (isRegularBasket() && fruitingLeaves > 0)
                     {
-                        level.destroyBlock(pos, true);
+                        if (level.random.nextDouble() <= Helpers.getValueOrDefault(LithicConfig.SERVER.fruitTreeBranchBreakChance))
+                        {
+                            level.destroyBlock(pos, true);
+                        }
                     }
                     held.hurtAndBreak(fruitingLeaves, player, p -> {});
                     while (fruitingLeaves > 0)
@@ -130,7 +132,7 @@ public class FruitBasket extends Item {
     }
 
 
-    public boolean beesket()
+    public boolean isRegularBasket()
     {
       return true;
     }
