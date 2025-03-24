@@ -28,7 +28,7 @@ public class LithicServerConfig {
 
     public final BooleanValue betterHorseBreeding;
 
-    public final IntValue fruitTreeBreakChance;
+    public final DoubleValue fruitTreeBranchBreakChance;
 
 
 
@@ -70,16 +70,16 @@ public class LithicServerConfig {
                 .defineInRange("maxrain",400.0f, 0.0f, 500.0f);
 
         mothEatChance = builder.apply("mothEatChance")
-                .comment("The chance out of 100 the fruit leaves will be consumed each day. set to 100 to gaurentee they eat ")
+                .comment("The chance out of 100 the fruit leaves will be consumed each day. Set to 100 to guarantee they eat ")
                 .defineInRange("mothEatChance",50, 0, 100);
 
         betterHorseBreeding = builder.apply("betterHorseBreeding")
                         .comment("Whether or not make horse offsprings get a bonus to speed based on the parents familiarity")
                         .define("betterHorseBreeding", true);
 
-        fruitTreeBreakChance = builder.apply("fruitTreeBreakChance")
-                .comment("The chance out of 100 that a fruit tree breaks when using a fruit basket. Set to zero to disable")
-                .defineInRange("fruitTreeBreakChance",5, 0, 100);
+        fruitTreeBranchBreakChance = builder.apply("fruitTreeBranchBreakChance")
+                .comment("The chance that a fruit tree branch breaks when using a fruit basket. Set to zero to disable")
+                .defineInRange("fruitTreeBranchBreakChance", 0.05, 0.0, 1.0);
 
 
         innerBuilder.pop();
