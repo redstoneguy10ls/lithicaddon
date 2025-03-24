@@ -31,10 +31,8 @@ import static net.dries007.tfc.common.blocks.plant.fruit.Lifecycle.FRUITING;
 
 public class FruitBasket extends Item {
 
-    private boolean gay;
     public FruitBasket(Properties pProperties) {
         super(pProperties);
-        gay = false;
     }
 
 
@@ -68,13 +66,6 @@ public class FruitBasket extends Item {
 
     @Override
     public @NotNull InteractionResult useOn(UseOnContext context) {
-
-        gay = !gay;
-        if(gay)
-        {
-            return InteractionResult.PASS;
-        }
-
 
         final Level level = context.getLevel();
         final BlockPos pos = context.getClickedPos();
