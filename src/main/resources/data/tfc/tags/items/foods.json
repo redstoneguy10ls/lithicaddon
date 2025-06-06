@@ -59,6 +59,11 @@
     "lithicaddon:food/ground_soy",
     "lithicaddon:food/fish_fillet",
     "lithicaddon:food/cooked_fish_fillet",
-    "lithicaddon:food/soy_curd"
+    "lithicaddon:food/soy_curd",
+    "lithicaddon:food/mashed_potato",
+    "lithicaddon:food/potato_dough",
+    "lithicaddon:food/potato_bread",
+    "lithicaddon:food/potato_bread_sandwich",
+    "lithicaddon:food/potato_bread_jam_sandwich"
   ]
 }
