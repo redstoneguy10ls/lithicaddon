@@ -1,0 +1,26 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "lithicaddon:food/mashed_potato"
+      }
+    },
+    {
+      "type": "tfc:fluid_item",
+      "fluid_ingredient": {
+        "ingredient": "firmalife:yeast_starter",
+        "amount": 100
+      }
+    },
+    {
+      "tag": "tfc:sweetener"
+    }
+  ],
+  "result": {
+    "item": "lithicaddon:food/potato_dough",
+    "count": 4
+  }
+}

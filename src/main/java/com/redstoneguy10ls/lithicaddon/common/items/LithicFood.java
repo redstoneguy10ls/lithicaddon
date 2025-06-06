@@ -11,7 +11,12 @@ public enum LithicFood {
     FISH_FILLET(true,false,false),
     COOKED_FISH_FILLET(true,false,false),
     SOY,
-    SOY_CURD;
+    SOY_CURD,
+    MASHED_POTATO,
+    POTATO_DOUGH,
+    POTATO_BREAD,
+    POTATO_BREAD_SANDWICH,
+    POTATO_BREAD_JAM_SANDWICH;
 
     private final boolean meat, fast,fruit;
 

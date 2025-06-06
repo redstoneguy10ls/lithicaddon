@@ -105,6 +105,11 @@
   "item.lithicaddon.food.cooked_fish_fillet": "Cooked Fish Fillet",
   "item.lithicaddon.food.soy": "Soy Cheese",
   "item.lithicaddon.food.soy_curd": "Soy Curd",
+  "item.lithicaddon.food.mashed_potato": "Mashed Potatoes",
+  "item.lithicaddon.food.potato_dough": "Potato Dough",
+  "item.lithicaddon.food.potato_bread": "Potato Bread",
+  "item.lithicaddon.food.potato_bread_sandwich": "Potato Bread Sandwich",
+  "item.lithicaddon.food.potato_bread_jam_sandwich": "Potato Bread Jam Sandwich",
 
 
   "__comment__": "BLOCKS",
