@@ -37,24 +37,28 @@ public class ForgeEventHandler {
 
         bus.addListener(ForgeEventHandler::PlayerItemCraftedEvent);
         bus.addListener(ForgeEventHandler::PlayerInteractWithBlockEvent);
-        //bus.addListener(ForgeEventHandler::onPlayerInventoryTick);
-    }
-/*
-    public static void onPlayerInventoryTick(PlayerEvent event)
-    {
-        Inventory inv = event.getEntity().getInventory();
-        for(ItemStack stack : inv.items)
-        {
-            stack.getCapability(MothCapability.CAPABILITY).ifPresent(moth->{
-                if(moth.isMoth())
-                {
-                    moth.kill();
-                }
-            });
-        }
+        bus.addListener(ForgeEventHandler::onPlayerInventoryTick);
     }
 
- */
+    public static void onPlayerInventoryTick(PlayerEvent event)
+    {
+        if(event.getEntity() instanceof ServerPlayer)
+        {
+            Inventory inv = event.getEntity().getInventory();
+            for(ItemStack stack : inv.items)
+            {
+                stack.getCapability(MothCapability.CAPABILITY).ifPresent(moth->{
+                    if(moth.isMoth())
+                    {
+                        moth.kill();
+                    }
+                });
+            }
+        }
+        
+    }
+
+ 
 
     public static void PlayerInteractWithBlockEvent(PlayerInteractEvent.RightClickBlock event)
     {
