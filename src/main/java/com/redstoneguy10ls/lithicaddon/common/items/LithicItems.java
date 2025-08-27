@@ -33,10 +33,10 @@ public class LithicItems {
     public static final Map<Metal.Default, RegistryObject<Item>> METAL_SPINDLES =
             Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasTools, metals ->
                     register("metal_spindle/" + metals.name(), () ->
-                    new MetalSpindle(metals.toolTier(), new Item.Properties())));
+                    new MetalSpindle(metals.toolTier(), new Item.Properties().rarity(metals.getRarity()))));
     public static final Map<Metal.Default, RegistryObject<Item>> SPINDLE_HEADS =
             Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasTools, metals ->
-                    register("metal_spindle_head/" + metals.name(), basicItem())
+                    register("metal_spindle_head/" + metals.name(), () ->new Item( new Item.Properties().rarity(metals.getRarity())))
             );
 
     public static final RegistryObject<Item> ALUMINUM_LID = register("aluminum_lid");
