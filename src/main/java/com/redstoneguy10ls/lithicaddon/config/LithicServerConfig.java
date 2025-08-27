@@ -29,7 +29,9 @@ public class LithicServerConfig {
     public final BooleanValue betterHorseBreeding;
 
     public final DoubleValue fruitTreeBranchBreakChance;
-
+    
+    public final IntValue fruitBasketSearchRadius;
+    
 
 
     LithicServerConfig(Builder innerBuilder)
@@ -80,7 +82,9 @@ public class LithicServerConfig {
         fruitTreeBranchBreakChance = builder.apply("fruitTreeBranchBreakChance")
                 .comment("The chance that a fruit tree branch breaks when using a fruit basket. Set to zero to disable")
                 .defineInRange("fruitTreeBranchBreakChance", 0.05, 0.0, 1.0);
-
+        fruitBasketSearchRadius = builder.apply("fruitBasketSearchRadius")
+            .comment("The radius in blocks the fruit basket will search for fruit leaves")
+            .defineInRange("fruitBasketSearchRadius", 1, 0, 16);
 
         innerBuilder.pop();
     }
