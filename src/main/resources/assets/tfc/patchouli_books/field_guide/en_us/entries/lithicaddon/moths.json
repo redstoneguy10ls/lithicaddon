@@ -249,7 +249,7 @@
     },
         {
       "type":"patchouli:text",
-      "text": "$(p)Once you have a $(thing)cocoon$() you must boil it. Doing so will give you a $(item)Boiled Silk Worm Cocoon$() which you cut open with a knife to get a $(item)Boiled Silk Worm$() and a $(item)Bundle of String$().$(br)From there you can eat the $(item)Boiled Silk Worm Cocoon$() and put the $(item)Bundle of String$() in with a $(l:lithicaddon/spindle)spindles$() in a crafting table."
+      "text": "$(p)Once you have a $(thing)cocoon$() you must boil it. Doing so will give you a $(item)Boiled Silk Worm Cocoon$() which you cut open with a knife to get a $(item)Boiled Silk Worm$() and a $(item)Bundle of String$().$(br)From there you can eat the $(item)Boiled Silk Worm Cocoon$() and put the $(item)Bundle of String$() in with a $(l:lithicaddon/spindles)spindles$() in a crafting table."
     },
     {
       "type": "patchouli:image",
@@ -288,5 +288,5 @@
     }
   ],
   "read_by_default": true,
-  "sortnum": 5
+  "sortnum": 10
 }

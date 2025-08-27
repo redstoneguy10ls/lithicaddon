@@ -1,0 +1,26 @@
+{
+  "name": "Fruit baskets",
+  "category": "tfc:lithicaddon",
+  "icon": "lithicaddon:fruit_basket",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item":
+      {
+        "item": "lithicaddon:fruit_basket"
+      },
+      "text": "Ever tried picking fruit from your $(l:the_world/wild_fruits#fruit_trees)fruit tree$() only to not be able to reach all the leaves? Well do I have a solution for you. Introducing the $(item)fruit basket$(), crafted with a bit of straw you can use it to right click a branch to shake the tree and drop a bunch of the fruits, collecting in the basket."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lithicaddon:crafting/basket",
+      "text": "Be careful though as there is a $(t:5%)$(thing)1 in 20 chance$()$(/t) the branch snaps. This can be disabled in the config"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Theres a secret if you right click on the fruit basket in your inventory with a powerful $(l:firmalife/beekeeping)queen bee$()"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 16
+}
