@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.Block;
 
 public enum FruitPicker
 {
+    CHERRY(Food.CHERRY, TFCBlocks.FRUIT_TREE_LEAVES.get(FruitBlocks.Tree.CHERRY).get(),TFCBlocks.FRUIT_TREE_BRANCHES.get(FruitBlocks.Tree.CHERRY).get()),
     GREEN_APPLE(Food.GREEN_APPLE, TFCBlocks.FRUIT_TREE_LEAVES.get(FruitBlocks.Tree.GREEN_APPLE).get(),TFCBlocks.FRUIT_TREE_BRANCHES.get(FruitBlocks.Tree.GREEN_APPLE).get()),
     LEMON(Food.LEMON,TFCBlocks.FRUIT_TREE_LEAVES.get(FruitBlocks.Tree.LEMON).get(),TFCBlocks.FRUIT_TREE_BRANCHES.get(FruitBlocks.Tree.LEMON).get()),
     OLIVE(Food.OLIVE,TFCBlocks.FRUIT_TREE_LEAVES.get(FruitBlocks.Tree.OLIVE).get(),TFCBlocks.FRUIT_TREE_BRANCHES.get(FruitBlocks.Tree.OLIVE).get()),

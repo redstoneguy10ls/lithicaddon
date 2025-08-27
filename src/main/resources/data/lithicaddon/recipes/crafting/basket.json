@@ -1,24 +1,26 @@
 {
-  "__comment__": "This file was automatically created by redstoneguy10ls",
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "sss",
-    "# #",
-    " #K"
-  ],
-  "key": {
-    "s": {
-      "item": "tfc:straw"
+  "type": "tfc:damage_inputs_shaped_crafting",
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "sss",
+      "# #",
+      " #K"
+    ],
+    "key": {
+      "s": {
+        "item": "tfc:straw"
+      },
+      "#": {
+        "item": "lithicaddon:straw_sheet"
+      },
+      "K": {
+        "tag": "tfc:knives"
+      }
     },
-    "#": {
-      "item": "lithicaddon:straw_sheet"
-    },
-    "K": {
-      "tag": "tfc:knives"
+    "result": {
+      "item": "lithicaddon:fruit_basket",
+      "count": 1
     }
-  },
-  "result": {
-    "item": "lithicaddon:fruit_basket",
-    "count": 1
   }
 }
