@@ -20,6 +20,7 @@ public class LithicTags {
 
     public static class Items {
         public static final TagKey<Item> MOTH_FOOD = tag("moth_food");
+        public static final TagKey<Item> CHAINS = tag("chains");
 
 
         private static TagKey<Item> tag(String name){

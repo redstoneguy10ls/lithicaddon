@@ -13,6 +13,7 @@ import com.redstoneguy10ls.lithicaddon.common.items.LithicItems;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.TFCBlocks;
+import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.common.items.CandleBlockItem;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
@@ -22,6 +23,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -81,20 +83,22 @@ public class LithicBlocks {
 
             ));
 
-
-
-
-    public static final RegistryObject<Block> LCANDLE_HOLDER = register("candle_holder",
-            () -> new lcandleHolderBlock(ExtendedProperties.of(Blocks.CANDLE)
-                    .mapColor(MapColor.SAND)
-                    .randomTicks()
+    public static final RegistryObject<Block> WELL_PULLEY = register("well_pully");
+    
+    //public static final RegistryObject<Block> WELL_OUTPUT = register("well_output");
+    
+    public static final Map<Rock, RegistryObject<Block>> WELL_LINING =
+        Helpers.mapOfKeys(Rock.class, rock ->
+                register("rock/well_lining/" + rock.name(), () -> new
+                    WellLining(BlockBehaviour.Properties.of()
+                    .mapColor(rock.color())
+                    .sound(SoundType.STONE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
                     .noOcclusion()
-                    .strength(0.1F)
-                    .sound(SoundType.CANDLE)
-                    .lightLevel(lcandleHolderBlock.LIGHTING_SCALE)
-                    .blockEntity(TFCBlockEntities.TICK_COUNTER))
-            , b -> new CandleBlockItem(new Item.Properties(), b, TFCBlocks.CANDLE_CAKE));
-
+                    .strength(rock.category().hardness(4.5f), 5))));
+    
+    
+    
     public static final RegistryObject<Block> MOTHBOX = register("mothbox",
             () -> new MothboxBlock(ExtendedProperties.of()
                     .strength(0.6f)

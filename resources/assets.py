@@ -1,5 +1,3 @@
-import itertools
-
 from mcresources import ResourceManager, ItemContext, BlockContext, block_states
 from mcresources import utils, loot_tables
 from mcresources.type_definitions import JsonObject, Json
@@ -7,6 +5,9 @@ from mcresources.type_definitions import JsonObject, Json
 from consts import *
 def generate(rm: ResourceManager):
 
+    for rock, rock_data in ROCKS.items():
+        textures = {'0': 'tfc:block/rock/bricks/%s' % rock, 'particle': 'tfc:block/rock/bricks/%s' % rock}
+        rm.blockstate('rock/well_lining/%s' % rock, model='lithicaddon:block/rock/well_lining/%s' % rock).with_block_model(parent='lithicaddon:block/well_lining_base', textures=textures).with_lang(lang('%s Well Lining', rock)).with_item_model().with_block_loot('lithicaddon:rock/well_lining/%s' % rock)
 
 
     for fruit in FRUITS.keys():

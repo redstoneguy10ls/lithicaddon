@@ -1,3 +1,4 @@
+
 {
   "__comment__": "ITEMS",
   "item.lithicaddon.metal_spindle.bismuth_bronze" :  "Bismuth Bronze Spindle",
@@ -121,6 +122,26 @@
   "block.lithicaddon.plant.potted.mulberry_sapling": "Potted Mulberry Sapling",
   "block.lithicaddon.plant.mulberry_growing_branch": "Mulberry Branch",
   "block.lithicaddon.soy_wheel": "Soy Cheese Wheel",
+  "block.lithicaddon.rock.well_lining.granite": "Granite Well Lining",
+  "block.lithicaddon.rock.well_lining.diorite": "Diorite Well Lining",
+  "block.lithicaddon.rock.well_lining.gabbro": "Gabbro Well Lining",
+  "block.lithicaddon.rock.well_lining.shale": "Shale Well Lining",
+  "block.lithicaddon.rock.well_lining.claystone": "Claystone Well Lining",
+  "block.lithicaddon.rock.well_lining.limestone": "Limestone Well Lining",
+  "block.lithicaddon.rock.well_lining.conglomerate": "Conglomerate Well Lining",
+  "block.lithicaddon.rock.well_lining.dolomite": "Dolomite Well Lining",
+  "block.lithicaddon.rock.well_lining.chert": "Chert Well Lining",
+  "block.lithicaddon.rock.well_lining.chalk": "Chalk Well Lining",
+  "block.lithicaddon.rock.well_lining.rhyolite": "Rhyolite Well Lining",
+  "block.lithicaddon.rock.well_lining.basalt": "Basalt Well Lining",
+  "block.lithicaddon.rock.well_lining.andesite": "Andesite Well Lining",
+  "block.lithicaddon.rock.well_lining.dacite": "Dacite Well Lining",
+  "block.lithicaddon.rock.well_lining.quartzite": "Quartzite Well Lining",
+  "block.lithicaddon.rock.well_lining.slate": "Slate Well Lining",
+  "block.lithicaddon.rock.well_lining.phyllite": "Phyllite Well Lining",
+  "block.lithicaddon.rock.well_lining.schist": "Schist Well Lining",
+  "block.lithicaddon.rock.well_lining.gneiss": "Gneiss Well Lining",
+  "block.lithicaddon.rock.well_lining.marble": "Marble Well Lining",
 
 
 
@@ -183,6 +204,7 @@
 
 
   "lithicaddon.block_entity.mothbox": "Moth Box",
+  "lithicaddon.block_entity.wellpulley" : "Well Pulley",
 
 
   "lithicaddon.creative_tab.lithic": "Lithic Addon Tab"

@@ -1,0 +1,8 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "lithicaddon:block/well_lining_base",
+  "textures": {
+    "0": "tfc:block/rock/bricks/granite",
+    "particle": "tfc:block/rock/bricks/granite"
+  }
+}

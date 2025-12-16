@@ -59,6 +59,7 @@ public class LithicTab {
             accept(out,LithicItems.FL_FRUIT_PRESERVES_STAINLESS_STEEL, fruit);
 
         }
+        
         /*
         for(LithicFood fruit : LithicFood.values())
         {
@@ -90,7 +91,7 @@ public class LithicTab {
         accept(out, LithicItems.UNFIRED_SPINDLE_HEAD_MOLD);
         accept(out, LithicItems.SPINDLE_HEAD_MOLD);
         accept(out, LithicBlocks.SOY_WHEEL);
-
+        LithicBlocks.WELL_LINING.values().forEach(reg -> accept(out, reg));
 
         LithicItems.FOODS.values().forEach(reg -> accept(out, reg));
     }

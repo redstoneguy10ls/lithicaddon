@@ -27,7 +27,9 @@ public class LithicBlockEntities {
     ).<Supplier<? extends Block>>flatMap(Helpers::flatten));
 
     public static final RegistryObject<BlockEntityType<MothBlockEntity>> MOTHBOX = register("mothbox", MothBlockEntity::new, LithicBlocks.MOTHBOX);
-
+    
+    public static final RegistryObject<BlockEntityType<WellPulleyBlockEntity>> WELL_PULLEY = register("well_pulley", WellPulleyBlockEntity::new, LithicBlocks.WELL_PULLEY);
+    
     public static final RegistryObject<BlockEntityType<BerryBushBlockEntity>> BERRY_BUSH = register("berry_bush", LithicBerryBushBlockEntity::new,
             Stream.of(LithicBlocks.FRUIT_TREE_LEAVES.values()).<Supplier<? extends Block>>flatMap(Helpers::flatten));
 

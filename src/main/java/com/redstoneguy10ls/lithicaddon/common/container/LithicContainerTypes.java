@@ -2,6 +2,7 @@ package com.redstoneguy10ls.lithicaddon.common.container;
 
 import com.redstoneguy10ls.lithicaddon.common.blockentities.LithicBlockEntities;
 import com.redstoneguy10ls.lithicaddon.common.blockentities.MothBlockEntity;
+import com.redstoneguy10ls.lithicaddon.common.blockentities.WellPulleyBlockEntity;
 import net.dries007.tfc.common.blockentities.InventoryBlockEntity;
 import net.dries007.tfc.common.container.BlockEntityContainer;
 import net.dries007.tfc.common.container.ItemStackContainer;
@@ -21,7 +22,9 @@ public class LithicContainerTypes {
     public static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MOD_ID);
 
     public static final RegistryObject<MenuType<MothboxContainer>> MOTHBOX = LithicContainerTypes.<MothBlockEntity, MothboxContainer>registerBlock("mothbox", LithicBlockEntities.MOTHBOX, MothboxContainer::create);
-
+    
+    public static final RegistryObject<MenuType<WellPulleyContainer>> WELL_PULLEY = LithicContainerTypes.<WellPulleyBlockEntity, WellPulleyContainer>registerBlock("well_pulley", LithicBlockEntities.WELL_PULLEY, WellPulleyContainer::create);
+    
     private static <T extends InventoryBlockEntity<?>, C extends BlockEntityContainer<T>> RegistryObject<MenuType<C>> registerBlock(String name, Supplier<BlockEntityType<T>> type, BlockEntityContainer.Factory<T, C> factory)
     {
         return RegistrationHelpers.registerBlockEntityContainer(CONTAINERS, name, type, factory);
