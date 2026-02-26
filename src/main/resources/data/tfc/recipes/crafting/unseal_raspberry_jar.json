@@ -22,7 +22,7 @@
             "item": "tfc:jar/raspberry_unsealed"
           },
           "modifiers": [
-            "lithicaddon:copy_creation_date"
+            "tfc:copy_food"
           ]
         }
     }

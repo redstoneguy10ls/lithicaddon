@@ -19,7 +19,7 @@
             "item": "tfc:jar/green_apple"
           },
           "modifiers": [
-            "lithicaddon:copy_creation_date"
+            "tfc:copy_food"
           ]
         }
   }

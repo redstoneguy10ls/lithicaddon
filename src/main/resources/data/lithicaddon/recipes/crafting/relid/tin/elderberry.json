@@ -19,7 +19,7 @@
             "item": "tfc:jar/elderberry"
           },
           "modifiers": [
-            "lithicaddon:copy_creation_date"
+            "tfc:copy_food"
           ]
         }
   }

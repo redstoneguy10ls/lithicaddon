@@ -25,7 +25,7 @@
             "item": "firmalife:jar/white_grapes"
           },
           "modifiers": [
-            "lithicaddon:copy_creation_date"
+            "tfc:copy_food"
           ]
         }
   }

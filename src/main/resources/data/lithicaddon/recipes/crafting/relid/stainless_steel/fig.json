@@ -25,7 +25,7 @@
             "item": "lithicaddon:stainless_steel_jar/fig"
           },
           "modifiers": [
-            "lithicaddon:copy_creation_date"
+            "tfc:copy_food"
           ]
         }
   }
