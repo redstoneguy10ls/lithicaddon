@@ -7,6 +7,8 @@ import net.dries007.tfc.common.recipes.outputs.ItemStackModifiers;
 
 public class LithicItemStackModifiers {
 
+    
+    //TODO REPLACE WITH "OPENED" TRAIT
     public static void init()
     {
         register("copy_creation_date", CopyCreationDateModifier.INSTANCE);

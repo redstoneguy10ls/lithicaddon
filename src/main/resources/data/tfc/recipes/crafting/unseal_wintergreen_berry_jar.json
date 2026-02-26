@@ -22,7 +22,7 @@
             "item": "tfc:jar/wintergreen_berry_unsealed"
           },
           "modifiers": [
-            "lithicaddon:copy_creation_date"
+            "tfc:copy_food"
           ]
         }
     }
