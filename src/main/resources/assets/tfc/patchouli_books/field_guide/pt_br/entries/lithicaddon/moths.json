@@ -1,16 +1,16 @@
 {
-  "name": "Moths and Silk Worms",
+  "name": "Mariposas e Bichos-da-seda",
   "category": "tfc:lithicaddon",
   "icon": "lithicaddon:mothbox",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Moths are much like the $(l:firmalife/beekeeping)bees$() from $(l:firmalife)firmalife$(), with a couple of key differences. $(br)Before you can even start a silk worm farm you first must find a climate suitable for them. By default silk worms need a $(l:the_world/climate#temperature)temperature$(): of 19 - 29 °C and $(l:mechanics/hydration)rainfall$(): of 300 - 400mm. While there look for a mulberry tree, it's leaves are a silk worms favourite snack."
+      "text": "As mariposas são muito parecidas com as $(l:firmalife/beekeeping)abelhas$() do $(l:firmalife)Firmalife$(), com algumas diferenças importantes. $(br)Antes mesmo de começar uma criação de bicho-da-seda, você precisa encontrar um clima adequado para eles. Por padrão, os bichos-da-seda precisam de uma $(l:the_world/climate#temperature)temperatura$() entre 19 - 29 °C e uma $(l:mechanics/hydration)precipitação$() entre 300 - 400 mm. Enquanto estiver lá, procure uma amoreira, pois suas folhas são o petisco favorito dos bichos-da-seda."
     },
     {
       "anchor": "mulberry",
       "type": "tfc:multimultiblock",
-      "text": "Mulberry trees require 19 - 35 °C for $(l:the_world/climate#temperature)temperature$() and 300 - 500mm for $(l:mechanics/hydration)rainfall$().",
+      "text": "As amoreiras requerem 19 - 35 °C de $(l:the_world/climate#temperature)temperatura$() e 300 - 500mm de $(l:mechanics/hydration)precipitação$().",
       "multiblocks": [
         {
           "pattern": [
@@ -228,7 +228,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Now you'll need to craft a $(item)mothbox$() as well as some $(item)larvae lattices$(). Wild moths will come and lay their larvae on lattices housed in mothboxes. In order to attract wild moths the mothbox needs light sources around it. About 10 torches is enough to attract moths, with the benefit falling off around 60. Mothboxes can share light sources"
+      "text": "Agora você precisará criar uma $(item)caixa de mariposas$() e algumas $(item)treliças de larvas$(). Mariposas selvagens virão e depositarão suas larvas nas treliças alojadas nas caixas de mariposas. Para atrair mariposas selvagens, a caixa de mariposas precisa de fontes de luz ao seu redor. Cerca de 10 tochas são suficientes para atrair mariposas, com o benefício diminuindo por volta de 60. As caixas de mariposas podem compartilhar fontes de luz."
     },
     {
       "type": "patchouli:crafting",
@@ -241,15 +241,15 @@
       {
         "item": "lithicaddon:mulberry_leaflets"
       },
-      "text": "Getting a wild moth to lay larvae isn't the end of you job however. You remember those $(l:lithicaddon/moths#mulberry)mulberry trees$()? Well you'll need to cut them down in hopes of getting $(item)mulberry leaflets$() the primary source of food for silk worms. Silkworms have a 50% chance to eat leaves every day."
+      "text": "Mas fazer uma mariposa selvagem depositar larvas não é o fim do seu trabalho. Lembra-se daquelas $(l:lithicaddon/moths#mulberry)amoreiras$()? Pois bem, você precisará cortá-las na esperança de obter $(item)folhelhos de amoreira$(), a principal fonte de alimento para os bichos-da-seda. Os bichos-da-seda têm 50% de chance de comer folhas todos os dias."
     },
     {
       "type": "patchouli:text",
-      "text": "Regardless of if leaves are consumed or not leaves still must be present for the mothbox to function and for the silk worms to grow. After about 22 days of developing the silk worm will cocoon.$(br2)From there you may choose to pluck the cocoons right off using $(item)$(k:key.use)$(). Or you can let them develop into $(l:lithicaddon/moths#note)moths$() to allow for their traits to pass on to new silk worms."
+      "text": "Independentemente de as folhas serem consumidas ou não, elas ainda precisam estar presentes para que a caixa de mariposas funcione e para que os bichos-da-seda cresçam. Após cerca de 22 dias de desenvolvimento, o bicho-da-seda formará um casulo.$(br2)A partir daí, você pode optar por arrancar os casulos imediatamente usando $(item)$(k:key.use)$(). Ou pode deixá-los se desenvolverem em $(l:lithicaddon/moths#note)mariposas$() para permitir que suas características sejam transmitidas para novos bichos-da-seda."
     },
         {
       "type":"patchouli:text",
-      "text": "$(p)Once you have a $(thing)cocoon$() you must boil it. Doing so will give you a $(item)Boiled Silk Worm Cocoon$() which you cut open with a knife to get a $(item)Boiled Silk Worm$() and a $(item)Bundle of String$().$(br)From there you can eat the $(item)Boiled Silk Worm Cocoon$() and put the $(item)Bundle of String$() in with a $(l:lithicaddon/spindles)spindles$() in a crafting table."
+      "text": "$(p)Assim que você tiver um $(thing)casulo$(), você deve fervê-lo. Fazendo isso, você obterá um $(thing)Casulo de Bicho-da-seda Cozido$(), que você abre com uma faca para obter um $(thing)Bicho-da-seda Cozido$() e um $(thing)Novelo de Fio$().$(br)A partir daí, você pode comer o $(thing)Casulo de Bicho-da-seda Cozido$() e colocar o $(thing)Novelo de Fio$() junto com um (l:lithicaddon/spindles)fuso$() em uma mesa de trabalho."
     },
     {
       "type": "patchouli:image",
@@ -268,23 +268,23 @@
       "images": [
         "lithicaddon:textures/gui/book/steps.png"
       ],
-      "text": "Thank you Jothbot for this image",
+      "text": "Obrigado Jothbot por esta imagem.",
       "border": true
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(thing)Hardiness$(): Allows silkworms to grow at more extreme temperatures and humidity. Hardiness increases temperature tolerance by 1°C in each direction per level and humidity tolerance by 5mm in each direction per level. $()$(li)$(thing)Size$(): Makes silk worms eat more leaves but they grow into bigger cocoons.$()$(li)$(thing)Fertility$(): Lets moth breed with less lights around$().",
-      "title": "List of Abilities"
+      "text": "$(li)$(thing)Resistência$(): Permite que os bichos-da-seda cresçam em temperaturas e umidades mais extremas. Resistência aumenta a tolerância à temperatura em 1°C em ambas direções por nível e a tolerância à umidade em 5mm em ambas direções por nível. $()$(li)$(thing)Tamanho$(): Faz com que os bichos-da-seda comam mais folhas, mas produzam casulos maiores. $()$(li)$(thing)Fertilidade$(): Permite que as mariposas se reproduzam com menos luz$().",
+      "title": "Lista de Habilidades"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(thing)Fasting$(): Decreases the chances a silk worm will eat. $(t:So Fasting 1 makes the chance they eat 40%)$(thing)By 10% per level$(). Fasting also increases the time it takes for a silk worm to develop $()$(li)$(thing)Hunger$(): The opposite of Fasting, decreasing the time for silk worms to develop, but increasing the chances they eat$()$(p)$(l)$(#f00)FASTING AND HUNGER CANCEL EACH-OTHER OUT"
+      "text": "$(thing)Jejum$(): Diminui as chances de um bicho-da-seda se alimentar. $(t:Então Jejum 1 faz a chance deles se alimentarem de 40%)$(thing)10% por nível$(). O Jejum também aumenta o tempo necessário para o desenvolvimento do bicho-da-seda. $()$(li)$(thing)Fome$(): O oposto do Jejum, diminui o tempo de desenvolvimento dos bichos-da-seda, mas aumenta as chances de eles se alimentarem.$()$(p)$(l)$(#f00)JEJUM E FOME SE ANULAM"
     },
     {
       "title": "Extras",
       "anchor": "note",
       "type":"patchouli:text",
-      "text": "$(li)When a moth hatches from a cocoon there is a small chance for a $(item)Bundle of String$() to appear in the bottom slot.$()$(li)Grown moths are good for breeding but still require food.$()$(li)Taking a $(item)Larvae lattice$() with moths on it out of the $(item)mothbox$() will kill the moth. This only applies to fully grown moths"
+      "text": "$(li)Quando uma mariposa eclode de um casulo, há uma pequena chance de um $(thing)Novelo de Fio$() aparecer no compartimento inferior.$()$(li)Mariposas adultas são boas para reprodução, mas ainda precisam de alimento.$()$(li)Retirar uma $(thing)Treliça de Larvas$() com mariposas da $(item)Caixa de Mariposas$() matará a mariposa. Isso só se aplica a mariposas totalmente adultas"
     }
   ],
   "read_by_default": true,

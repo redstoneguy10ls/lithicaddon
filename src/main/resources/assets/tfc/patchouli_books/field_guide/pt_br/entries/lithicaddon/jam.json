@@ -1,16 +1,16 @@
 {
-  "name": "Jar and Jam changes",
+  "name": "Mudanças nos Potes e Geleias",
   "category": "tfc:lithicaddon",
   "icon": "tfc:jar/plum",
   "pages": [
     {
       "type": "patchouli:text",
-      "title": "No more ripping lids off",
-      "text": "If you've ever been concerned about not being able to $(l:mechanics/jarring)jam$() your fruits properly because of a lack of $(l:the_world/ores_and_minerals#cassiterite)tin$() then fear not for this mod add two new types of $(thing)jar lids$().$(br)An $(thing)aluminium lid$() as well as a $(thing)stainless steel lid$(). As well this mod changes the unsealing recipes to allow for a chance for the lids to be given back based on the metal the lid was made of."
+      "title": "Chega de arrancar as tampas",
+      "text": "Se você já se preocupou em não conseguir fazer $(l:mechanics/jarring)geleia$() de frutas direito por falta de $(l:the_world/ores_and_minerals#cassiterite)estanho$(), não se preocupe, pois este mod adiciona dois novos tipos de $(thing)tampa para potes$().$(br)Uma $(thing)tampa de alumínio$() e uma $(thing)tampa de aço inoxidável$(). Além disso, este mod altera as receitas de abertura de potes para permitir que as tampas sejam devolvidas dependendo do metal de que são feitas."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)25% chance to get tin lids back$()$(li)50% chance to get aluminium lids back, and$()$(li)75% chance to get stainless steel lids back$()$(p)Now this also changes how you make jam in the first place, instead of needing an $(item)empty jar with lid$() to pick up the jam from the pot, you use an $(item)empty jar$() and then put a lid on afterwards. This also works with the $(l:firmalife/oven_appliances#vat)vat$()"
+      "text": "$(li)25% de chance de recuperar tampas de estanho$()$(li)50% de chance de recuperar tampas de alumínio, e$()$(li)75% de chance de recuperar tampas de aço inoxidável$()$(p)Agora isso também muda a forma como você faz geleia, em vez de precisar de um $(item)pote vazio com tampa$() para pegar a geleia da panela, você usa um $(item)pote vazio$() e coloca a tampa depois. Isso também funciona com a $(l:firmalife/oven_appliances#vat)Cuba$()"
     }
 
   ],

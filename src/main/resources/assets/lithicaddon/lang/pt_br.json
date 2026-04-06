@@ -114,7 +114,7 @@
 
   "__comment__": "BLOCOS",
 
-  "block.lithicaddon.mothbox" :  "Caixa de Traça",
+  "block.lithicaddon.mothbox" :  "Caixa de Mariposa",
   "block.lithicaddon.plant.mulberry_branch": "Ramo de Amoreira",
   "block.lithicaddon.plant.mulberry_leaves": "Folhas de Amoreira",
   "block.lithicaddon.plant.mulberry_sapling": "Muda de Amoreira",
@@ -144,9 +144,9 @@
   "lithic.advancements.world.spindle.description": "Quebre um fuso feito de aço azul ou rubro perfeitamente forjado",
 
   "lithic.moth.larva": "Larva ",
-  "lithic.moth.moth": "Traça ",
+  "lithic.moth.moth": "Mariposa ",
   "lithic.moth.till_cocoon": "Dias até casulo: %s ",
-  "lithic.moth.till_moth": "Dias até eclosão da traça: %s ",
+  "lithic.moth.till_moth": "Dias até eclosão da mariposa: %s ",
   "lithic.moth.cocoon": "Casulo ",
   "lithic.moth.no_larva": "Sem Larva",
   "lithic.moth.empty": "Vazio",
@@ -171,7 +171,7 @@
   "lithic.moth.ability.fasting": "Jejum %s",
   "lithic.moth.ability.hunger": "Fome %s",
 
-  "lithicaddon.block_entity.mothbox": "Caixa de Traça",
+  "lithicaddon.block_entity.mothbox": "Caixa de Mariposa",
 
   "lithicaddon.creative_tab.lithic": "Aba Lithic Addon"
 }
