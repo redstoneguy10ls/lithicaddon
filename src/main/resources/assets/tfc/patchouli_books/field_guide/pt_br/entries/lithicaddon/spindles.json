@@ -1,0 +1,22 @@
+{
+  "name": "Fusos",
+  "category": "tfc:lithicaddon",
+  "icon": "lithicaddon:metal_spindle/red_steel",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item":
+      {
+        "tag": "lithicaddon:spindles"
+      },
+      "text": "Este mod adiciona $(l:mechanics/weaving)fusos$() de metal, para facilitar a produção em massa de $(item)fio de lã$() e $(item)linha$(). Você os forja com uma bigorna, e os bônus de forja também se aplicam."
+    },
+    {
+      "type": "tfc:anvil_recipe",
+      "recipe": "lithicaddon:anvil/spindle_head/bismuth_bronze_spindle_head",
+      "text": "Forje uma cabeça de fuso em uma $(l:mechanics/anvils)Bigorna$()."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 15
+}

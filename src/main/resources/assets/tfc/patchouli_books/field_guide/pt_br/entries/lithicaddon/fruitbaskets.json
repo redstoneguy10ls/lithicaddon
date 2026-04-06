@@ -1,0 +1,26 @@
+{
+  "name": "Cestas de Fruta",
+  "category": "tfc:lithicaddon",
+  "icon": "lithicaddon:fruit_basket",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item":
+      {
+        "item": "lithicaddon:fruit_basket"
+      },
+      "text": "Já tentou colher frutas da sua $(l:the_world/wild_fruits#fruit_trees)árvore frutífera$() e não conseguiu alcançar todas as folhas? Bem, tenho a solução perfeita para você. Apresento a vocês a$(item)cesta de frutas$(), feita com um pouco de palha. Basta clicar com botão direito em um galho para sacudir a árvore e derrubar várias frutas, que serão coletadas na cesta."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lithicaddon:crafting/basket",
+      "text": "Mas tenha cuidado, pois existe uma chande de $(t:5%)$(thing)1 em 20$()$(/t) do galho quebrar. Isso pode ser desativado na configuração"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Existe um segredo se você clicar com o botão direito do mouse na cesta de frutas em seu inventário com uma poderosa $(l:firmalife/beekeeping)abelha rainha$()"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 16
+}

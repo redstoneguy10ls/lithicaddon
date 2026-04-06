@@ -1,0 +1,292 @@
+{
+  "name": "Mariposas e Bichos-da-seda",
+  "category": "tfc:lithicaddon",
+  "icon": "lithicaddon:mothbox",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "As mariposas são muito parecidas com as $(l:firmalife/beekeeping)abelhas$() do $(l:firmalife)Firmalife$(), com algumas diferenças importantes. $(br)Antes mesmo de começar uma criação de bicho-da-seda, você precisa encontrar um clima adequado para eles. Por padrão, os bichos-da-seda precisam de uma $(l:the_world/climate#temperature)temperatura$() entre 19 - 29 °C e uma $(l:mechanics/hydration)precipitação$() entre 300 - 400 mm. Enquanto estiver lá, procure uma amoreira, pois suas folhas são o petisco favorito dos bichos-da-seda."
+    },
+    {
+      "anchor": "mulberry",
+      "type": "tfc:multimultiblock",
+      "text": "As amoreiras requerem 19 - 35 °C de $(l:the_world/climate#temperature)temperatura$() e 300 - 500mm de $(l:mechanics/hydration)precipitação$().",
+      "multiblocks": [
+        {
+          "pattern": [
+            [
+              "     ",
+              "  L  ",
+              "     ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L3L ",
+              " L2L ",
+              "  L  ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  0  ",
+              "     ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  1  ",
+              "     ",
+              "     "
+            ]
+          ],
+          "mapping": {
+            "0": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "1": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "2": "lithicaddon:plant/mulberry_branch[down=true,west=true]",
+            "3": "lithicaddon:plant/mulberry_branch[east=true,up=true]",
+            "L": "lithicaddon:plant/mulberry_leaves[lifecycle=dormant]"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "     ",
+              "  L  ",
+              "     ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L3L ",
+              " L2L ",
+              "  L  ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  0  ",
+              "     ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  1  ",
+              "     ",
+              "     "
+            ]
+          ],
+          "mapping": {
+            "0": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "1": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "2": "lithicaddon:plant/mulberry_branch[down=true,west=true]",
+            "3": "lithicaddon:plant/mulberry_branch[east=true,up=true]",
+            "L": "lithicaddon:plant/mulberry_leaves[lifecycle=healthy]"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "     ",
+              "  L  ",
+              "     ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L3L ",
+              " L2L ",
+              "  L  ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  0  ",
+              "     ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  1  ",
+              "     ",
+              "     "
+            ]
+          ],
+          "mapping": {
+            "0": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "1": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "2": "lithicaddon:plant/mulberry_branch[down=true,west=true]",
+            "3": "lithicaddon:plant/mulberry_branch[east=true,up=true]",
+            "L": "lithicaddon:plant/mulberry_leaves[lifecycle=flowering]"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "     ",
+              "  L  ",
+              "     ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L1L ",
+              "  L  ",
+              "     ",
+              "     "
+            ],
+            [
+              "  L  ",
+              " L3L ",
+              " L2L ",
+              "  L  ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  0  ",
+              "     ",
+              "     "
+            ],
+            [
+              "     ",
+              "     ",
+              "  1  ",
+              "     ",
+              "     "
+            ]
+          ],
+          "mapping": {
+            "0": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "1": "lithicaddon:plant/mulberry_branch[down=true,up=true]",
+            "2": "lithicaddon:plant/mulberry_branch[down=true,west=true]",
+            "3": "lithicaddon:plant/mulberry_branch[east=true,up=true]",
+            "L": "lithicaddon:plant/mulberry_leaves[lifecycle=fruiting]"
+          }
+        }
+      ]
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Agora você precisará criar uma $(item)caixa de mariposas$() e algumas $(item)treliças de larvas$(). Mariposas selvagens virão e depositarão suas larvas nas treliças alojadas nas caixas de mariposas. Para atrair mariposas selvagens, a caixa de mariposas precisa de fontes de luz ao seu redor. Cerca de 10 tochas são suficientes para atrair mariposas, com o benefício diminuindo por volta de 60. As caixas de mariposas podem compartilhar fontes de luz."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lithicaddon:crafting/mothbox",
+      "recipe2": "lithicaddon:crafting/lattice"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item":
+      {
+        "item": "lithicaddon:mulberry_leaflets"
+      },
+      "text": "Mas fazer uma mariposa selvagem depositar larvas não é o fim do seu trabalho. Lembra-se daquelas $(l:lithicaddon/moths#mulberry)amoreiras$()? Pois bem, você precisará cortá-las na esperança de obter $(item)folhelhos de amoreira$(), a principal fonte de alimento para os bichos-da-seda. Os bichos-da-seda têm 50% de chance de comer folhas todos os dias."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Independentemente de as folhas serem consumidas ou não, elas ainda precisam estar presentes para que a caixa de mariposas funcione e para que os bichos-da-seda cresçam. Após cerca de 22 dias de desenvolvimento, o bicho-da-seda formará um casulo.$(br2)A partir daí, você pode optar por arrancar os casulos imediatamente usando $(item)$(k:key.use)$(). Ou pode deixá-los se desenvolverem em $(l:lithicaddon/moths#note)mariposas$() para permitir que suas características sejam transmitidas para novos bichos-da-seda."
+    },
+        {
+      "type":"patchouli:text",
+      "text": "$(p)Assim que você tiver um $(thing)casulo$(), você deve fervê-lo. Fazendo isso, você obterá um $(thing)Casulo de Bicho-da-seda Cozido$(), que você abre com uma faca para obter um $(thing)Bicho-da-seda Cozido$() e um $(thing)Novelo de Fio$().$(br)A partir daí, você pode comer o $(thing)Casulo de Bicho-da-seda Cozido$() e colocar o $(thing)Novelo de Fio$() junto com um (l:lithicaddon/spindles)fuso$() em uma mesa de trabalho."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "lithicaddon:textures/gui/book/boiling_moth.png",
+        "lithicaddon:textures/gui/book/boiled_moth.png"
+      ],
+      "border": true
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lithicaddon:crafting/string"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "lithicaddon:textures/gui/book/steps.png"
+      ],
+      "text": "Obrigado Jothbot por esta imagem.",
+      "border": true
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(thing)Resistência$(): Permite que os bichos-da-seda cresçam em temperaturas e umidades mais extremas. Resistência aumenta a tolerância à temperatura em 1°C em ambas direções por nível e a tolerância à umidade em 5mm em ambas direções por nível. $()$(li)$(thing)Tamanho$(): Faz com que os bichos-da-seda comam mais folhas, mas produzam casulos maiores. $()$(li)$(thing)Fertilidade$(): Permite que as mariposas se reproduzam com menos luz$().",
+      "title": "Lista de Habilidades"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Jejum$(): Diminui as chances de um bicho-da-seda se alimentar. $(t:Então Jejum 1 faz a chance deles se alimentarem de 40%)$(thing)10% por nível$(). O Jejum também aumenta o tempo necessário para o desenvolvimento do bicho-da-seda. $()$(li)$(thing)Fome$(): O oposto do Jejum, diminui o tempo de desenvolvimento dos bichos-da-seda, mas aumenta as chances de eles se alimentarem.$()$(p)$(l)$(#f00)JEJUM E FOME SE ANULAM"
+    },
+    {
+      "title": "Extras",
+      "anchor": "note",
+      "type":"patchouli:text",
+      "text": "$(li)Quando uma mariposa eclode de um casulo, há uma pequena chance de um $(thing)Novelo de Fio$() aparecer no compartimento inferior.$()$(li)Mariposas adultas são boas para reprodução, mas ainda precisam de alimento.$()$(li)Retirar uma $(thing)Treliça de Larvas$() com mariposas da $(item)Caixa de Mariposas$() matará a mariposa. Isso só se aplica a mariposas totalmente adultas"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 10
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Mudanças nos Potes e Geleias",
+  "category": "tfc:lithicaddon",
+  "icon": "tfc:jar/plum",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Chega de arrancar as tampas",
+      "text": "Se você já se preocupou em não conseguir fazer $(l:mechanics/jarring)geleia$() de frutas direito por falta de $(l:the_world/ores_and_minerals#cassiterite)estanho$(), não se preocupe, pois este mod adiciona dois novos tipos de $(thing)tampa para potes$().$(br)Uma $(thing)tampa de alumínio$() e uma $(thing)tampa de aço inoxidável$(). Além disso, este mod altera as receitas de abertura de potes para permitir que as tampas sejam devolvidas dependendo do metal de que são feitas."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)25% de chance de recuperar tampas de estanho$()$(li)50% de chance de recuperar tampas de alumínio, e$()$(li)75% de chance de recuperar tampas de aço inoxidável$()$(p)Agora isso também muda a forma como você faz geleia, em vez de precisar de um $(item)pote vazio com tampa$() para pegar a geleia da panela, você usa um $(item)pote vazio$() e coloca a tampa depois. Isso também funciona com a $(l:firmalife/oven_appliances#vat)Cuba$()"
+    }
+
+  ],
+  "read_by_default": true,
+  "sortnum": 15
+}

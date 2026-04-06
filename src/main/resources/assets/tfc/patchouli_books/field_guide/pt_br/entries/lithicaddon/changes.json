@@ -1,0 +1,13 @@
+{
+  "name": "Mudanças",
+  "category": "tfc:lithicaddon",
+  "icon": "lithicaddon:lithic",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Esse mod altera algumas coisas sobre o tfc. $()Cavalos recém-nascidos recebem um aumento em seu atributo de velocidade com base na familiaridade dos seus pais"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 5
+}
