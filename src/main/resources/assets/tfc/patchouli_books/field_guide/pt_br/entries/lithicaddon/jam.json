@@ -1,0 +1,19 @@
+{
+  "name": "Jar and Jam changes",
+  "category": "tfc:lithicaddon",
+  "icon": "tfc:jar/plum",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "No more ripping lids off",
+      "text": "If you've ever been concerned about not being able to $(l:mechanics/jarring)jam$() your fruits properly because of a lack of $(l:the_world/ores_and_minerals#cassiterite)tin$() then fear not for this mod add two new types of $(thing)jar lids$().$(br)An $(thing)aluminium lid$() as well as a $(thing)stainless steel lid$(). As well this mod changes the unsealing recipes to allow for a chance for the lids to be given back based on the metal the lid was made of."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)25% chance to get tin lids back$()$(li)50% chance to get aluminium lids back, and$()$(li)75% chance to get stainless steel lids back$()$(p)Now this also changes how you make jam in the first place, instead of needing an $(item)empty jar with lid$() to pick up the jam from the pot, you use an $(item)empty jar$() and then put a lid on afterwards. This also works with the $(l:firmalife/oven_appliances#vat)vat$()"
+    }
+
+  ],
+  "read_by_default": true,
+  "sortnum": 15
+}
